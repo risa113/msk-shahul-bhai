@@ -2,12 +2,19 @@ import { ArrowDown, ArrowRight, ArrowUpRight, MapPin, Phone, Sparkles } from 'lu
 import { motion, useReducedMotion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
+import { AvailabilityBadge } from '../components/menu/AvailabilityBadge'
 import { Reveal, SectionHeading } from '../components/MotionSection'
-import { BRAND, CONTACT_LINES, MENU_VARIETIES, assetUrl, buildWhatsAppUrl } from '../data/restaurant'
+import { MENU_DATA } from '../data/menuData'
+import { BRAND, CONTACT_LINES, assetUrl, buildWhatsAppUrl } from '../data/restaurant'
 
 export function HomePage() {
   const shouldReduceMotion = useReducedMotion()
-  const featuredVarieties = MENU_VARIETIES.slice(0, 4)
+  const featuredDishes = [
+    MENU_DATA[0].items[0], // Chicken Mandi (Available from 6:30 PM)
+    MENU_DATA[1].items[0], // Mutton Biryani
+    MENU_DATA[5].items[0], // Malabar Chicken Chukka – Spicy
+    MENU_DATA[6].items[5], // Alfaham Chicken
+  ]
 
   return (
     <>
@@ -154,9 +161,9 @@ export function HomePage() {
             <Reveal>
               <SectionHeading
                 eyebrow="Our Menu"
-                title="Confirmed Food"
-                accentWord="Varieties"
-                description="Browse a preview of our confirmed kitchen categories. View the full catalog to filter across all selections."
+                title="Featured"
+                accentWord="Selections"
+                description="Explore highlights from our evening Mandi Specials (6:30 PM onwards), Biryani Collection, Malabar Chukka, and Grilled Specialties."
               />
             </Reveal>
             <Reveal delay={0.1}>
@@ -171,28 +178,31 @@ export function HomePage() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredVarieties.map((item, idx) => (
-              <Reveal key={item.id} delay={idx * 0.06}>
+            {featuredDishes.map((dish, idx) => (
+              <Reveal key={dish.id} delay={idx * 0.06}>
                 <Link to="/menu" className="luxury-panel group block h-full overflow-hidden">
                   <div className="relative h-56 overflow-hidden">
                     <img
-                      src={item.image}
-                      alt={item.imageAlt}
+                      src={dish.image}
+                      alt={dish.imageAlt}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#141312] via-transparent to-transparent" />
+                    <div className="absolute top-3 left-3">
+                      <AvailabilityBadge
+                        label={dish.availability}
+                        isEveningSpecial={dish.isEveningSpecial}
+                      />
+                    </div>
                   </div>
                   <div className="p-5">
                     <span className="text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-                      {item.subtitle}
+                      {dish.categoryTitle}
                     </span>
                     <h3 className="mt-1.5 font-serif text-2xl font-normal text-[#F5F0E8]">
-                      {item.name}
+                      {dish.name}
                     </h3>
-                    <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-[#CFC6B8]">
-                      {item.description}
-                    </p>
                   </div>
                 </Link>
               </Reveal>

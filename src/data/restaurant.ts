@@ -208,33 +208,33 @@ export const MENU_VARIETIES: MenuVariety[] = [
 export const SIGNATURE_SHOWCASE: EditorialHighlight[] = [
   {
     number: '01',
-    eyebrow: 'Confirmed House Category',
-    title: 'Signature Biryani',
+    eyebrow: 'Evening Speciality · 6:30 PM Onwards',
+    title: 'Mandi Specials',
     description:
-      'Our flagship category celebrates slow-steamed aroma, carefully tempered whole spices, and richly seasoned meat sealed inside traditional vessels until service.',
-    image: assetUrl('images/hero-biryani.webp'),
-    imageAlt: 'Steaming copper handi of signature biryani on dark charcoal slate',
-    confirmationNote: 'Confirmed category · Individual dish titles confirmed on visit',
+      'Slow-roasted Chicken, Alfaham, Fish, Golden, and Masala Peri Peri Mandi served over aromatic long-grain rice — freshly prepared each evening from 6:30 PM onwards.',
+    image: assetUrl('images/menu/alfaham-mandi.webp'),
+    imageAlt: 'Alfaham Mandi with charcoal-grilled chicken over aromatic mandi rice',
+    confirmationNote: 'Available from 6:30 PM onwards',
   },
   {
     number: '02',
-    eyebrow: 'Culinary Foundation',
-    title: 'Whole Spice & Saffron Craft',
+    eyebrow: 'Morning to Night · House Craft',
+    title: 'Biryani Collection',
     description:
-      'Star anise, green cardamom pods, cinnamon bark, cloves, crispy golden shallots, and saffron threads build layered depth before the handi ever hits the flame.',
-    image: assetUrl('images/spice-craft.webp'),
-    imageAlt: 'Whole spices and saffron in an antique brass spoon next to a steaming copper handi',
-    confirmationNote: 'House culinary craft',
+      'From Mutton, Chicken, Fish, and Prawn Biryani to Hyderabadi, Egg, White, and Thokku Biryani — layered with whole spices, saffron undertones, and balanced heat.',
+    image: assetUrl('images/hero-biryani.webp'),
+    imageAlt: 'Steaming copper handi of signature biryani on dark charcoal slate',
+    confirmationNote: 'Availability: Morning to Night',
   },
   {
     number: '03',
-    eyebrow: 'To Be Confirmed With Owner',
-    title: 'Special & Super Dishes',
+    eyebrow: 'Aromatic Craft & Spice',
+    title: 'Whole Spice & Chukka Heritage',
     description:
-      'Additional named Special and Super house creations will be featured here individually once their exact titles are confirmed by the restaurant owner.',
-    image: assetUrl('images/dum-mutton-biryani.webp'),
-    imageAlt: 'Hammered copper handi of dum biryani surrounded by raita and salna bowls',
-    confirmationNote: 'Pending owner confirmation of specific Special / Super dish titles',
+      'Star anise, green cardamom, cinnamon bark, cloves, and freshly cracked black pepper define our Malabar Chukka and slow-simmered Agni and Masala gravies.',
+    image: assetUrl('images/spice-craft.webp'),
+    imageAlt: 'Whole spices and saffron in an antique brass spoon next to a steaming copper handi',
+    confirmationNote: 'Availability: Morning to Night',
   },
 ]
 
