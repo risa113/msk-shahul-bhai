@@ -1,34 +1,46 @@
 @import "tailwindcss";
 
+:root {
+  --msk-primary: #356B4F;
+  --msk-secondary: #477D5D;
+  --msk-deep: #263C30;
+  --msk-cream: #F4EFE3;
+  --msk-cream-soft: #FAF7F0;
+  --msk-white: #FFFFFF;
+  --msk-gold: #D6A85C;
+  --msk-gold-soft: #E5C58A;
+  --msk-text-primary: #263C30;
+  --msk-text-secondary: #647067;
+}
+
 @theme {
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
-  --color-charcoal: #171717;
-  --color-charcoal-deep: #101010;
-  --color-charcoal-elevated: #201d1c;
-  --color-burgundy: #5A0E19;
-  --color-burgundy-deep: #38070f;
-  --color-gold: #D4AF37;
-  --color-gold-champagne: #E8CF7D;
-  --color-ivory: #F5F0E8;
-  --color-ivory-muted: #CFC6B8;
-  --color-stone: #988F82;
+  --color-brand-primary: #356B4F;
+  --color-brand-secondary: #477D5D;
+  --color-brand-deep: #263C30;
+  --color-cream: #F4EFE3;
+  --color-cream-soft: #FAF7F0;
+  --color-gold: #D6A85C;
+  --color-gold-soft: #E5C58A;
+  --color-ink: #263C30;
+  --color-muted: #647067;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 84px;
-    background-color: #171717;
-    color: #F5F0E8;
+    background-color: var(--msk-cream);
+    color: var(--msk-text-primary);
     font-family: var(--font-sans);
   }
 
   body {
     overflow-x: hidden;
-    background-color: #171717;
-    color: #F5F0E8;
+    background-color: var(--msk-cream);
+    color: var(--msk-text-primary);
   }
 
   h1, h2, h3, h4 {
@@ -36,20 +48,28 @@
   }
 
   :focus-visible {
-    outline: 2px solid #D4AF37;
+    outline: 2px solid var(--msk-gold);
     outline-offset: 3px;
   }
 }
 
 .luxury-panel {
-  background: linear-gradient(180deg, #1d1b1a 0%, #141312 100%);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  background-color: var(--msk-white);
+  border: 1px solid rgba(53, 107, 79, 0.14);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px -16px rgba(38, 60, 48, 0.16);
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .luxury-panel:hover {
-  border-color: rgba(212, 175, 55, 0.48);
-  box-shadow: 0 22px 54px -22px rgba(0, 0, 0, 0.85);
+  border-color: rgba(214, 168, 92, 0.72);
+  box-shadow: 0 22px 44px -18px rgba(38, 60, 48, 0.22);
+}
+
+.hero-scrim-green {
+  background:
+    linear-gradient(95deg, rgba(38, 60, 48, 0.92) 0%, rgba(53, 107, 79, 0.74) 48%, rgba(38, 60, 48, 0.34) 100%),
+    linear-gradient(180deg, rgba(38, 60, 48, 0.56) 0%, rgba(38, 60, 48, 0.2) 38%, rgba(38, 60, 48, 0.88) 100%);
 }
 
 @keyframes gentle-float {

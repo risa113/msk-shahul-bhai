@@ -7,28 +7,30 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[#D4AF37]/25 bg-[#101010] text-[#F5F0E8]">
+    <footer className="border-t-2 border-gold/45 bg-brand-deep text-cream">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Link to="/" className="inline-flex items-center gap-3.5">
-              <img
-                src={BRAND.logoPath}
-                alt="MSK Catering Service official logo"
-                loading="lazy"
-                className="h-16 w-auto object-contain"
-              />
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-cream p-1.5 ring-1 ring-gold/60">
+                <img
+                  src={BRAND.logoPath}
+                  alt="MSK Catering Service official logo"
+                  loading="lazy"
+                  className="h-full w-auto object-contain"
+                />
+              </div>
               <div>
-                <p className="font-serif text-2xl font-normal text-[#F5F0E8]">{BRAND.name}</p>
-                <p className="text-[10px] tracking-[0.22em] text-[#D4AF37] uppercase">
+                <p className="font-serif text-2xl font-normal text-white">{BRAND.name}</p>
+                <p className="text-[10px] tracking-[0.22em] text-gold uppercase">
                   {BRAND.cateringBrand}
                 </p>
               </div>
             </Link>
 
-            <p className="mt-5 max-w-xs text-xs leading-relaxed text-[#CFC6B8]">
-              {BRAND.heroHeadline} Authentic biryani prepared with whole-spice aroma and warm
-              hospitality for dine-in visits and event catering.
+            <p className="mt-5 max-w-xs text-xs leading-relaxed text-cream/80">
+              {BRAND.heroHeadline} Authentic biryani and Arabian Mandi prepared with whole-spice
+              aroma and welcoming hospitality for dine-in guests and event catering.
             </p>
 
             <a
@@ -38,24 +40,24 @@ export function Footer() {
               )}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 border border-[#D4AF37]/60 bg-[#5A0E19] px-5 py-3 text-xs font-semibold tracking-[0.14em] text-[#F5F0E8] uppercase transition-colors hover:border-[#D4AF37] hover:bg-[#6d1421]"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg border border-gold/60 bg-brand-primary px-5 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:bg-brand-secondary"
             >
-              <WhatsAppBrandIcon className="h-3.5 w-3.5 text-[#D4AF37]" />
+              <WhatsAppBrandIcon className="h-3.5 w-3.5 text-gold" />
               <span>Enquire for Catering</span>
-              <ArrowUpRight className="h-3.5 w-3.5 text-[#D4AF37]" />
+              <ArrowUpRight className="h-3.5 w-3.5 text-gold" />
             </a>
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-[#D4AF37] uppercase">
+            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
               Pages
             </h3>
-            <ul className="mt-4 space-y-2.5 text-xs text-[#E3DBCF]">
+            <ul className="mt-4 space-y-2.5 text-xs text-cream/85">
               {NAV_ITEMS.map((item) => (
                 <li key={item.to}>
                   <Link
                     to={item.to}
-                    className="inline-block py-0.5 transition-colors hover:text-[#D4AF37]"
+                    className="inline-block py-0.5 transition-colors hover:text-gold-soft"
                   >
                     {item.label}
                   </Link>
@@ -65,17 +67,17 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-[#D4AF37] uppercase">
+            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
               Contact &amp; Social
             </h3>
-            <ul className="mt-4 space-y-3 text-xs text-[#E3DBCF]">
+            <ul className="mt-4 space-y-3 text-xs text-cream/85">
               {CONTACT_LINES.map((line) => (
                 <li key={line.id}>
                   <a
                     href={line.telHref}
-                    className="inline-flex items-center gap-2 transition-colors hover:text-[#D4AF37]"
+                    className="inline-flex items-center gap-2 transition-colors hover:text-gold-soft"
                   >
-                    <Phone className="h-3.5 w-3.5 text-[#D4AF37]" />
+                    <Phone className="h-3.5 w-3.5 text-gold" />
                     <span>{line.display}</span>
                   </a>
                 </li>
@@ -85,9 +87,9 @@ export function Footer() {
                   href={BRAND.instagramUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[#D4AF37]"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold-soft"
                 >
-                  <InstagramBrandIcon className="h-3.5 w-3.5 text-[#D4AF37]" />
+                  <InstagramBrandIcon className="h-3.5 w-3.5 text-gold" />
                   <span>{BRAND.instagramHandle}</span>
                   <ArrowUpRight className="h-3 w-3" />
                 </a>
@@ -97,9 +99,9 @@ export function Footer() {
                   href={BRAND.mapsUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[#D4AF37]"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold-soft"
                 >
-                  <MapPin className="h-3.5 w-3.5 text-[#D4AF37]" />
+                  <MapPin className="h-3.5 w-3.5 text-gold" />
                   <span>Google Maps Directions</span>
                   <ArrowUpRight className="h-3 w-3" />
                 </a>
@@ -108,23 +110,23 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-[#D4AF37] uppercase">
+            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
               Visit Us
             </h3>
-            <div className="mt-4 space-y-3 text-xs leading-relaxed text-[#CFC6B8]">
+            <div className="mt-4 space-y-3 text-xs leading-relaxed text-cream/80">
               <p className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#D4AF37]" />
+                <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
                 <span>{BRAND.areaSummary} (Street address to be confirmed)</span>
               </p>
               <p className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#D4AF37]" />
+                <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
                 <span>Opening hours to be confirmed</span>
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-[#D4AF37]/15 pt-6 text-[11px] text-[#988F82] sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-gold/25 pt-6 text-[11px] text-cream/65 sm:flex-row sm:items-center">
           <p>
             &copy; {year} {BRAND.name}. All rights reserved.
           </p>

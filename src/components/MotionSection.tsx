@@ -8,7 +8,7 @@ interface RevealProps {
   yOffset?: number
 }
 
-export function Reveal({ children, className = '', delay = 0, yOffset = 18 }: RevealProps) {
+export function Reveal({ children, className = '', delay = 0, yOffset = 16 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
@@ -17,7 +17,7 @@ export function Reveal({ children, className = '', delay = 0, yOffset = 18 }: Re
       initial={shouldReduceMotion ? false : { opacity: 0, y: yOffset }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.14 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
     </motion.div>
@@ -30,6 +30,7 @@ interface SectionHeadingProps {
   accentWord?: string
   description?: string
   align?: 'left' | 'center'
+  variant?: 'light' | 'dark'
 }
 
 export function SectionHeading({
@@ -38,29 +39,41 @@ export function SectionHeading({
   accentWord,
   description,
   align = 'left',
+  variant = 'light',
 }: SectionHeadingProps) {
   const isCentered = align === 'center'
+  const isDark = variant === 'dark'
 
   return (
     <div className={isCentered ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
       <div
-        className={`mb-4 inline-flex items-center gap-3 text-[11px] font-semibold tracking-[0.26em] text-[#D4AF37] uppercase ${
-          isCentered ? 'justify-center' : ''
+        className={`mb-4 inline-flex items-center gap-3 text-[11px] font-semibold tracking-[0.26em] uppercase ${
+          isDark ? 'text-gold' : 'text-brand-primary'
+        } ${isCentered ? 'justify-center' : ''}`}
+      >
+        <span className="h-px w-7 bg-gold" aria-hidden="true" />
+        <span>{eyebrow}</span>
+        {isCentered && <span className="h-px w-7 bg-gold" aria-hidden="true" />}
+      </div>
+      <h2
+        className={`font-serif text-4xl leading-[1.06] font-normal tracking-tight sm:text-5xl lg:text-[3.35rem] ${
+          isDark ? 'text-white' : 'text-ink'
         }`}
       >
-        <span className="h-px w-7 bg-[#D4AF37]/70" aria-hidden="true" />
-        <span>{eyebrow}</span>
-        {isCentered && <span className="h-px w-7 bg-[#D4AF37]/70" aria-hidden="true" />}
-      </div>
-      <h2 className="font-serif text-4xl leading-[1.06] font-normal tracking-tight text-[#F5F0E8] sm:text-5xl lg:text-[3.35rem]">
         {title}{' '}
-        {accentWord && <em className="font-normal text-[#D4AF37] italic">{accentWord}</em>}
+        {accentWord && (
+          <em
+            className={`font-normal italic ${isDark ? 'text-gold' : 'text-brand-primary'}`}
+          >
+            {accentWord}
+          </em>
+        )}
       </h2>
       {description && (
         <p
-          className={`mt-5 text-sm leading-relaxed text-[#CFC6B8] sm:text-base ${
-            isCentered ? 'mx-auto max-w-xl' : 'max-w-xl'
-          }`}
+          className={`mt-5 text-sm leading-relaxed sm:text-base ${
+            isDark ? 'text-cream/90' : 'text-muted'
+          } ${isCentered ? 'mx-auto max-w-xl' : 'max-w-xl'}`}
         >
           {description}
         </p>

@@ -41,25 +41,20 @@ export function CateringPage() {
   return (
     <>
       {/* Catering Hero */}
-      <section className="relative flex min-h-[64vh] items-end overflow-hidden bg-[#171717] pt-36 pb-16 sm:pt-44 sm:pb-20">
+      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl('images/catering-feast.webp')}
             alt="Steaming copper handis of biryani prepared for wedding and event catering"
-            className="h-full w-full object-cover opacity-65"
+            className="h-full w-full object-cover"
             fetchPriority="high"
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(90deg, rgba(16,16,16,0.95) 0%, rgba(90,14,25,0.62) 55%, rgba(23,23,23,0.4) 100%), linear-gradient(180deg, rgba(16,16,16,0.55) 0%, rgba(23,23,23,0.96) 100%)',
-            }}
-          />
+          <div className="hero-scrim-green absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
           <SectionHeading
+            variant="dark"
             eyebrow="Catering & Event Management"
             title="We Make Every Celebration"
             accentWord="Memorable."
@@ -74,16 +69,16 @@ export function CateringPage() {
               )}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2.5 bg-[#D4AF37] px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-[#171717] uppercase transition-colors hover:bg-[#E8CF7D]"
+              className="inline-flex items-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md transition-colors hover:bg-brand-secondary"
             >
-              <WhatsAppBrandIcon className="h-4 w-4" />
+              <WhatsAppBrandIcon className="h-4 w-4 text-gold-soft" />
               <span>Enquire for Catering</span>
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-4 w-4 text-gold-soft" />
             </a>
 
             <a
               href="#catering-enquiry-form"
-              className="inline-flex items-center gap-2 border border-[#F5F0E8]/45 bg-[#171717]/75 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-[#F5F0E8] uppercase backdrop-blur-sm transition-colors hover:border-[#D4AF37] hover:text-[#D4AF37]"
+              className="inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-white/95 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-md transition-colors hover:bg-cream"
             >
               <span>Prepare WhatsApp Message</span>
             </a>
@@ -92,7 +87,7 @@ export function CateringPage() {
       </section>
 
       {/* Catering Services Grid */}
-      <section className="border-t border-[#D4AF37]/15 bg-[#171717] py-16 sm:py-24">
+      <section className="border-t border-gold/30 bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <SectionHeading
@@ -108,25 +103,25 @@ export function CateringPage() {
               <Reveal key={item.id} delay={idx * 0.05}>
                 <div className="luxury-panel group flex h-full flex-col justify-between p-6">
                   <div>
-                    <span className="text-[10px] font-semibold tracking-[0.22em] text-[#D4AF37] uppercase">
+                    <span className="text-[10px] font-semibold tracking-[0.22em] text-brand-secondary uppercase">
                       {item.subtitle}
                     </span>
-                    <h3 className="mt-2 font-serif text-2xl font-normal text-[#F5F0E8]">
+                    <h3 className="mt-2 font-serif text-2xl font-medium text-ink">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-xs leading-relaxed text-[#CFC6B8]">
+                    <p className="mt-3 text-xs leading-relaxed text-muted">
                       {item.description}
                     </p>
                   </div>
 
-                  <div className="mt-6 border-t border-[#D4AF37]/15 pt-4">
+                  <div className="mt-6 border-t border-gold/30 pt-4">
                     <a
                       href={buildWhatsAppUrl(CONTACT_LINES[0].rawDigits, item.whatsappMessage)}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.12em] text-[#D4AF37] uppercase transition-colors hover:text-[#F5F0E8]"
+                      className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.12em] text-brand-primary uppercase transition-colors hover:text-brand-deep"
                     >
-                      <WhatsAppBrandIcon className="h-3.5 w-3.5" />
+                      <WhatsAppBrandIcon className="h-3.5 w-3.5 text-gold" />
                       <span>Enquire for Catering</span>
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
@@ -139,7 +134,7 @@ export function CateringPage() {
       </section>
 
       {/* Event Food Gallery */}
-      <section className="border-t border-[#D4AF37]/15 bg-[#121212] py-16 sm:py-24">
+      <section className="border-t border-gold/30 bg-cream-soft py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <SectionHeading
@@ -154,7 +149,7 @@ export function CateringPage() {
             {CATERING_GALLERY.map((photo, idx) => (
               <Reveal key={photo.id} delay={idx * 0.08}>
                 <figure className="luxury-panel overflow-hidden">
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden bg-cream">
                     <img
                       src={photo.image}
                       alt={photo.alt}
@@ -163,8 +158,8 @@ export function CateringPage() {
                     />
                   </div>
                   <figcaption className="p-5">
-                    <h3 className="font-serif text-2xl text-[#F5F0E8]">{photo.title}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-[#CFC6B8]">
+                    <h3 className="font-serif text-2xl font-medium text-ink">{photo.title}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted">
                       {photo.caption}
                     </p>
                   </figcaption>
@@ -175,10 +170,10 @@ export function CateringPage() {
         </div>
       </section>
 
-      {/* WhatsApp Enquiry Builder (No fake online booking or payment) */}
+      {/* WhatsApp Enquiry Builder */}
       <section
         id="catering-enquiry-form"
-        className="border-t border-[#D4AF37]/15 bg-gradient-to-b from-[#5A0E19]/60 to-[#171717] py-16 sm:py-24"
+        className="border-t border-gold/35 bg-gradient-to-br from-cream via-cream to-brand-primary/[0.08] py-16 sm:py-24"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
@@ -190,18 +185,18 @@ export function CateringPage() {
                 description="Share your occasion details below to generate a prefilled WhatsApp message directly to MSK Sahul Bhai Biryani. All catering discussions are handled personally by our team."
               />
 
-              <div className="mt-8 space-y-3 border border-[#D4AF37]/25 bg-[#171717]/90 p-5 text-xs text-[#CFC6B8]">
-                <p className="font-semibold tracking-[0.16em] text-[#D4AF37] uppercase">
+              <div className="mt-8 space-y-3 rounded-2xl border border-gold/50 bg-brand-deep p-6 text-xs text-cream shadow-md">
+                <p className="font-semibold tracking-[0.16em] text-gold uppercase">
                   Call Directly
                 </p>
                 {CONTACT_LINES.map((line) => (
                   <a
                     key={line.id}
                     href={line.telHref}
-                    className="flex items-center justify-between border-b border-[#D4AF37]/10 pb-2 text-sm text-[#F5F0E8] last:border-b-0 last:pb-0 hover:text-[#D4AF37]"
+                    className="flex items-center justify-between border-b border-gold/20 pb-2.5 text-sm text-white last:border-b-0 last:pb-0 hover:text-gold-soft"
                   >
                     <span>{line.display}</span>
-                    <Phone className="h-4 w-4 text-[#D4AF37]" />
+                    <Phone className="h-4 w-4 text-gold" />
                   </a>
                 ))}
               </div>
@@ -210,12 +205,12 @@ export function CateringPage() {
             <Reveal delay={0.1} className="lg:col-span-7">
               <form
                 onSubmit={handleEnquirySubmit}
-                className="space-y-5 border border-[#D4AF37]/30 bg-[#171717] p-6 sm:p-8"
+                className="space-y-5 rounded-3xl border border-gold/45 bg-white p-6 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.18)] sm:p-8"
               >
                 <div>
                   <label
                     htmlFor="occasion-type"
-                    className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-[#D4AF37] uppercase"
+                    className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-brand-primary uppercase"
                   >
                     Occasion / Enquiry Type
                   </label>
@@ -223,10 +218,10 @@ export function CateringPage() {
                     id="occasion-type"
                     value={occasion}
                     onChange={(e) => setOccasion(e.target.value)}
-                    className="w-full border border-[#D4AF37]/30 bg-[#1f1c1b] px-4 py-3 text-sm text-[#F5F0E8] focus:border-[#D4AF37] focus:outline-none"
+                    className="w-full rounded-lg border border-brand-primary/25 bg-cream-soft px-4 py-3 text-sm text-ink focus:border-brand-primary focus:outline-none"
                   >
                     {CATERING_CATEGORIES.map((item) => (
-                      <option key={item.id} value={item.title} className="bg-[#1f1c1b]">
+                      <option key={item.id} value={item.title} className="bg-white text-ink">
                         {item.title}
                       </option>
                     ))}
@@ -237,7 +232,7 @@ export function CateringPage() {
                   <div>
                     <label
                       htmlFor="event-date"
-                      className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-[#D4AF37] uppercase"
+                      className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-brand-primary uppercase"
                     >
                       Preferred Date
                     </label>
@@ -246,13 +241,13 @@ export function CateringPage() {
                       type="date"
                       value={eventDate}
                       onChange={(e) => setEventDate(e.target.value)}
-                      className="w-full border border-[#D4AF37]/30 bg-[#1f1c1b] px-4 py-3 text-sm text-[#F5F0E8] focus:border-[#D4AF37] focus:outline-none"
+                      className="w-full rounded-lg border border-brand-primary/25 bg-cream-soft px-4 py-3 text-sm text-ink focus:border-brand-primary focus:outline-none"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="event-venue"
-                      className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-[#D4AF37] uppercase"
+                      className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-brand-primary uppercase"
                     >
                       Venue / Area
                     </label>
@@ -262,7 +257,7 @@ export function CateringPage() {
                       value={venue}
                       onChange={(e) => setVenue(e.target.value)}
                       placeholder="Town, hall, or neighbourhood"
-                      className="w-full border border-[#D4AF37]/30 bg-[#1f1c1b] px-4 py-3 text-sm text-[#F5F0E8] placeholder:text-[#988F82] focus:border-[#D4AF37] focus:outline-none"
+                      className="w-full rounded-lg border border-brand-primary/25 bg-cream-soft px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-brand-primary focus:outline-none"
                     />
                   </div>
                 </div>
@@ -270,7 +265,7 @@ export function CateringPage() {
                 <div>
                   <label
                     htmlFor="event-notes"
-                    className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-[#D4AF37] uppercase"
+                    className="mb-1.5 block text-[11px] font-semibold tracking-[0.16em] text-brand-primary uppercase"
                   >
                     Occasion Notes
                   </label>
@@ -280,12 +275,12 @@ export function CateringPage() {
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="Share your occasion details or questions for our team"
-                    className="w-full border border-[#D4AF37]/30 bg-[#1f1c1b] px-4 py-3 text-sm text-[#F5F0E8] placeholder:text-[#988F82] focus:border-[#D4AF37] focus:outline-none"
+                    className="w-full rounded-lg border border-brand-primary/25 bg-cream-soft px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-brand-primary focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <span className="mb-2 block text-[11px] font-semibold tracking-[0.16em] text-[#D4AF37] uppercase">
+                  <span className="mb-2 block text-[11px] font-semibold tracking-[0.16em] text-brand-primary uppercase">
                     Choose WhatsApp Contact Number
                   </span>
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -294,16 +289,24 @@ export function CateringPage() {
                         key={line.id}
                         type="button"
                         onClick={() => setSelectedLine(line.rawDigits)}
-                        className={`cursor-pointer border px-4 py-3 text-left transition-all ${
+                        className={`cursor-pointer rounded-xl border px-4 py-3 text-left transition-all ${
                           selectedLine === line.rawDigits
-                            ? 'border-[#D4AF37] bg-[#5A0E19]/75 text-[#F5F0E8]'
-                            : 'border-[#D4AF37]/20 bg-[#1f1c1b] text-[#CFC6B8] hover:border-[#D4AF37]/50'
+                            ? 'border-brand-primary bg-brand-primary text-white shadow-sm'
+                            : 'border-brand-primary/20 bg-cream-soft text-ink hover:border-brand-primary/60'
                         }`}
                       >
-                        <span className="block text-sm font-semibold text-[#D4AF37]">
+                        <span
+                          className={`block text-sm font-semibold ${
+                            selectedLine === line.rawDigits ? 'text-white' : 'text-brand-primary'
+                          }`}
+                        >
                           {line.display}
                         </span>
-                        <span className="mt-0.5 block text-[10px] text-[#CFC6B8]">
+                        <span
+                          className={`mt-0.5 block text-[10px] ${
+                            selectedLine === line.rawDigits ? 'text-cream/90' : 'text-muted'
+                          }`}
+                        >
                           Contact Line 0{index + 1}
                         </span>
                       </button>
@@ -313,15 +316,15 @@ export function CateringPage() {
 
                 <button
                   type="submit"
-                  className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 bg-[#D4AF37] px-6 py-4 text-xs font-semibold tracking-[0.14em] text-[#171717] uppercase transition-colors hover:bg-[#E8CF7D]"
+                  className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-lg bg-brand-primary px-6 py-4 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-sm transition-colors hover:bg-brand-secondary"
                 >
-                  <WhatsAppBrandIcon className="h-4 w-4" />
+                  <WhatsAppBrandIcon className="h-4 w-4 text-gold-soft" />
                   <span>Enquire for Catering</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-4 w-4 text-gold-soft" />
                 </button>
 
                 {preparedUrl && (
-                  <p className="flex items-start gap-2 text-xs text-[#D4AF37]" role="status">
+                  <p className="flex items-start gap-2 text-xs text-brand-primary" role="status">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
                     <span>
                       WhatsApp message prepared.{' '}
@@ -329,7 +332,7 @@ export function CateringPage() {
                         href={preparedUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="underline hover:text-[#F5F0E8]"
+                        className="font-semibold underline hover:text-brand-deep"
                       >
                         Open WhatsApp enquiry link
                       </a>
@@ -344,4 +347,3 @@ export function CateringPage() {
     </>
   )
 }
-

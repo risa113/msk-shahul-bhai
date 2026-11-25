@@ -36,18 +36,18 @@ export function MenuSection() {
       <section
         id="menu-catalogue"
         aria-live="polite"
-        className="bg-[#171717] py-14 sm:py-20"
+        className="bg-cream py-14 sm:py-20"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-12 flex flex-col items-start justify-between gap-4 border border-[#D4AF37]/25 bg-[#121212] p-5 sm:flex-row sm:items-center">
-            <div className="flex items-start gap-3 text-xs leading-relaxed text-[#CFC6B8] sm:text-sm">
+          <div className="mb-12 flex flex-col items-start justify-between gap-4 rounded-2xl border border-gold/40 bg-white p-5 shadow-xs sm:flex-row sm:items-center">
+            <div className="flex items-start gap-3 text-xs leading-relaxed text-muted sm:text-sm">
               <UtensilsCrossed
-                className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]"
+                className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary"
                 aria-hidden="true"
               />
               <span>{BRAND.orderingNotice}</span>
             </div>
-            <span className="shrink-0 border border-[#D4AF37]/30 bg-[#5A0E19]/80 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-[#D4AF37] uppercase">
+            <span className="shrink-0 rounded-full border border-gold/60 bg-brand-primary px-3.5 py-1 text-[10px] font-semibold tracking-[0.18em] text-white uppercase">
               Direct Dining Only
             </span>
           </div>
@@ -68,15 +68,17 @@ export function MenuSection() {
                   aria-labelledby={`heading-${category.id}`}
                   className={
                     category.isEveningSpecial
-                      ? 'relative border border-[#D4AF37]/40 bg-gradient-to-b from-[#320910]/65 via-[#1b1213] to-[#141313] p-6 sm:p-9'
-                      : 'border-t border-[#D4AF37]/15 pt-10 first:border-t-0 first:pt-0'
+                      ? 'relative rounded-3xl border border-gold/60 bg-gradient-to-br from-brand-primary/[0.08] via-white to-cream-soft p-6 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.2)] sm:p-10'
+                      : 'border-t border-gold/35 pt-10 first:border-t-0 first:pt-0'
                   }
                 >
                   <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                     <div>
-                      <div className="mb-2 inline-flex items-center gap-2.5 text-[10px] font-semibold tracking-[0.24em] text-[#D4AF37] uppercase">
-                        {category.isEveningSpecial && (
-                          <MoonStar className="h-3.5 w-3.5 text-[#D4AF37]" aria-hidden="true" />
+                      <div className="mb-2 inline-flex items-center gap-2.5 text-[10px] font-semibold tracking-[0.24em] text-brand-primary uppercase">
+                        {category.isEveningSpecial ? (
+                          <MoonStar className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                        ) : (
+                          <span className="h-px w-6 bg-gold" aria-hidden="true" />
                         )}
                         <span>
                           {category.isEveningSpecial
@@ -86,7 +88,7 @@ export function MenuSection() {
                       </div>
                       <h2
                         id={`heading-${category.id}`}
-                        className="font-serif text-3xl font-normal text-[#F5F0E8] sm:text-4xl lg:text-5xl"
+                        className="font-serif text-3xl font-normal text-ink sm:text-4xl lg:text-5xl"
                       >
                         {category.title}
                       </h2>
@@ -109,12 +111,12 @@ export function MenuSection() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="mt-16 flex flex-col items-start justify-between gap-5 border border-[#D4AF37]/25 bg-[#5A0E19]/70 p-7 sm:flex-row sm:items-center">
+          <div className="mt-16 flex flex-col items-start justify-between gap-5 rounded-2xl border border-gold/50 bg-brand-deep p-7 text-cream shadow-md sm:flex-row sm:items-center sm:p-8">
             <div>
-              <h3 className="font-serif text-2xl text-[#F5F0E8] sm:text-3xl">
+              <h3 className="font-serif text-2xl text-white sm:text-3xl">
                 Planning a Visit or Function Order?
               </h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-[#E3DBCF] sm:text-sm">
+              <p className="mt-1.5 text-xs leading-relaxed text-cream/85 sm:text-sm">
                 Visit MSK Sahul Bhai Biryani in person to order directly, or connect on WhatsApp
                 for catering and bulk biryani enquiries.
               </p>
@@ -126,11 +128,11 @@ export function MenuSection() {
               )}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex shrink-0 items-center gap-2.5 bg-[#D4AF37] px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-[#171717] uppercase transition-colors hover:bg-[#E8CF7D]"
+              className="inline-flex shrink-0 items-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:bg-brand-secondary"
             >
-              <WhatsAppBrandIcon className="h-4 w-4" />
+              <WhatsAppBrandIcon className="h-4 w-4 text-gold-soft" />
               <span>Enquire on WhatsApp</span>
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-4 w-4 text-gold-soft" />
             </a>
           </div>
         </div>

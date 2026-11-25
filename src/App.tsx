@@ -34,7 +34,7 @@ function AnimatedRoutes() {
           <Suspense
             fallback={
               <div
-                className="flex min-h-[60vh] items-center justify-center font-serif text-xl text-[#D4AF37]"
+                className="flex min-h-[60vh] items-center justify-center bg-cream font-serif text-xl text-brand-primary"
                 role="status"
               >
                 Preparing MSK Sahul Bhai Biryani…

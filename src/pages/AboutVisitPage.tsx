@@ -13,25 +13,20 @@ export function AboutVisitPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative flex min-h-[54vh] items-end overflow-hidden bg-[#171717] pt-36 pb-16 sm:pt-44 sm:pb-20">
+      <section className="relative flex min-h-[52vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl('images/restaurant-ambience.webp')}
             alt="Warm evening dining ambience at MSK Sahul Bhai Biryani"
-            className="h-full w-full object-cover opacity-55"
+            className="h-full w-full object-cover"
             fetchPriority="high"
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(90deg, rgba(16,16,16,0.94) 0%, rgba(23,23,23,0.75) 55%, rgba(90,14,25,0.45) 100%), linear-gradient(180deg, rgba(16,16,16,0.6) 0%, rgba(23,23,23,0.96) 100%)',
-            }}
-          />
+          <div className="hero-scrim-green absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
           <SectionHeading
+            variant="dark"
             eyebrow="About Us & Visit Us"
             title="Rooted in Flavour."
             accentWord="Always Welcoming."
@@ -41,24 +36,26 @@ export function AboutVisitPage() {
       </section>
 
       {/* About Us Section */}
-      <section className="border-t border-[#D4AF37]/15 bg-[#171717] py-16 sm:py-24">
+      <section className="border-t border-gold/30 bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <Reveal className="lg:col-span-5">
-              <div className="border border-[#D4AF37]/30 bg-gradient-to-b from-[#5A0E19]/65 via-[#1b1514] to-[#121212] p-8 text-center">
-                <span className="text-[10px] font-semibold tracking-[0.26em] text-[#D4AF37] uppercase">
+              <div className="rounded-3xl border border-gold/55 bg-white p-8 text-center shadow-[0_18px_45px_-20px_rgba(38,60,48,0.18)]">
+                <span className="text-[10px] font-semibold tracking-[0.26em] text-brand-primary uppercase">
                   Official Brand Mark
                 </span>
                 <div className="my-6 flex justify-center">
-                  <img
-                    src={BRAND.logoPath}
-                    alt="Official MSK Catering Service crest logo"
-                    loading="lazy"
-                    className="h-56 w-auto object-contain"
-                  />
+                  <div className="flex h-60 w-60 items-center justify-center rounded-full bg-cream/70 p-4 ring-1 ring-gold/60">
+                    <img
+                      src={BRAND.logoPath}
+                      alt="Official MSK Catering Service crest logo"
+                      loading="lazy"
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
                 </div>
-                <h2 className="font-serif text-3xl text-[#F5F0E8]">{BRAND.name}</h2>
-                <p className="mt-1 text-xs tracking-[0.18em] text-[#D4AF37] uppercase">
+                <h2 className="font-serif text-3xl text-ink">{BRAND.name}</h2>
+                <p className="mt-1 text-xs font-medium tracking-[0.18em] text-brand-secondary uppercase">
                   {BRAND.cateringBrand}
                 </p>
               </div>
@@ -69,19 +66,23 @@ export function AboutVisitPage() {
                 eyebrow="Our Story & Hospitality"
                 title="Dedicated to Flavour,"
                 accentWord="Warmth & Gathering"
-                description="MSK Sahul Bhai Biryani brings together rich, aromatic biryani and thoughtful hospitality. Rather than automated delivery, we focus on serving guests face-to-face at the restaurant and crafting memorable catering spreads for life’s important occasions."
+                description="MSK Sahul Bhai Biryani brings together rich, aromatic biryani, Arabian Mandi, and thoughtful hospitality. Rather than automated delivery, we focus on serving guests face-to-face at the restaurant and crafting memorable catering spreads for life’s important occasions."
               />
 
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="border border-[#D4AF37]/20 bg-[#121212] p-5">
-                  <h3 className="font-serif text-2xl text-[#F5F0E8]">Visit &amp; Order Directly</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-[#CFC6B8]">
+                <div className="rounded-2xl border border-brand-primary/14 bg-white p-5 shadow-xs">
+                  <h3 className="font-serif text-2xl font-medium text-ink">
+                    Visit &amp; Order Directly
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted">
                     {BRAND.orderingNotice}
                   </p>
                 </div>
-                <div className="border border-[#D4AF37]/20 bg-[#121212] p-5">
-                  <h3 className="font-serif text-2xl text-[#F5F0E8]">Follow Our Journey</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-[#CFC6B8]">
+                <div className="rounded-2xl border border-brand-primary/14 bg-white p-5 shadow-xs">
+                  <h3 className="font-serif text-2xl font-medium text-ink">
+                    Follow Our Journey
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted">
                     Stay connected with our official Instagram account for kitchen highlights,
                     updates, and announcements.
                   </p>
@@ -89,9 +90,9 @@ export function AboutVisitPage() {
                     href={BRAND.instagramUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.12em] text-[#D4AF37] uppercase hover:text-[#F5F0E8]"
+                    className="mt-3 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.12em] text-brand-primary uppercase hover:text-brand-deep"
                   >
-                    <InstagramBrandIcon className="h-3.5 w-3.5" />
+                    <InstagramBrandIcon className="h-3.5 w-3.5 text-gold" />
                     <span>{BRAND.instagramHandle}</span>
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
@@ -103,14 +104,14 @@ export function AboutVisitPage() {
       </section>
 
       {/* Restaurant Gallery */}
-      <section className="border-t border-[#D4AF37]/15 bg-[#121212] py-16 sm:py-24">
+      <section className="border-t border-gold/30 bg-cream-soft py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <SectionHeading
               eyebrow="Restaurant Gallery"
               title="Inside the"
               accentWord="MSK Experience"
-              description="Warm brass light, whole spice craft, and freshly served biryani made to be shared at the table."
+              description="Warm hospitality, whole spice craft, and freshly served biryani made to be shared at the table."
             />
           </Reveal>
 
@@ -118,7 +119,7 @@ export function AboutVisitPage() {
             {RESTAURANT_GALLERY.map((photo, idx) => (
               <Reveal key={photo.id} delay={idx * 0.06}>
                 <figure className="luxury-panel overflow-hidden">
-                  <div className="h-64 overflow-hidden">
+                  <div className="h-64 overflow-hidden bg-cream">
                     <img
                       src={photo.image}
                       alt={photo.alt}
@@ -127,8 +128,8 @@ export function AboutVisitPage() {
                     />
                   </div>
                   <figcaption className="p-5">
-                    <h3 className="font-serif text-xl text-[#F5F0E8]">{photo.title}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-[#CFC6B8]">
+                    <h3 className="font-serif text-xl font-medium text-ink">{photo.title}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted">
                       {photo.caption}
                     </p>
                   </figcaption>
@@ -140,7 +141,7 @@ export function AboutVisitPage() {
       </section>
 
       {/* Visit Us, Maps, Contact & Hours */}
-      <section id="visit" className="border-t border-[#D4AF37]/15 bg-[#171717] py-16 sm:py-24">
+      <section id="visit" className="border-t border-gold/30 bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <SectionHeading
@@ -153,18 +154,18 @@ export function AboutVisitPage() {
           <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
             {/* Map & Hours */}
             <Reveal className="lg:col-span-6">
-              <div className="flex h-full flex-col justify-between border border-[#D4AF37]/25 bg-[#121212] p-6 sm:p-8">
+              <div className="flex h-full flex-col justify-between rounded-3xl border border-brand-primary/14 bg-white p-6 shadow-sm sm:p-8">
                 <div>
-                  <h3 className="font-serif text-3xl text-[#F5F0E8]">{BRAND.areaSummary}</h3>
+                  <h3 className="font-serif text-3xl text-ink">{BRAND.areaSummary}</h3>
 
-                  <div className="mt-6 space-y-4 text-xs leading-relaxed text-[#CFC6B8] sm:text-sm">
+                  <div className="mt-6 space-y-4 text-xs leading-relaxed text-muted sm:text-sm">
                     <div className="flex items-start gap-3">
                       <MapPin
-                        className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary"
                         aria-hidden="true"
                       />
                       <div>
-                        <span className="block text-[10px] font-semibold tracking-[0.18em] text-[#D4AF37] uppercase">
+                        <span className="block text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
                           Pinned Coordinates ({BRAND.mapsCoordinates.dms})
                         </span>
                         <p className="mt-1">{BRAND.addressStatus}</p>
@@ -173,11 +174,11 @@ export function AboutVisitPage() {
 
                     <div className="flex items-start gap-3">
                       <Clock
-                        className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary"
                         aria-hidden="true"
                       />
                       <div>
-                        <span className="block text-[10px] font-semibold tracking-[0.18em] text-[#D4AF37] uppercase">
+                        <span className="block text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
                           Opening Hours (Placeholder Until Confirmed)
                         </span>
                         <p className="mt-1">{BRAND.openingHoursStatus}</p>
@@ -185,13 +186,13 @@ export function AboutVisitPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 overflow-hidden border border-[#D4AF37]/25">
+                  <div className="mt-6 overflow-hidden rounded-2xl border border-gold/40">
                     <iframe
                       title="MSK Sahul Bhai Biryani Google Maps Pin"
                       src={BRAND.mapsEmbedUrl}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      className="h-64 w-full border-0 grayscale-[20%] contrast-[1.06]"
+                      className="h-64 w-full border-0"
                     />
                   </div>
                 </div>
@@ -200,21 +201,21 @@ export function AboutVisitPage() {
                   href={BRAND.mapsUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2.5 bg-[#D4AF37] px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-[#171717] uppercase transition-colors hover:bg-[#E8CF7D]"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-sm transition-colors hover:bg-brand-secondary"
                 >
-                  <Navigation className="h-4 w-4" />
+                  <Navigation className="h-4 w-4 text-gold-soft" />
                   <span>Get Directions on Google Maps</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-4 w-4 text-gold-soft" />
                 </a>
               </div>
             </Reveal>
 
             {/* Phone Numbers, WhatsApp & Social */}
             <Reveal delay={0.1} className="lg:col-span-6">
-              <div className="flex h-full flex-col justify-between border border-[#D4AF37]/25 bg-gradient-to-b from-[#5A0E19]/65 to-[#121212] p-6 sm:p-8">
+              <div className="flex h-full flex-col justify-between rounded-3xl border border-gold/50 bg-gradient-to-br from-brand-primary to-brand-deep p-6 text-white shadow-md sm:p-8">
                 <div>
-                  <h3 className="font-serif text-3xl text-[#F5F0E8]">Call or WhatsApp Us</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-[#E3DBCF]">
+                  <h3 className="font-serif text-3xl text-white">Call or WhatsApp Us</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-cream/90">
                     Click either number below to call directly or open a WhatsApp conversation using
                     India’s international `+91` format.
                   </p>
@@ -223,20 +224,20 @@ export function AboutVisitPage() {
                     {CONTACT_LINES.map((line, idx) => (
                       <div
                         key={line.id}
-                        className="border border-[#D4AF37]/25 bg-[#171717]/95 p-5"
+                        className="rounded-2xl border border-gold/35 bg-white p-5 text-ink shadow-xs"
                       >
-                        <span className="text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
+                        <span className="text-[10px] font-semibold tracking-[0.2em] text-brand-secondary uppercase">
                           Phone Line 0{idx + 1}
                         </span>
-                        <p className="mt-1 font-serif text-3xl text-[#F5F0E8]">{line.display}</p>
-                        <p className="mt-1 text-[11px] text-[#988F82]">{line.note}</p>
+                        <p className="mt-1 font-serif text-3xl text-ink">{line.display}</p>
+                        <p className="mt-1 text-[11px] text-muted">{line.note}</p>
 
                         <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                           <a
                             href={line.telHref}
-                            className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] px-4 py-2.5 text-xs font-semibold tracking-[0.12em] text-[#171717] uppercase transition-colors hover:bg-[#E8CF7D]"
+                            className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-4 py-2.5 text-xs font-semibold tracking-[0.12em] text-white uppercase transition-colors hover:bg-brand-secondary"
                           >
-                            <Phone className="h-3.5 w-3.5" />
+                            <Phone className="h-3.5 w-3.5 text-gold-soft" />
                             <span>Call Now</span>
                           </a>
 
@@ -247,9 +248,9 @@ export function AboutVisitPage() {
                             )}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-2 border border-[#D4AF37]/45 bg-[#5A0E19] px-4 py-2.5 text-xs font-semibold tracking-[0.12em] text-[#F5F0E8] uppercase transition-colors hover:border-[#D4AF37] hover:bg-[#6d1421]"
+                            className="inline-flex items-center justify-center gap-2 rounded-lg border border-gold/60 bg-cream px-4 py-2.5 text-xs font-semibold tracking-[0.12em] text-brand-deep uppercase transition-colors hover:bg-cream-soft"
                           >
-                            <WhatsAppBrandIcon className="h-3.5 w-3.5 text-[#D4AF37]" />
+                            <WhatsAppBrandIcon className="h-3.5 w-3.5 text-brand-primary" />
                             <span>WhatsApp</span>
                           </a>
                         </div>
@@ -258,15 +259,15 @@ export function AboutVisitPage() {
                   </div>
                 </div>
 
-                <div className="mt-6 grid grid-cols-1 gap-3 border-t border-[#D4AF37]/20 pt-5 sm:grid-cols-2">
+                <div className="mt-6 grid grid-cols-1 gap-3 border-t border-gold/25 pt-5 sm:grid-cols-2">
                   <a
                     href={BRAND.instagramUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-between border border-[#D4AF37]/25 bg-[#171717] px-4 py-3 text-xs text-[#F5F0E8] transition-colors hover:border-[#D4AF37] hover:text-[#D4AF37]"
+                    className="flex items-center justify-between rounded-xl border border-gold/35 bg-brand-deep/65 px-4 py-3 text-xs text-white transition-colors hover:border-gold hover:text-gold-soft"
                   >
                     <span className="inline-flex items-center gap-2">
-                      <InstagramBrandIcon className="h-4 w-4 text-[#D4AF37]" />
+                      <InstagramBrandIcon className="h-4 w-4 text-gold" />
                       <span>{BRAND.instagramHandle}</span>
                     </span>
                     <ArrowUpRight className="h-3.5 w-3.5" />
@@ -274,10 +275,10 @@ export function AboutVisitPage() {
 
                   <a
                     href={`mailto:${BRAND.email}`}
-                    className="flex items-center justify-between border border-[#D4AF37]/25 bg-[#171717] px-4 py-3 text-xs text-[#F5F0E8] transition-colors hover:border-[#D4AF37] hover:text-[#D4AF37]"
+                    className="flex items-center justify-between rounded-xl border border-gold/35 bg-brand-deep/65 px-4 py-3 text-xs text-white transition-colors hover:border-gold hover:text-gold-soft"
                   >
                     <span className="inline-flex items-center gap-2 truncate">
-                      <Mail className="h-4 w-4 shrink-0 text-[#D4AF37]" />
+                      <Mail className="h-4 w-4 shrink-0 text-gold" />
                       <span className="truncate">{BRAND.email}</span>
                     </span>
                     <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
@@ -291,4 +292,3 @@ export function AboutVisitPage() {
     </>
   )
 }
-

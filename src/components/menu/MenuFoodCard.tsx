@@ -16,17 +16,17 @@ export function MenuFoodCard({ dish, index }: MenuFoodCardProps) {
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{
-        duration: 0.42,
+        duration: 0.4,
         ease: [0.22, 1, 0.36, 1],
-        delay: Math.min(index * 0.04, 0.24),
+        delay: Math.min(index * 0.04, 0.22),
       }}
-      className={`group flex flex-col overflow-hidden border transition-all duration-300 ${
+      className={`group flex flex-col overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${
         dish.isEveningSpecial
-          ? 'border-[#D4AF37]/35 bg-gradient-to-b from-[#231517] to-[#131212] hover:border-[#D4AF37]/75'
-          : 'border-[#D4AF37]/20 bg-gradient-to-b from-[#1c1a19] to-[#121212] hover:border-[#D4AF37]/55'
-      } hover:shadow-[0_20px_48px_-20px_rgba(0,0,0,0.85)]`}
+          ? 'border-gold/60 shadow-[0_14px_34px_-16px_rgba(38,60,48,0.2)] hover:border-brand-primary/70'
+          : 'border-brand-primary/14 shadow-[0_10px_28px_-16px_rgba(38,60,48,0.14)] hover:border-gold/80'
+      } hover:-translate-y-0.5 hover:shadow-[0_22px_44px_-18px_rgba(38,60,48,0.24)]`}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#101010]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-cream">
         <img
           src={dish.image}
           alt={dish.imageAlt}
@@ -36,7 +36,7 @@ export function MenuFoodCard({ dish, index }: MenuFoodCardProps) {
           height={600}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-deep/30 via-transparent to-transparent" />
         <div className="absolute top-3 left-3">
           <AvailabilityBadge
             label={dish.availability}
@@ -47,13 +47,14 @@ export function MenuFoodCard({ dish, index }: MenuFoodCardProps) {
 
       <div className="flex flex-1 flex-col justify-between p-5">
         <div>
-          <p className="text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
+          <p className="text-[10px] font-semibold tracking-[0.2em] text-brand-secondary uppercase">
             {dish.categoryTitle}
           </p>
-          <h3 className="mt-1.5 font-serif text-2xl leading-snug font-normal text-[#F5F0E8] transition-colors group-hover:text-[#E8CF7D]">
+          <h3 className="mt-1.5 font-serif text-2xl leading-snug font-medium text-ink transition-colors group-hover:text-brand-primary">
             {dish.name}
           </h3>
         </div>
+        <div className="mt-4 h-px w-10 bg-gold/60 transition-all duration-300 group-hover:w-16" />
       </div>
     </motion.article>
   )

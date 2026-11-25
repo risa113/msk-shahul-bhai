@@ -14,3 +14,4 @@ export function MenuGrid({ items }: MenuGridProps) {
     </div>
   )
 }
+
