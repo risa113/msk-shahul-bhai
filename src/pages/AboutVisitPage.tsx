@@ -26,7 +26,7 @@ export function AboutVisitPage() {
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.restaurantAmbience.path)}
-            alt="Warm welcoming dining ambience at MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli"
+            alt="Warm welcoming dining ambience at MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli"
             width={BRAND_IMAGES.restaurantAmbience.width}
             height={BRAND_IMAGES.restaurantAmbience.height}
             fetchPriority="high"
@@ -40,7 +40,7 @@ export function AboutVisitPage() {
           <SectionHeading
             as="h1"
             variant="dark"
-            eyebrow={`About MSK Sahul Bhai Biryani · Since ${BRAND.establishedYear}`}
+            eyebrow={`About MSK Shahul Bhai Biryani · Since ${BRAND.establishedYear}`}
             title={ABOUT_STORY.title}
             accentWord={ABOUT_STORY.accentWord}
             description={ABOUT_STORY.closingStatement}
@@ -252,7 +252,7 @@ export function AboutVisitPage() {
 
                   <div className="mt-6 overflow-hidden rounded-2xl border border-gold/40">
                     <iframe
-                      title="MSK Sahul Bhai Biryani Google Maps Pin in Melapalayam, Tirunelveli"
+                      title="MSK Shahul Bhai Biryani Google Maps Pin in Melapalayam, Tirunelveli"
                       src={BRAND.mapsEmbedUrl}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
@@ -308,7 +308,7 @@ export function AboutVisitPage() {
                           <a
                             href={buildWhatsAppUrl(
                               line.rawDigits,
-                              'Hello MSK Sahul Bhai Biryani, I would like to get in touch.'
+                              'Hello MSK Shahul Bhai Biryani, I would like to get in touch.'
                             )}
                             target="_blank"
                             rel="noreferrer"

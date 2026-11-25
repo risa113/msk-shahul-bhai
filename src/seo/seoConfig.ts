@@ -137,7 +137,7 @@ function buildFullMenuNode() {
   return {
     '@type': 'Menu',
     '@id': `${toAbsoluteSiteUrl('/menu/')}#menu`,
-    name: 'MSK Sahul Bhai Biryani Menu',
+    name: 'MSK Shahul Bhai Biryani Menu',
     inLanguage: 'en-IN',
     mainEntityOfPage: toAbsoluteSiteUrl('/menu/'),
     hasMenuSection: MENU_DATA.map((category) => ({
@@ -199,24 +199,24 @@ const ROUTE_SEO_CONFIG: Record<RouteSeoKey, Omit<RouteSeoMeta, 'canonicalUrl' | 
   home: {
     key: 'home',
     path: '/',
-    title: 'MSK Sahul Bhai Biryani | Biryani & Mandi in Tirunelveli',
+    title: 'MSK Shahul Bhai Biryani | Biryani & Mandi in Tirunelveli',
     description:
-      'Discover MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli. Explore biryani, evening Mandi from 6:30 PM, speciality dishes and catering services.',
+      'Discover MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli. Explore biryani, evening Mandi from 6:30 PM, speciality dishes and catering services.',
     robots: 'index, follow, max-image-preview:large',
     ogImagePath: BRAND_IMAGES.heroBiryani.path,
-    ogImageAlt: 'Steaming copper handi of signature biryani at MSK Sahul Bhai Biryani in Tirunelveli',
+    ogImageAlt: 'Steaming copper handi of signature biryani at MSK Shahul Bhai Biryani in Tirunelveli',
     preloadHero: true,
     breadcrumbs: [{ name: 'Home', path: '/' }],
   },
   menu: {
     key: 'menu',
     path: '/menu/',
-    title: 'Menu | Biryani, Mandi & Special Dishes | MSK Sahul Bhai',
+    title: 'Menu | Biryani, Mandi & Special Dishes | MSK Shahul Bhai',
     description:
-      'Explore the MSK Sahul Bhai Biryani menu in Melapalayam, Tirunelveli: evening Mandi from 6:30 PM, 8 biryanis, rice varieties, gravies, Malabar Chukka & grills.',
+      'Explore the MSK Shahul Bhai Biryani menu in Melapalayam, Tirunelveli: evening Mandi from 6:30 PM, 8 biryanis, rice varieties, gravies, Malabar Chukka & grills.',
     robots: 'index, follow, max-image-preview:large',
     ogImagePath: BRAND_IMAGES.chickenBiryani.path,
-    ogImageAlt: 'Chicken Biryani garnished with whole spices at MSK Sahul Bhai Biryani Tirunelveli',
+    ogImageAlt: 'Chicken Biryani garnished with whole spices at MSK Shahul Bhai Biryani Tirunelveli',
     preloadHero: true,
     breadcrumbs: [
       { name: 'Home', path: '/' },
@@ -226,7 +226,7 @@ const ROUTE_SEO_CONFIG: Record<RouteSeoKey, Omit<RouteSeoMeta, 'canonicalUrl' | 
   mandi: {
     key: 'mandi',
     path: '/menu/mandi/',
-    title: 'Mandi Specials in Tirunelveli (6:30 PM) | MSK Sahul Bhai',
+    title: 'Mandi Specials in Tirunelveli (6:30 PM) | MSK Shahul Bhai',
     description:
       'Enjoy freshly prepared Arabian Mandi in Melapalayam, Tirunelveli from 6:30 PM onwards: Chicken Mandi, Alfaham Mandi, Fish Mandi, Golden Mandi & Peri Peri.',
     robots: 'index, follow, max-image-preview:large',
@@ -242,9 +242,9 @@ const ROUTE_SEO_CONFIG: Record<RouteSeoKey, Omit<RouteSeoMeta, 'canonicalUrl' | 
   signature: {
     key: 'signature',
     path: '/signature/',
-    title: 'Signature Dishes & Craft | MSK Sahul Bhai Biryani',
+    title: 'Signature Dishes & Craft | MSK Shahul Bhai Biryani',
     description:
-      'Explore MSK Sahul Bhai Biryani’s evening Mandi Specials from 6:30 PM, Biryani Collection, and Malabar Chukka spice heritage in Melapalayam, Tirunelveli.',
+      'Explore MSK Shahul Bhai Biryani’s evening Mandi Specials from 6:30 PM, Biryani Collection, and Malabar Chukka spice heritage in Melapalayam, Tirunelveli.',
     robots: 'index, follow, max-image-preview:large',
     ogImagePath: BRAND_IMAGES.dumMuttonBiryani.path,
     ogImageAlt: 'Traditional copper handi filled with signature biryani',
@@ -257,12 +257,12 @@ const ROUTE_SEO_CONFIG: Record<RouteSeoKey, Omit<RouteSeoMeta, 'canonicalUrl' | 
   catering: {
     key: 'catering',
     path: '/catering/',
-    title: 'Catering Services in Tirunelveli | MSK Sahul Bhai Biryani',
+    title: 'Catering Services in Tirunelveli | MSK Shahul Bhai Biryani',
     description:
       'MSK Catering Service provides wedding catering, marriage functions, family event feasts, and bulk biryani orders across Melapalayam and Tirunelveli.',
     robots: 'index, follow, max-image-preview:large',
     ogImagePath: BRAND_IMAGES.weddingCatering.path,
-    ogImageAlt: 'Grand wedding catering biryani feast by MSK Sahul Bhai Biryani Tirunelveli',
+    ogImageAlt: 'Grand wedding catering biryani feast by MSK Shahul Bhai Biryani Tirunelveli',
     preloadHero: true,
     breadcrumbs: [
       { name: 'Home', path: '/' },
@@ -274,7 +274,7 @@ const ROUTE_SEO_CONFIG: Record<RouteSeoKey, Omit<RouteSeoMeta, 'canonicalUrl' | 
     path: '/wedding-catering/',
     title: 'Wedding Catering & Bulk Orders Tirunelveli | MSK Catering',
     description:
-      'Plan wedding catering, marriage function meals, and bulk biryani orders in Melapalayam and Tirunelveli directly with MSK Sahul Bhai Biryani.',
+      'Plan wedding catering, marriage function meals, and bulk biryani orders in Melapalayam and Tirunelveli directly with MSK Shahul Bhai Biryani.',
     robots: 'index, follow, max-image-preview:large',
     ogImagePath: BRAND_IMAGES.marriageCatering.path,
     ogImageAlt: 'Steaming copper biryani vessels prepared for marriage catering in Tirunelveli',
@@ -288,12 +288,12 @@ const ROUTE_SEO_CONFIG: Record<RouteSeoKey, Omit<RouteSeoMeta, 'canonicalUrl' | 
   about: {
     key: 'about',
     path: '/about/',
-    title: 'About & Visit MSK Sahul Bhai Biryani | Since 2016',
+    title: 'About & Visit MSK Shahul Bhai Biryani | Since 2016',
     description:
-      'Founded in 2016 in Melapalayam, Tirunelveli. Read our story, view restaurant photos, get Google Maps directions, or call MSK Sahul Bhai Biryani directly.',
+      'Founded in 2016 in Melapalayam, Tirunelveli. Read our story, view restaurant photos, get Google Maps directions, or call MSK Shahul Bhai Biryani directly.',
     robots: 'index, follow, max-image-preview:large',
     ogImagePath: BRAND_IMAGES.restaurantAmbience.path,
-    ogImageAlt: 'Dining ambience at MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli',
+    ogImageAlt: 'Dining ambience at MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli',
     preloadHero: true,
     breadcrumbs: [
       { name: 'Home', path: '/' },
@@ -303,12 +303,12 @@ const ROUTE_SEO_CONFIG: Record<RouteSeoKey, Omit<RouteSeoMeta, 'canonicalUrl' | 
   'not-found': {
     key: 'not-found',
     path: '/404.html',
-    title: 'Page Not Found | MSK Sahul Bhai Biryani',
+    title: 'Page Not Found | MSK Shahul Bhai Biryani',
     description:
-      'Return to MSK Sahul Bhai Biryani to explore our biryani and Mandi menu, catering services, and Melapalayam, Tirunelveli location.',
+      'Return to MSK Shahul Bhai Biryani to explore our biryani and Mandi menu, catering services, and Melapalayam, Tirunelveli location.',
     robots: 'noindex, follow',
     ogImagePath: BRAND_IMAGES.heroBiryani.path,
-    ogImageAlt: 'MSK Sahul Bhai Biryani',
+    ogImageAlt: 'MSK Shahul Bhai Biryani',
     breadcrumbs: [{ name: 'Home', path: '/' }],
   },
 }

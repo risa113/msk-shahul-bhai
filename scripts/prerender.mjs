@@ -62,7 +62,7 @@ for (const redirect of LEGACY_REDIRECT_ROUTES) {
     <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="${targetUrl}" />
     <meta http-equiv="refresh" content="0; url=${targetUrl}" />
-    <title>Redirecting | MSK Sahul Bhai Biryani</title>
+    <title>Redirecting | MSK Shahul Bhai Biryani</title>
     <script>window.location.replace(${JSON.stringify(targetUrl)});</script>
   </head>
   <body>

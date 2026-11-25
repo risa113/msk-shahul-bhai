@@ -82,14 +82,14 @@ export function WeddingCateringPage() {
             eyebrow={`${BRAND.cateringBrand} · Tirunelveli & Melapalayam`}
             title="Wedding Catering &"
             accentWord="Bulk Biryani Orders"
-            description="Since 2016, MSK Sahul Bhai Biryani extends the warmth and authentic flavour of our kitchen to weddings, marriage functions, family gatherings, and bulk food orders."
+            description="Since 2016, MSK Shahul Bhai Biryani extends the warmth and authentic flavour of our kitchen to weddings, marriage functions, family gatherings, and bulk food orders."
           />
 
           <div className="mt-8 flex flex-wrap gap-3.5">
             <a
               href={buildWhatsAppUrl(
                 CONTACT_LINES[0].rawDigits,
-                'Hello MSK Sahul Bhai Biryani, I would like to enquire about Wedding Catering / Bulk Biryani Orders.'
+                'Hello MSK Shahul Bhai Biryani, I would like to enquire about Wedding Catering / Bulk Biryani Orders.'
               )}
               target="_blank"
               rel="noreferrer"

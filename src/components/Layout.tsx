@@ -36,7 +36,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <a
         href={buildWhatsAppUrl(
           CONTACT_LINES[0].rawDigits,
-          'Hello MSK Sahul Bhai Biryani, I would like to enquire.'
+          'Hello MSK Shahul Bhai Biryani, I would like to enquire.'
         )}
         target="_blank"
         rel="noreferrer"

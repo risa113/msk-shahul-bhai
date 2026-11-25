@@ -42,74 +42,74 @@ export function assetUrl(path: string): string {
 
 export const BRAND_IMAGES = {
   logoWebp: {
-    path: 'images/msk-sahul-bhai-biryani-logo.webp',
+    path: 'images/msk-shahul-bhai-biryani-logo.webp',
     width: 420,
     height: 520,
   },
   logoPng: {
-    path: 'images/msk-sahul-bhai-biryani-logo.png',
+    path: 'images/msk-shahul-bhai-biryani-logo.png',
     width: 256,
     height: 317,
   },
   heroBiryani: {
-    path: 'images/msk-sahul-bhai-biryani-tirunelveli-hero.webp',
+    path: 'images/msk-shahul-bhai-biryani-tirunelveli-hero.webp',
     width: 1376,
     height: 768,
   },
   dumMuttonBiryani: {
-    path: 'images/msk-sahul-bhai-dum-mutton-biryani-tirunelveli.webp',
+    path: 'images/msk-shahul-bhai-dum-mutton-biryani-tirunelveli.webp',
     width: 768,
     height: 907,
   },
   restaurantAmbience: {
-    path: 'images/msk-sahul-bhai-restaurant-melapalayam-ambience.webp',
+    path: 'images/msk-shahul-bhai-restaurant-melapalayam-ambience.webp',
     width: 1300,
     height: 726,
   },
   weddingCatering: {
-    path: 'images/msk-sahul-bhai-wedding-catering-tirunelveli.webp',
+    path: 'images/msk-shahul-bhai-wedding-catering-tirunelveli.webp',
     width: 1376,
     height: 768,
   },
   marriageCatering: {
-    path: 'images/msk-sahul-bhai-marriage-catering-melapalayam.webp',
+    path: 'images/msk-shahul-bhai-marriage-catering-melapalayam.webp',
     width: 1264,
     height: 848,
   },
   feastPlatter: {
-    path: 'images/msk-sahul-bhai-feast-platter-tirunelveli.webp',
+    path: 'images/msk-shahul-bhai-feast-platter-tirunelveli.webp',
     width: 1100,
     height: 821,
   },
   spiceCraft: {
-    path: 'images/msk-sahul-bhai-whole-spice-biryani-craft.webp',
+    path: 'images/msk-shahul-bhai-whole-spice-biryani-craft.webp',
     width: 1100,
     height: 738,
   },
   mainCourse: {
-    path: 'images/msk-sahul-bhai-biryani-salna-gravy-tirunelveli.webp',
+    path: 'images/msk-shahul-bhai-biryani-salna-gravy-tirunelveli.webp',
     width: 1100,
     height: 821,
   },
   chickenBiryani: {
-    path: 'images/menu/msk-sahul-bhai-chicken-biryani-tirunelveli.webp',
+    path: 'images/menu/msk-shahul-bhai-chicken-biryani-tirunelveli.webp',
     width: 768,
     height: 783,
   },
   alfahamMandi: {
-    path: 'images/menu/msk-sahul-bhai-alfaham-mandi-tirunelveli.webp',
+    path: 'images/menu/msk-shahul-bhai-alfaham-mandi-tirunelveli.webp',
     width: 1100,
     height: 821,
   },
 } as const
 
 export const BRAND = {
-  name: 'MSK Sahul Bhai Biryani',
-  shortName: 'MSK Sahul Bhai',
+  name: 'MSK Shahul Bhai Biryani',
+  shortName: 'MSK Shahul Bhai',
   cateringBrand: 'MSK Catering Service',
   establishedYear: '2016',
   heritageTagline: 'A Decade of Flavour. A Tradition of Trust.',
-  heroHeadline: 'MSK Sahul Bhai Biryani – A Taste Worth Gathering For',
+  heroHeadline: 'MSK Shahul Bhai Biryani – A Taste Worth Gathering For',
   heroSupporting:
     'Since 2016, serving food lovers in Melapalayam and Tirunelveli with slow-cooked authentic biryani, evening Arabian-style Mandi from 6:30 PM onwards, speciality gravies, grilled dishes, and celebration catering.',
   logoPath: assetUrl(BRAND_IMAGES.logoWebp.path),
@@ -129,23 +129,23 @@ export const BRAND = {
   country: 'India',
   areaSummary: 'Melapalayam, Tirunelveli, Tamil Nadu 627005, India',
   addressStatus:
-    'Exact street address to be confirmed by MSK Sahul Bhai Biryani — pinned directly via Google Maps.',
+    'Exact street address to be confirmed by MSK Shahul Bhai Biryani — pinned directly via Google Maps.',
   openingHoursStatus:
     'Opening hours to be confirmed — please call or message on WhatsApp before visiting. Mandi Specials are served from 6:30 PM onwards.',
   orderingNotice:
-    'MSK Sahul Bhai Biryani does not currently offer online ordering or delivery. Guests visit the restaurant in person and order directly.',
+    'MSK Shahul Bhai Biryani does not currently offer online ordering or delivery. Guests visit the restaurant in person and order directly.',
 } as const
 
 export const ABOUT_STORY = {
   eyebrow: 'Since 2016 · Melapalayam, Tirunelveli',
   title: 'A Decade of Taste,',
   accentWord: 'Tradition & Trust',
-  closingStatement: 'MSK Sahul Bhai Biryani – A Decade of Flavour. A Tradition of Trust.',
+  closingStatement: 'MSK Shahul Bhai Biryani – A Decade of Flavour. A Tradition of Trust.',
   shortSummary:
-    'Since 2016, MSK Sahul Bhai Biryani has grown through dedication, consistency, and customer trust — bringing families and friends together across Tirunelveli around signature biryanis, evening Arabian-style Mandi, speciality gravies, grilled dishes, and event catering.',
+    'Since 2016, MSK Shahul Bhai Biryani has grown through dedication, consistency, and customer trust — bringing families and friends together across Tirunelveli around signature biryanis, evening Arabian-style Mandi, speciality gravies, grilled dishes, and event catering.',
   paragraphs: [
-    'Since 2016, MSK Sahul Bhai Biryani has been serving food lovers with a passion for flavour, quality and memorable dining experiences. What began as a journey driven by a love for authentic biryani and delicious food has grown into a name built on dedication, consistency and the trust of our customers. For nearly a decade, we have believed that great food is more than just a meal – it is a way of bringing people together, creating happiness and making every occasion memorable.',
-    'At MSK Sahul Bhai Biryani, we take pride in preparing dishes that bring together rich spices, authentic flavours and the joy of sharing good food. From our signature biryanis and Arabian-style Mandi to our speciality gravies, grilled dishes and flavourful rice varieties, every offering is inspired by our commitment to taste and customer satisfaction. We strive to make every meal an experience worth remembering, whether you are visiting with friends, enjoying a family gathering or celebrating a special occasion.',
+    'Since 2016, MSK Shahul Bhai Biryani has been serving food lovers with a passion for flavour, quality and memorable dining experiences. What began as a journey driven by a love for authentic biryani and delicious food has grown into a name built on dedication, consistency and the trust of our customers. For nearly a decade, we have believed that great food is more than just a meal – it is a way of bringing people together, creating happiness and making every occasion memorable.',
+    'At MSK Shahul Bhai Biryani, we take pride in preparing dishes that bring together rich spices, authentic flavours and the joy of sharing good food. From our signature biryanis and Arabian-style Mandi to our speciality gravies, grilled dishes and flavourful rice varieties, every offering is inspired by our commitment to taste and customer satisfaction. We strive to make every meal an experience worth remembering, whether you are visiting with friends, enjoying a family gathering or celebrating a special occasion.',
     'Over the years, the appreciation and support of our customers have been an important part of our journey. Their trust inspires us to continue improving, serving with care and maintaining the passion that has been with us since the beginning. We also extend our food experience beyond the restaurant through bulk orders and catering services for weddings, celebrations, gatherings and special events.',
     'As we move forward, our vision remains simple – to serve delicious food, welcome every customer with warmth and continue building a legacy of flavour, quality and trust.',
   ],
@@ -210,7 +210,7 @@ export const SIGNATURE_SHOWCASE: EditorialHighlight[] = [
     image: assetUrl(BRAND_IMAGES.alfahamMandi.path),
     imageWidth: BRAND_IMAGES.alfahamMandi.width,
     imageHeight: BRAND_IMAGES.alfahamMandi.height,
-    imageAlt: 'Alfaham Mandi served over aromatic rice at MSK Sahul Bhai Biryani in Tirunelveli',
+    imageAlt: 'Alfaham Mandi served over aromatic rice at MSK Shahul Bhai Biryani in Tirunelveli',
     confirmationNote: 'Available from 6:30 PM onwards',
   },
   {
@@ -222,7 +222,7 @@ export const SIGNATURE_SHOWCASE: EditorialHighlight[] = [
     image: assetUrl(BRAND_IMAGES.heroBiryani.path),
     imageWidth: BRAND_IMAGES.heroBiryani.width,
     imageHeight: BRAND_IMAGES.heroBiryani.height,
-    imageAlt: 'Steaming copper handi of authentic biryani at MSK Sahul Bhai Biryani Tirunelveli',
+    imageAlt: 'Steaming copper handi of authentic biryani at MSK Shahul Bhai Biryani Tirunelveli',
     confirmationNote: 'Availability: Morning to Night',
   },
   {
@@ -247,7 +247,7 @@ export const CATERING_CATEGORIES: CateringCategory[] = [
     description:
       'Authentic celebratory biryani and accompaniments prepared fresh for marriage functions across Melapalayam and Tirunelveli.',
     whatsappMessage:
-      'Hello MSK Sahul Bhai Biryani, I would like to enquire about catering for a Marriage Function.',
+      'Hello MSK Shahul Bhai Biryani, I would like to enquire about catering for a Marriage Function.',
   },
   {
     id: 'wedding',
@@ -256,7 +256,7 @@ export const CATERING_CATEGORIES: CateringCategory[] = [
     description:
       'Dedicated wedding catering by MSK Catering Service built around authentic taste, consistent aroma, and warm guest hospitality.',
     whatsappMessage:
-      'Hello MSK Sahul Bhai Biryani, I would like to enquire about Wedding Catering.',
+      'Hello MSK Shahul Bhai Biryani, I would like to enquire about Wedding Catering.',
   },
   {
     id: 'family',
@@ -265,7 +265,7 @@ export const CATERING_CATEGORIES: CateringCategory[] = [
     description:
       'Thoughtfully prepared meals for family milestones, home gatherings, and special celebration dinners.',
     whatsappMessage:
-      'Hello MSK Sahul Bhai Biryani, I would like to enquire about catering for a Family Function.',
+      'Hello MSK Shahul Bhai Biryani, I would like to enquire about catering for a Family Function.',
   },
   {
     id: 'celebrations',
@@ -274,7 +274,7 @@ export const CATERING_CATEGORIES: CateringCategory[] = [
     description:
       'Festive occasions, receptions, and celebratory gatherings served with authentic biryani, Mandi, and specialities.',
     whatsappMessage:
-      'Hello MSK Sahul Bhai Biryani, I would like to enquire about catering for a Celebration.',
+      'Hello MSK Shahul Bhai Biryani, I would like to enquire about catering for a Celebration.',
   },
   {
     id: 'event',
@@ -283,7 +283,7 @@ export const CATERING_CATEGORIES: CateringCategory[] = [
     description:
       'Coordinated event catering arrangements across Tirunelveli discussed directly with our team to match your occasion.',
     whatsappMessage:
-      'Hello MSK Sahul Bhai Biryani, I would like to enquire about Event Catering.',
+      'Hello MSK Shahul Bhai Biryani, I would like to enquire about Event Catering.',
   },
   {
     id: 'bulk',
@@ -292,7 +292,7 @@ export const CATERING_CATEGORIES: CateringCategory[] = [
     description:
       'Bulk biryani orders prepared fresh to discuss directly on WhatsApp or phone for events and gatherings.',
     whatsappMessage:
-      'Hello MSK Sahul Bhai Biryani, I would like to enquire about a Bulk Biryani Order.',
+      'Hello MSK Shahul Bhai Biryani, I would like to enquire about a Bulk Biryani Order.',
   },
 ]
 
@@ -334,7 +334,7 @@ export const RESTAURANT_GALLERY: GalleryPhoto[] = [
     image: assetUrl(BRAND_IMAGES.restaurantAmbience.path),
     width: BRAND_IMAGES.restaurantAmbience.width,
     height: BRAND_IMAGES.restaurantAmbience.height,
-    alt: 'Warm dining ambience inside MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli',
+    alt: 'Warm dining ambience inside MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli',
   },
   {
     id: 'rest-2',
@@ -343,7 +343,7 @@ export const RESTAURANT_GALLERY: GalleryPhoto[] = [
     image: assetUrl(BRAND_IMAGES.heroBiryani.path),
     width: BRAND_IMAGES.heroBiryani.width,
     height: BRAND_IMAGES.heroBiryani.height,
-    alt: 'Steaming copper handi of authentic biryani served at MSK Sahul Bhai Biryani',
+    alt: 'Steaming copper handi of authentic biryani served at MSK Shahul Bhai Biryani',
   },
   {
     id: 'rest-3',
@@ -352,7 +352,7 @@ export const RESTAURANT_GALLERY: GalleryPhoto[] = [
     image: assetUrl(BRAND_IMAGES.spiceCraft.path),
     width: BRAND_IMAGES.spiceCraft.width,
     height: BRAND_IMAGES.spiceCraft.height,
-    alt: 'Whole biryani spices and saffron prepared in the MSK Sahul Bhai Biryani kitchen',
+    alt: 'Whole biryani spices and saffron prepared in the MSK Shahul Bhai Biryani kitchen',
   },
   {
     id: 'rest-4',

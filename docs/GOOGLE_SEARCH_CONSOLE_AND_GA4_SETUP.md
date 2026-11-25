@@ -1,6 +1,6 @@
 # Google Search Console, GA4 & Google Business Profile Setup Guide
 
-**Business:** MSK Sahul Bhai Biryani (MSK Catering Service)  
+**Business:** MSK Shahul Bhai Biryani (MSK Catering Service)  
 **Primary Area:** Melapalayam, Tirunelveli, Tamil Nadu 627005, India  
 **Current Live URL:** `https://risa113.github.io/msk-shahul-bhai/`
 
@@ -86,7 +86,7 @@
 
 Your website reinforces Google Business Profile trust signals through consistent NAP details, local schema, and Google Maps links, while ongoing GBP management helps local visibility:
 
-1. **Exact Business Name**: Keep strictly as `MSK Sahul Bhai Biryani` (avoid adding extra city/keyword modifiers to the profile title, which violates Google guidelines).
+1. **Exact Business Name**: Keep strictly as `MSK Shahul Bhai Biryani` (avoid adding extra city/keyword modifiers to the profile title, which violates Google guidelines).
 2. **Primary & Secondary Categories**:
    - Primary category: *Biryani restaurant* (or *Indian restaurant*)
    - Secondary categories (verify exact availability in GBP dashboard): *Caterer*, *Mandi restaurant* / *Arabian restaurant*, *Restaurant*

@@ -19,7 +19,7 @@ export function SignaturePage() {
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.dumMuttonBiryani.path)}
-            alt="Traditional copper handi filled with signature biryani at MSK Sahul Bhai Biryani Tirunelveli"
+            alt="Traditional copper handi filled with signature biryani at MSK Shahul Bhai Biryani Tirunelveli"
             width={BRAND_IMAGES.dumMuttonBiryani.width}
             height={BRAND_IMAGES.dumMuttonBiryani.height}
             fetchPriority="high"
@@ -36,7 +36,7 @@ export function SignaturePage() {
             eyebrow="Signature & Special Dishes"
             title="Culinary Craft"
             accentWord="From the Handi"
-            description="An editorial showcase dedicated to MSK Sahul Bhai Biryani’s evening Mandi Specials (6:30 PM onwards), Biryani Collection, and Malabar spice heritage in Melapalayam, Tirunelveli."
+            description="An editorial showcase dedicated to MSK Shahul Bhai Biryani’s evening Mandi Specials (6:30 PM onwards), Biryani Collection, and Malabar spice heritage in Melapalayam, Tirunelveli."
           />
         </div>
       </section>
@@ -98,7 +98,7 @@ export function SignaturePage() {
                   Ask About Today’s Signature Biryani &amp; Evening Mandi
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-cream/90">
-                  Visit MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli, explore the full
+                  Visit MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli, explore the full
                   menu, or connect via WhatsApp before coming by.
                 </p>
               </div>
@@ -107,7 +107,7 @@ export function SignaturePage() {
                 <a
                   href={buildWhatsAppUrl(
                     CONTACT_LINES[0].rawDigits,
-                    'Hello MSK Sahul Bhai Biryani, what Signature dishes and Mandi Specials are available today?'
+                    'Hello MSK Shahul Bhai Biryani, what Signature dishes and Mandi Specials are available today?'
                   )}
                   target="_blank"
                   rel="noreferrer"

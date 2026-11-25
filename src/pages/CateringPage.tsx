@@ -28,7 +28,7 @@ export function CateringPage() {
     e.preventDefault()
 
     const lines = [
-      'Hello MSK Sahul Bhai Biryani,',
+      'Hello MSK Shahul Bhai Biryani,',
       'I would like to enquire for catering / bulk biryani orders:',
       '',
       `• Occasion Type: ${occasion}`,
@@ -70,14 +70,14 @@ export function CateringPage() {
             eyebrow="Catering & Event Management · Tirunelveli"
             title="Catering Services for Weddings,"
             accentWord="Functions & Special Events"
-            description="At MSK Sahul Bhai Biryani, we bring the flavour of our kitchen to your celebrations. From weddings and family gatherings to special functions and large events, our catering and bulk food services are designed to help make every occasion memorable."
+            description="At MSK Shahul Bhai Biryani, we bring the flavour of our kitchen to your celebrations. From weddings and family gatherings to special functions and large events, our catering and bulk food services are designed to help make every occasion memorable."
           />
 
           <div className="mt-8 flex flex-wrap gap-3.5">
             <a
               href={buildWhatsAppUrl(
                 CONTACT_LINES[0].rawDigits,
-                'Hello MSK Sahul Bhai Biryani, I would like to enquire for catering.'
+                'Hello MSK Shahul Bhai Biryani, I would like to enquire for catering.'
               )}
               target="_blank"
               rel="noreferrer"
@@ -216,7 +216,7 @@ export function CateringPage() {
                 eyebrow="Direct Catering Enquiry"
                 title="Plan Your Event"
                 accentWord="On WhatsApp"
-                description="Share your occasion details below to generate a prefilled WhatsApp message directly to MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli. All catering discussions are handled personally by our team."
+                description="Share your occasion details below to generate a prefilled WhatsApp message directly to MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli. All catering discussions are handled personally by our team."
               />
 
               <div className="mt-8 space-y-3 rounded-2xl border border-gold/50 bg-brand-deep p-6 text-xs text-cream shadow-md">

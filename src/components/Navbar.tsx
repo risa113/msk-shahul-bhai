@@ -54,7 +54,7 @@ export function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-lg leading-tight font-semibold tracking-wide text-white sm:text-xl">
-              MSK Sahul Bhai
+              MSK Shahul Bhai
             </span>
             <span className="text-[10px] font-medium tracking-[0.24em] text-gold-soft uppercase">
               Biryani &amp; Catering
@@ -144,7 +144,7 @@ export function Navbar() {
             <a
               href={buildWhatsAppUrl(
                 CONTACT_LINES[0].rawDigits,
-                'Hello MSK Sahul Bhai Biryani, I would like to enquire.'
+                'Hello MSK Shahul Bhai Biryani, I would like to enquire.'
               )}
               target="_blank"
               rel="noreferrer"

@@ -23,7 +23,7 @@ export function MandiSpecialsPage() {
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.alfahamMandi.path)}
-            alt="Alfaham Mandi served fresh from 6:30 PM at MSK Sahul Bhai Biryani in Tirunelveli"
+            alt="Alfaham Mandi served fresh from 6:30 PM at MSK Shahul Bhai Biryani in Tirunelveli"
             width={BRAND_IMAGES.alfahamMandi.width}
             height={BRAND_IMAGES.alfahamMandi.height}
             fetchPriority="high"
@@ -40,7 +40,7 @@ export function MandiSpecialsPage() {
             eyebrow="Evening Speciality · Available from 6:30 PM Onwards"
             title="Arabian Mandi Specials"
             accentWord="in Tirunelveli"
-            description="Enjoy slow-roasted Arabian-style Mandi prepared fresh each evening from 6:30 PM onwards at MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli."
+            description="Enjoy slow-roasted Arabian-style Mandi prepared fresh each evening from 6:30 PM onwards at MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli."
           />
         </div>
       </section>
@@ -58,7 +58,7 @@ export function MandiSpecialsPage() {
                 Five Distinct Mandi Varieties Prepared Every Evening
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                {mandiCategory.description} Guests visit MSK Sahul Bhai Biryani in Melapalayam in
+                {mandiCategory.description} Guests visit MSK Shahul Bhai Biryani in Melapalayam in
                 person to order directly at the table alongside our full restaurant menu.
               </p>
             </div>
@@ -67,7 +67,7 @@ export function MandiSpecialsPage() {
               <a
                 href={buildWhatsAppUrl(
                   CONTACT_LINES[0].rawDigits,
-                  'Hello MSK Sahul Bhai Biryani, I would like to confirm today’s evening Mandi Specials (6:30 PM onwards).'
+                  'Hello MSK Shahul Bhai Biryani, I would like to confirm today’s evening Mandi Specials (6:30 PM onwards).'
                 )}
                 target="_blank"
                 rel="noreferrer"

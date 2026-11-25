@@ -40,7 +40,7 @@ export function HomePage() {
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.heroBiryani.path)}
-            alt="Steaming authentic biryani served in a copper handi at MSK Sahul Bhai Biryani in Tirunelveli"
+            alt="Steaming authentic biryani served in a copper handi at MSK Shahul Bhai Biryani in Tirunelveli"
             width={BRAND_IMAGES.heroBiryani.width}
             height={BRAND_IMAGES.heroBiryani.height}
             className="h-full w-full object-cover object-center"
@@ -59,7 +59,7 @@ export function HomePage() {
             </div>
 
             <h1 className="font-serif text-4xl leading-[1.02] font-normal tracking-tight text-white sm:text-6xl lg:text-[4.65rem]">
-              MSK Sahul Bhai Biryani – <br className="hidden sm:block" />
+              MSK Shahul Bhai Biryani – <br className="hidden sm:block" />
               <em className="font-normal text-gold italic">A Taste Worth Gathering For</em>
             </h1>
 
@@ -165,7 +165,7 @@ export function HomePage() {
                 <div className="overflow-hidden rounded-2xl">
                   <img
                     src={assetUrl(BRAND_IMAGES.restaurantAmbience.path)}
-                    alt="Warm welcoming dining room inside MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli"
+                    alt="Warm welcoming dining room inside MSK Shahul Bhai Biryani in Melapalayam, Tirunelveli"
                     loading="lazy"
                     decoding="async"
                     width={BRAND_IMAGES.restaurantAmbience.width}
@@ -189,7 +189,7 @@ export function HomePage() {
             eyebrow="House Kitchen Specialities"
             title="Authentic Biryani &"
             accentWord="Evening Mandi"
-            description="Visit MSK Sahul Bhai Biryani in person for morning-to-night biryani, gravies, and Malabar Chukka, or join us from 6:30 PM onwards for Arabian-style Mandi."
+            description="Visit MSK Shahul Bhai Biryani in person for morning-to-night biryani, gravies, and Malabar Chukka, or join us from 6:30 PM onwards for Arabian-style Mandi."
           />
 
           <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -197,7 +197,7 @@ export function HomePage() {
               <div className="relative h-56 shrink-0 overflow-hidden sm:h-auto sm:w-52">
                 <img
                   src={assetUrl(BRAND_IMAGES.chickenBiryani.path)}
-                  alt="Chicken Biryani prepared with aromatic whole spices at MSK Sahul Bhai Biryani Tirunelveli"
+                  alt="Chicken Biryani prepared with aromatic whole spices at MSK Shahul Bhai Biryani Tirunelveli"
                   loading="lazy"
                   decoding="async"
                   width={BRAND_IMAGES.chickenBiryani.width}
@@ -233,7 +233,7 @@ export function HomePage() {
               <div className="relative h-56 shrink-0 overflow-hidden sm:h-auto sm:w-52">
                 <img
                   src={assetUrl(BRAND_IMAGES.alfahamMandi.path)}
-                  alt="Alfaham Mandi served fresh from 6:30 PM onwards at MSK Sahul Bhai Biryani Melapalayam"
+                  alt="Alfaham Mandi served fresh from 6:30 PM onwards at MSK Shahul Bhai Biryani Melapalayam"
                   loading="lazy"
                   decoding="async"
                   width={BRAND_IMAGES.alfahamMandi.width}
@@ -336,7 +336,7 @@ export function HomePage() {
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
                     src={assetUrl(BRAND_IMAGES.dumMuttonBiryani.path)}
-                    alt="Signature biryani served hot in a traditional hammered copper handi at MSK Sahul Bhai Biryani"
+                    alt="Signature biryani served hot in a traditional hammered copper handi at MSK Shahul Bhai Biryani"
                     loading="lazy"
                     decoding="async"
                     width={BRAND_IMAGES.dumMuttonBiryani.width}
@@ -394,7 +394,7 @@ export function HomePage() {
                 <a
                   href={buildWhatsAppUrl(
                     CONTACT_LINES[0].rawDigits,
-                    'Hello MSK Sahul Bhai Biryani, I would like to enquire for catering.'
+                    'Hello MSK Shahul Bhai Biryani, I would like to enquire for catering.'
                   )}
                   target="_blank"
                   rel="noreferrer"
@@ -443,7 +443,7 @@ export function HomePage() {
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <Reveal className="lg:col-span-6">
               <SectionHeading
-                eyebrow="Visit MSK Sahul Bhai Biryani"
+                eyebrow="Visit MSK Shahul Bhai Biryani"
                 title="Find Us in Melapalayam,"
                 accentWord="Tirunelveli"
                 description={BRAND.addressStatus}
@@ -507,7 +507,7 @@ export function HomePage() {
             <Reveal delay={0.1} className="lg:col-span-6">
               <div className="overflow-hidden rounded-3xl border border-gold/45 bg-white p-2 shadow-sm">
                 <iframe
-                  title="MSK Sahul Bhai Biryani Location in Melapalayam, Tirunelveli"
+                  title="MSK Shahul Bhai Biryani Location in Melapalayam, Tirunelveli"
                   src={BRAND.mapsEmbedUrl}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

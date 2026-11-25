@@ -115,14 +115,14 @@ export function MenuSection() {
                 Planning a Visit or Function Order in Tirunelveli?
               </h3>
               <p className="mt-1.5 text-xs leading-relaxed text-cream/85 sm:text-sm">
-                Visit MSK Sahul Bhai Biryani in Melapalayam to order directly, or connect on
+                Visit MSK Shahul Bhai Biryani in Melapalayam to order directly, or connect on
                 WhatsApp for wedding catering and bulk biryani enquiries.
               </p>
             </div>
             <a
               href={buildWhatsAppUrl(
                 CONTACT_LINES[0].rawDigits,
-                'Hello MSK Sahul Bhai Biryani, I would like to enquire about your menu.'
+                'Hello MSK Shahul Bhai Biryani, I would like to enquire about your menu.'
               )}
               target="_blank"
               rel="noreferrer"

@@ -1,4 +1,4 @@
-# Local Content Plan — MSK Sahul Bhai Biryani
+# Local Content Plan — MSK Shahul Bhai Biryani
 
 **Target Localities:** Melapalayam & Tirunelveli, Tamil Nadu  
 **Rule of Thumb:** Every planned page or guide must answer genuine customer questions using confirmed kitchen facts — never thin doorway pages, duplicate city swaps, fake pricing, or unconfirmed claims.
@@ -20,7 +20,7 @@
 
 ## Content Governance Rules Before Publishing Any New Section
 1. **No Duplicate City Pages**: Never clone identical pages for nearby towns (`Tirunelveli`, `Palayamkottai`, `Melapalayam`). Use natural service-area mentions on `/catering/` and `/wedding-catering/`.
-2. **Verify Before Publishing**: Only publish street address lines, opening hours, catering lead-times, or special pricing if explicitly approved by MSK Sahul Bhai Biryani management.
+2. **Verify Before Publishing**: Only publish street address lines, opening hours, catering lead-times, or special pricing if explicitly approved by MSK Shahul Bhai Biryani management.
 3. **Internal Linking**: Every new content section should link naturally back to `/menu/`, `/catering/`, and `/about/#visit` with descriptive anchor text.
 4. **Schema Hygiene**: Only add structured data matching visible on-page text (and keep `/sitemap.xml` synchronized via `npm run build`).
 

@@ -42,7 +42,7 @@ export function Footer() {
             <a
               href={buildWhatsAppUrl(
                 CONTACT_LINES[0].rawDigits,
-                'Hello MSK Sahul Bhai Biryani, I would like to enquire about catering.'
+                'Hello MSK Shahul Bhai Biryani, I would like to enquire about catering.'
               )}
               target="_blank"
               rel="noreferrer"

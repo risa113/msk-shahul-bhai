@@ -17,7 +17,7 @@ export function MenuPage() {
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.chickenBiryani.path)}
-            alt="Aromatic Chicken Biryani topped with whole spices at MSK Sahul Bhai Biryani in Tirunelveli"
+            alt="Aromatic Chicken Biryani topped with whole spices at MSK Shahul Bhai Biryani in Tirunelveli"
             width={BRAND_IMAGES.chickenBiryani.width}
             height={BRAND_IMAGES.chickenBiryani.height}
             fetchPriority="high"

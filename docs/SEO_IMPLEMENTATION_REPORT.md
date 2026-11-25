@@ -1,6 +1,6 @@
-# Technical & Local SEO Implementation Report — MSK Sahul Bhai Biryani
+# Technical & Local SEO Implementation Report — MSK Shahul Bhai Biryani
 
-**Site Name:** MSK Sahul Bhai Biryani (MSK Catering Service)  
+**Site Name:** MSK Shahul Bhai Biryani (MSK Catering Service)  
 **Primary Service Area:** Melapalayam, Tirunelveli, Tamil Nadu 627005, India  
 **Production URL:** `https://risa113.github.io/msk-shahul-bhai/`  
 **Completion Date:** 2026-11-25
@@ -39,13 +39,13 @@ Inspecting the pre-existing React 19 + Vite SPA uncovered the following concrete
 
 | Route | Title (`chars`) | Desc (`chars`) | Primary `<h1>` | Target Local Topics |
 | :--- | :--- | :--- | :--- | :--- |
-| `/` | `MSK Sahul Bhai Biryani \| Biryani & Mandi in Tirunelveli` (`55`) | `146` | `MSK Sahul Bhai Biryani – A Taste Worth Gathering For` | Brand name, biryani restaurant in Tirunelveli, restaurant in Melapalayam |
-| `/menu/` | `Menu \| Biryani, Mandi & Special Dishes \| MSK Sahul Bhai` (`55`) | `158` | `Biryani, Mandi & Special Dishes` | Biryani varieties in Tirunelveli, gravies, Malabar Chukka, fried & grilled dishes |
-| `/menu/mandi/` | `Mandi Specials in Tirunelveli (6:30 PM) \| MSK Sahul Bhai` (`56`) | `154` | `Arabian Mandi Specials in Tirunelveli` | Evening Arabian Mandi (6:30 PM onwards), Chicken/Alfaham/Fish/Golden/Peri Peri Mandi |
-| `/signature/` | `Signature Dishes & Craft \| MSK Sahul Bhai Biryani` (`49`) | `152` | `Culinary Craft From the Handi` | House biryani craft, evening Mandi highlight, whole-spice Chukka |
-| `/catering/` | `Catering Services in Tirunelveli \| MSK Sahul Bhai Biryani` (`57`) | `148` | `Catering Services for Weddings, Functions & Special Events` | Catering services in Tirunelveli & Melapalayam, event catering, bulk food orders |
+| `/` | `MSK Shahul Bhai Biryani \| Biryani & Mandi in Tirunelveli` (`55`) | `146` | `MSK Shahul Bhai Biryani – A Taste Worth Gathering For` | Brand name, biryani restaurant in Tirunelveli, restaurant in Melapalayam |
+| `/menu/` | `Menu \| Biryani, Mandi & Special Dishes \| MSK Shahul Bhai` (`55`) | `158` | `Biryani, Mandi & Special Dishes` | Biryani varieties in Tirunelveli, gravies, Malabar Chukka, fried & grilled dishes |
+| `/menu/mandi/` | `Mandi Specials in Tirunelveli (6:30 PM) \| MSK Shahul Bhai` (`56`) | `154` | `Arabian Mandi Specials in Tirunelveli` | Evening Arabian Mandi (6:30 PM onwards), Chicken/Alfaham/Fish/Golden/Peri Peri Mandi |
+| `/signature/` | `Signature Dishes & Craft \| MSK Shahul Bhai Biryani` (`49`) | `152` | `Culinary Craft From the Handi` | House biryani craft, evening Mandi highlight, whole-spice Chukka |
+| `/catering/` | `Catering Services in Tirunelveli \| MSK Shahul Bhai Biryani` (`57`) | `148` | `Catering Services for Weddings, Functions & Special Events` | Catering services in Tirunelveli & Melapalayam, event catering, bulk food orders |
 | `/wedding-catering/` | `Wedding Catering & Bulk Orders Tirunelveli \| MSK Catering` (`57`) | `140` | `Wedding Catering & Bulk Biryani Orders` | Wedding catering & marriage catering in Tirunelveli, bulk biryani orders |
-| `/about/` | `About & Visit MSK Sahul Bhai Biryani \| Since 2016` (`49`) | `153` | `A Decade of Taste, Tradition & Trust` | Brand story since 2016, Melapalayam restaurant location, NAP & Google Maps directions |
+| `/about/` | `About & Visit MSK Shahul Bhai Biryani \| Since 2016` (`49`) | `153` | `A Decade of Taste, Tradition & Trust` | Brand story since 2016, Melapalayam restaurant location, NAP & Google Maps directions |
 
 - All routes render dynamic client metadata updates via [SeoHead.tsx](../src/components/SeoHead.tsx) synchronized with [seoConfig.ts](../src/seo/seoConfig.ts) and visible `<Breadcrumbs />` ([Breadcrumbs.tsx](../src/components/Breadcrumbs.tsx)).
 
@@ -57,7 +57,7 @@ Implemented unified, conflict-free JSON-LD per route in [seoConfig.ts](../src/se
 - Zero fabricated fields: opening hours, street door number, review counts, ratings, awards, MOQs, and prices remain excluded until confirmed by management.
 
 ### D. Local SEO, NAP Consistency & Content Improvements
-- Consistent **NAP** (`MSK Sahul Bhai Biryani`, `Melapalayam, Tirunelveli, Tamil Nadu 627005, India`, `+91 78678 13000`, `+91 78678 14000`, Google Maps link `https://maps.app.goo.gl/CzxZ4NVBfi62fv8U7`) across [Navbar.tsx](../src/components/Navbar.tsx), [Footer.tsx](../src/components/Footer.tsx), [HomePage.tsx](../src/pages/HomePage.tsx), [CateringPage.tsx](../src/pages/CateringPage.tsx), [WeddingCateringPage.tsx](../src/pages/WeddingCateringPage.tsx), [AboutVisitPage.tsx](../src/pages/AboutVisitPage.tsx), and JSON-LD.
+- Consistent **NAP** (`MSK Shahul Bhai Biryani`, `Melapalayam, Tirunelveli, Tamil Nadu 627005, India`, `+91 78678 13000`, `+91 78678 14000`, Google Maps link `https://maps.app.goo.gl/CzxZ4NVBfi62fv8U7`) across [Navbar.tsx](../src/components/Navbar.tsx), [Footer.tsx](../src/components/Footer.tsx), [HomePage.tsx](../src/pages/HomePage.tsx), [CateringPage.tsx](../src/pages/CateringPage.tsx), [WeddingCateringPage.tsx](../src/pages/WeddingCateringPage.tsx), [AboutVisitPage.tsx](../src/pages/AboutVisitPage.tsx), and JSON-LD.
 - Added unique descriptive category copy across all 7 sections in [menuData.ts](../src/data/menuData.ts) and ensured all 29 confirmed dishes are immediately rendered in static HTML on `/menu/` with clear availability timings (`6:30 PM onwards` for Mandi Specials; `Morning to Night` for the remaining 6 categories).
 - Preserved client policy: no prices, no online ordering/delivery, and no invented minimums.
 
@@ -66,7 +66,7 @@ Implemented unified, conflict-free JSON-LD per route in [seoConfig.ts](../src/se
 - `dist/robots.txt` & `public/robots.txt`: Allows all crawlers (`Allow: /`) and declares `Sitemap: https://risa113.github.io/msk-shahul-bhai/sitemap.xml`.
 
 ### F. Image Optimization & Core Web Vitals
-- Renamed all `40` public assets cleanly using descriptive names (e.g., `msk-sahul-bhai-biryani-tirunelveli-hero.webp`, `msk-sahul-bhai-chicken-mandi-melapalayam.webp`, `msk-sahul-bhai-wedding-catering-tirunelveli.webp`), removed duplicate copies, and compressed `msk-sahul-bhai-biryani-logo.png` from `1,018,627 B` to `98,979 B` (total `public/images` footprint: `4,165.8 KB`).
+- Renamed all `40` public assets cleanly using descriptive names (e.g., `msk-shahul-bhai-biryani-tirunelveli-hero.webp`, `msk-shahul-bhai-chicken-mandi-melapalayam.webp`, `msk-shahul-bhai-wedding-catering-tirunelveli.webp`), removed duplicate copies, and compressed `msk-shahul-bhai-biryani-logo.png` from `1,018,627 B` to `98,979 B` (total `public/images` footprint: `4,165.8 KB`).
 - Added exact natural `width`/`height` attributes matching disk dimensions across every `<img>` in components, data files, and pages.
 - Hero LCP images omit `loading="lazy"`, carry `fetchPriority="high"`, and receive `<link rel="preload" as="image" ... fetchpriority="high">` in the prerendered `<head>`; below-the-fold images use `loading="lazy"` + `decoding="async"`.
 - Removed `framer-motion` (`npm uninstall framer-motion`) and `Suspense` route splitting so the unified client JS bundle dropped to **`381.97 kB` (`107.80 kB` gzip)** (`1707` modules transformed), with `index-CEceAIsj.css` at `49.34 kB` (`8.33 kB` gzip), non-blocking Google Fonts CSS, smooth anchor hash handling in [Layout.tsx](../src/components/Layout.tsx), and zero initial `opacity: 0` traps.
@@ -92,3 +92,4 @@ Implemented unified, conflict-free JSON-LD per route in [seoConfig.ts](../src/se
 3. **Google Search Console & GA4 IDs**: Supply real `VITE_GSC_VERIFICATION` and `VITE_GA4_MEASUREMENT_ID` values (or DNS TXT verification) following [GOOGLE_SEARCH_CONSOLE_AND_GA4_SETUP.md](./GOOGLE_SEARCH_CONSOLE_AND_GA4_SETUP.md) and submit `sitemap.xml`.
 4. **Custom Domain (Optional Recommended Upgrade)**: Consider pointing a branded domain (e.g., `.com` / `.in`) rather than `github.io` subdirectory hosting, updating `base: '/'` in `vite.config.ts` and `VITE_SITE_URL` before final sitemap submission.
 5. **Runtime Lighthouse / DevTools Check**: Run Chrome DevTools Console + PageSpeed Insights / Lighthouse audit against the live deployed URLs (`https://risa113.github.io/msk-shahul-bhai/`) once propagated to inspect mobile Core Web Vitals field/lab scores visually.
+
