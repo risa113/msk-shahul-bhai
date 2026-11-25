@@ -1,71 +1,48 @@
-import { lazy, Suspense } from 'react'
-import { AnimatePresence, MotionConfig, motion } from 'framer-motion'
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
+import { AboutVisitPage } from './pages/AboutVisitPage'
+import { CateringPage } from './pages/CateringPage'
+import { HomePage } from './pages/HomePage'
+import { MandiSpecialsPage } from './pages/MandiSpecialsPage'
+import { MenuPage } from './pages/MenuPage'
+import { NotFoundPage } from './pages/NotFoundPage'
+import { SignaturePage } from './pages/SignaturePage'
+import { WeddingCateringPage } from './pages/WeddingCateringPage'
 
-const HomePage = lazy(() => import('./pages/HomePage').then((m) => ({ default: m.HomePage })))
-const MenuPage = lazy(() => import('./pages/MenuPage').then((m) => ({ default: m.MenuPage })))
-const SignaturePage = lazy(() =>
-  import('./pages/SignaturePage').then((m) => ({ default: m.SignaturePage }))
-)
-const CateringPage = lazy(() =>
-  import('./pages/CateringPage').then((m) => ({ default: m.CateringPage }))
-)
-const AboutVisitPage = lazy(() =>
-  import('./pages/AboutVisitPage').then((m) => ({ default: m.AboutVisitPage }))
-)
-const NotFoundPage = lazy(() =>
-  import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage }))
-)
-
-function AnimatedRoutes() {
-  const location = useLocation()
-
+export function AppRoutes() {
   return (
     <Layout>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={location.pathname}
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -4 }}
-          transition={{ duration: 0.26, ease: 'easeOut' }}
-        >
-          <Suspense
-            fallback={
-              <div
-                className="flex min-h-[60vh] items-center justify-center bg-cream font-serif text-xl text-brand-primary"
-                role="status"
-              >
-                Preparing MSK Sahul Bhai Biryani…
-              </div>
-            }
-          >
-            <Routes location={location}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/menu" element={<MenuPage />} />
-              <Route path="/signature" element={<SignaturePage />} />
-              <Route path="/special-dishes" element={<Navigate to="/signature" replace />} />
-              <Route path="/catering" element={<CateringPage />} />
-              <Route path="/about" element={<AboutVisitPage />} />
-              <Route path="/visit" element={<Navigate to="/about" replace />} />
-              <Route path="/contact" element={<Navigate to="/about" replace />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-        </motion.div>
-      </AnimatePresence>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/menu/" element={<MenuPage />} />
+        <Route path="/menu/mandi" element={<MandiSpecialsPage />} />
+        <Route path="/menu/mandi/" element={<MandiSpecialsPage />} />
+        <Route path="/signature" element={<SignaturePage />} />
+        <Route path="/signature/" element={<SignaturePage />} />
+        <Route path="/special-dishes" element={<Navigate to="/signature/" replace />} />
+        <Route path="/special-dishes/" element={<Navigate to="/signature/" replace />} />
+        <Route path="/catering" element={<CateringPage />} />
+        <Route path="/catering/" element={<CateringPage />} />
+        <Route path="/wedding-catering" element={<WeddingCateringPage />} />
+        <Route path="/wedding-catering/" element={<WeddingCateringPage />} />
+        <Route path="/about" element={<AboutVisitPage />} />
+        <Route path="/about/" element={<AboutVisitPage />} />
+        <Route path="/visit" element={<Navigate to="/about/" replace />} />
+        <Route path="/visit/" element={<Navigate to="/about/" replace />} />
+        <Route path="/contact" element={<Navigate to="/about/" replace />} />
+        <Route path="/contact/" element={<Navigate to="/about/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </Layout>
   )
 }
 
 export function App() {
   return (
-    <MotionConfig reducedMotion="user">
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <AnimatedRoutes />
-      </BrowserRouter>
-    </MotionConfig>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <AppRoutes />
+    </BrowserRouter>
   )
 }
 

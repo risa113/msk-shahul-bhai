@@ -1,25 +1,13 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import type { MenuDish } from '../../data/menuData'
 import { AvailabilityBadge } from './AvailabilityBadge'
 
 interface MenuFoodCardProps {
   dish: MenuDish
-  index: number
 }
 
-export function MenuFoodCard({ dish, index }: MenuFoodCardProps) {
-  const shouldReduceMotion = useReducedMotion()
-
+export function MenuFoodCard({ dish }: MenuFoodCardProps) {
   return (
-    <motion.article
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1],
-        delay: Math.min(index * 0.04, 0.22),
-      }}
+    <article
       className={`group flex flex-col overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${
         dish.isEveningSpecial
           ? 'border-gold/60 shadow-[0_14px_34px_-16px_rgba(38,60,48,0.2)] hover:border-brand-primary/70'
@@ -32,8 +20,8 @@ export function MenuFoodCard({ dish, index }: MenuFoodCardProps) {
           alt={dish.imageAlt}
           loading="lazy"
           decoding="async"
-          width={800}
-          height={600}
+          width={dish.imageWidth}
+          height={dish.imageHeight}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-deep/30 via-transparent to-transparent" />
@@ -56,6 +44,6 @@ export function MenuFoodCard({ dish, index }: MenuFoodCardProps) {
         </div>
         <div className="mt-4 h-px w-10 bg-gold/60 transition-all duration-300 group-hover:w-16" />
       </div>
-    </motion.article>
+    </article>
   )
 }

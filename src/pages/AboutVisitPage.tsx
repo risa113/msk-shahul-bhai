@@ -1,32 +1,44 @@
 import { ArrowUpRight, Clock, Mail, MapPin, Navigation, Phone } from 'lucide-react'
+import { Breadcrumbs } from '../components/Breadcrumbs'
 import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
 import { Reveal, SectionHeading } from '../components/MotionSection'
+import { SeoHead } from '../components/SeoHead'
 import {
   ABOUT_STORY,
   BRAND,
+  BRAND_IMAGES,
   CONTACT_LINES,
   RESTAURANT_GALLERY,
   assetUrl,
   buildWhatsAppUrl,
 } from '../data/restaurant'
+import { getRouteSeo } from '../seo/seoConfig'
 
 export function AboutVisitPage() {
+  const breadcrumbs = getRouteSeo('about').breadcrumbs
+
   return (
     <>
+      <SeoHead routeKey="about" />
+
       {/* Page Hero */}
       <section className="relative flex min-h-[54vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
-            src={assetUrl('images/restaurant-ambience.webp')}
-            alt="Warm evening dining ambience at MSK Sahul Bhai Biryani"
-            className="h-full w-full object-cover"
+            src={assetUrl(BRAND_IMAGES.restaurantAmbience.path)}
+            alt="Warm welcoming dining ambience at MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli"
+            width={BRAND_IMAGES.restaurantAmbience.width}
+            height={BRAND_IMAGES.restaurantAmbience.height}
             fetchPriority="high"
+            className="h-full w-full object-cover"
           />
           <div className="hero-scrim-green absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+          <Breadcrumbs items={breadcrumbs} variant="dark" />
           <SectionHeading
+            as="h1"
             variant="dark"
             eyebrow={`About MSK Sahul Bhai Biryani · Since ${BRAND.establishedYear}`}
             title={ABOUT_STORY.title}
@@ -51,6 +63,9 @@ export function AboutVisitPage() {
                       src={BRAND.logoPath}
                       alt="Official MSK Catering Service crest logo"
                       loading="lazy"
+                      decoding="async"
+                      width={BRAND_IMAGES.logoWebp.width}
+                      height={BRAND_IMAGES.logoWebp.height}
                       className="h-full w-auto object-contain"
                     />
                   </div>
@@ -159,30 +174,31 @@ export function AboutVisitPage() {
               eyebrow="Restaurant Gallery"
               title="Inside the"
               accentWord="MSK Experience"
-              description="Warm hospitality, whole spice craft, and freshly served biryani made to be shared at the table."
+              description="Warm hospitality, whole spice craft, and freshly served biryani made to be shared at the table in Melapalayam, Tirunelveli."
             />
           </Reveal>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {RESTAURANT_GALLERY.map((photo, idx) => (
-              <Reveal key={photo.id} delay={idx * 0.06}>
-                <figure className="luxury-panel overflow-hidden">
-                  <div className="h-64 overflow-hidden bg-cream">
-                    <img
-                      src={photo.image}
-                      alt={photo.alt}
-                      loading="lazy"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <figcaption className="p-5">
-                    <h3 className="font-serif text-xl font-medium text-ink">{photo.title}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-muted">
-                      {photo.caption}
-                    </p>
-                  </figcaption>
-                </figure>
-              </Reveal>
+            {RESTAURANT_GALLERY.map((photo) => (
+              <figure key={photo.id} className="luxury-panel overflow-hidden">
+                <div className="h-64 overflow-hidden bg-cream">
+                  <img
+                    src={photo.image}
+                    alt={photo.alt}
+                    loading="lazy"
+                    decoding="async"
+                    width={photo.width}
+                    height={photo.height}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <figcaption className="p-5">
+                  <h3 className="font-serif text-xl font-medium text-ink">{photo.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted">
+                    {photo.caption}
+                  </p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
@@ -236,7 +252,7 @@ export function AboutVisitPage() {
 
                   <div className="mt-6 overflow-hidden rounded-2xl border border-gold/40">
                     <iframe
-                      title="MSK Sahul Bhai Biryani Google Maps Pin"
+                      title="MSK Sahul Bhai Biryani Google Maps Pin in Melapalayam, Tirunelveli"
                       src={BRAND.mapsEmbedUrl}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"

@@ -1,12 +1,11 @@
 import { useRef, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight, MoonStar, UtensilsCrossed } from 'lucide-react'
 import { MENU_DATA, type MenuCategoryId } from '../../data/menuData'
 import { BRAND, CONTACT_LINES, buildWhatsAppUrl } from '../../data/restaurant'
 import { WhatsAppBrandIcon } from '../BrandIcons'
 import { AvailabilityBadge } from './AvailabilityBadge'
 import { MenuCategoryNavigation } from './MenuCategoryNavigation'
-import { MenuGrid } from './MenuGrid'
+import { MenuGrid, MenuMandiSpotlightLink } from './MenuGrid'
 
 export function MenuSection() {
   const [activeCategory, setActiveCategory] = useState<MenuCategoryId | 'all'>('all')
@@ -52,73 +51,72 @@ export function MenuSection() {
             </span>
           </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: 0.24, ease: 'easeOut' }}
-              className="space-y-16 sm:space-y-20"
-            >
-              {visibleCategories.map((category) => (
-                <section
-                  key={category.id}
-                  id={`category-${category.id}`}
-                  aria-labelledby={`heading-${category.id}`}
-                  className={
-                    category.isEveningSpecial
-                      ? 'relative rounded-3xl border border-gold/60 bg-gradient-to-br from-brand-primary/[0.08] via-white to-cream-soft p-6 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.2)] sm:p-10'
-                      : 'border-t border-gold/35 pt-10 first:border-t-0 first:pt-0'
-                  }
-                >
-                  <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-                    <div>
-                      <div className="mb-2 inline-flex items-center gap-2.5 text-[10px] font-semibold tracking-[0.24em] text-brand-primary uppercase">
-                        {category.isEveningSpecial ? (
-                          <MoonStar className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                        ) : (
-                          <span className="h-px w-6 bg-gold" aria-hidden="true" />
-                        )}
-                        <span>
-                          {category.isEveningSpecial
-                            ? 'Evening Speciality · Available from 6:30 PM'
-                            : 'Restaurant Menu Category'}
-                        </span>
-                      </div>
-                      <h2
-                        id={`heading-${category.id}`}
-                        className="font-serif text-3xl font-normal text-ink sm:text-4xl lg:text-5xl"
-                      >
-                        {category.title}
-                      </h2>
+          <div className="space-y-16 sm:space-y-20">
+            {visibleCategories.map((category) => (
+              <section
+                key={category.id}
+                id={`category-${category.id}`}
+                aria-labelledby={`heading-${category.id}`}
+                className={
+                  category.isEveningSpecial
+                    ? 'relative rounded-3xl border border-gold/60 bg-gradient-to-br from-brand-primary/[0.08] via-white to-cream-soft p-6 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.2)] sm:p-10'
+                    : 'border-t border-gold/35 pt-10 first:border-t-0 first:pt-0'
+                }
+              >
+                <div className="mb-8 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
+                  <div className="max-w-2xl">
+                    <div className="mb-2 inline-flex items-center gap-2.5 text-[10px] font-semibold tracking-[0.24em] text-brand-primary uppercase">
+                      {category.isEveningSpecial ? (
+                        <MoonStar className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                      ) : (
+                        <span className="h-px w-6 bg-gold" aria-hidden="true" />
+                      )}
+                      <span>
+                        {category.isEveningSpecial
+                          ? 'Evening Speciality · Available from 6:30 PM'
+                          : 'Restaurant Menu Category'}
+                      </span>
                     </div>
-
-                    <AvailabilityBadge
-                      label={
-                        category.isEveningSpecial
-                          ? `Available from 6:30 PM (${category.availabilityHours})`
-                          : `Availability: ${category.availabilityHours}`
-                      }
-                      isEveningSpecial={category.isEveningSpecial}
-                      size="md"
-                    />
+                    <h2
+                      id={`heading-${category.id}`}
+                      className="font-serif text-3xl font-normal text-ink sm:text-4xl lg:text-5xl"
+                    >
+                      {category.title}
+                    </h2>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">
+                      {category.description}
+                    </p>
+                    {category.isEveningSpecial && (
+                      <div className="mt-3">
+                        <MenuMandiSpotlightLink />
+                      </div>
+                    )}
                   </div>
 
-                  <MenuGrid items={category.items} />
-                </section>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+                  <AvailabilityBadge
+                    label={
+                      category.isEveningSpecial
+                        ? `Available from 6:30 PM (${category.availabilityHours})`
+                        : `Availability: ${category.availabilityHours}`
+                    }
+                    isEveningSpecial={category.isEveningSpecial}
+                    size="md"
+                  />
+                </div>
+
+                <MenuGrid items={category.items} />
+              </section>
+            ))}
+          </div>
 
           <div className="mt-16 flex flex-col items-start justify-between gap-5 rounded-2xl border border-gold/50 bg-brand-deep p-7 text-cream shadow-md sm:flex-row sm:items-center sm:p-8">
             <div>
               <h3 className="font-serif text-2xl text-white sm:text-3xl">
-                Planning a Visit or Function Order?
+                Planning a Visit or Function Order in Tirunelveli?
               </h3>
               <p className="mt-1.5 text-xs leading-relaxed text-cream/85 sm:text-sm">
-                Visit MSK Sahul Bhai Biryani in person to order directly, or connect on WhatsApp
-                for catering and bulk biryani enquiries.
+                Visit MSK Sahul Bhai Biryani in Melapalayam to order directly, or connect on
+                WhatsApp for wedding catering and bulk biryani enquiries.
               </p>
             </div>
             <a

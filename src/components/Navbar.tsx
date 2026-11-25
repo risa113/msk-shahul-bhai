@@ -48,7 +48,7 @@ export function Navbar() {
               src={BRAND.logoPath}
               alt="MSK Catering Service official logo"
               className="h-full w-auto object-contain"
-              width={44}
+              width={42}
               height={52}
             />
           </div>

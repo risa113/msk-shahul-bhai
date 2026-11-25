@@ -17,6 +17,9 @@ export function Footer() {
                   src={BRAND.logoPath}
                   alt="MSK Catering Service official logo"
                   loading="lazy"
+                  decoding="async"
+                  width={42}
+                  height={52}
                   className="h-full w-auto object-contain"
                 />
               </div>
@@ -32,8 +35,8 @@ export function Footer() {
               <strong className="font-semibold text-gold-soft">
                 Since {BRAND.establishedYear} — {BRAND.heritageTagline}
               </strong>{' '}
-              Signature biryanis, Arabian-style Mandi, speciality gravies, and welcoming catering
-              for weddings and celebrations.
+              Signature biryanis, evening Arabian-style Mandi (6:30 PM onwards), speciality gravies,
+              and welcoming catering across Melapalayam and Tirunelveli.
             </p>
 
             <a
@@ -53,7 +56,7 @@ export function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
-              Pages
+              Explore Pages
             </h3>
             <ul className="mt-4 space-y-2.5 text-xs text-cream/85">
               {NAV_ITEMS.map((item) => (
@@ -66,6 +69,22 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/menu/mandi/"
+                  className="inline-block py-0.5 transition-colors hover:text-gold-soft"
+                >
+                  Mandi Specials (6:30 PM)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/wedding-catering/"
+                  className="inline-block py-0.5 transition-colors hover:text-gold-soft"
+                >
+                  Wedding &amp; Bulk Catering
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -123,7 +142,7 @@ export function Footer() {
               </p>
               <p className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
-                <span>Opening hours to be confirmed</span>
+                <span>Mandi: 6:30 PM onwards · Full hours to be confirmed</span>
               </p>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
 interface RevealProps {
@@ -8,20 +7,8 @@ interface RevealProps {
   yOffset?: number
 }
 
-export function Reveal({ children, className = '', delay = 0, yOffset = 16 }: RevealProps) {
-  const shouldReduceMotion = useReducedMotion()
-
-  return (
-    <motion.div
-      className={className}
-      initial={shouldReduceMotion ? false : { opacity: 0, y: yOffset }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.14 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay }}
-    >
-      {children}
-    </motion.div>
-  )
+export function Reveal({ children, className = '' }: RevealProps) {
+  return <div className={className}>{children}</div>
 }
 
 interface SectionHeadingProps {
@@ -31,6 +18,7 @@ interface SectionHeadingProps {
   description?: string
   align?: 'left' | 'center'
   variant?: 'light' | 'dark'
+  as?: 'h1' | 'h2'
 }
 
 export function SectionHeading({
@@ -40,9 +28,11 @@ export function SectionHeading({
   description,
   align = 'left',
   variant = 'light',
+  as = 'h2',
 }: SectionHeadingProps) {
   const isCentered = align === 'center'
   const isDark = variant === 'dark'
+  const HeadingTag = as
 
   return (
     <div className={isCentered ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
@@ -55,7 +45,7 @@ export function SectionHeading({
         <span>{eyebrow}</span>
         {isCentered && <span className="h-px w-7 bg-gold" aria-hidden="true" />}
       </div>
-      <h2
+      <HeadingTag
         className={`font-serif text-4xl leading-[1.06] font-normal tracking-tight sm:text-5xl lg:text-[3.35rem] ${
           isDark ? 'text-white' : 'text-ink'
         }`}
@@ -68,7 +58,7 @@ export function SectionHeading({
             {accentWord}
           </em>
         )}
-      </h2>
+      </HeadingTag>
       {description && (
         <p
           className={`mt-5 text-sm leading-relaxed sm:text-base ${

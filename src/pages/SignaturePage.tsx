@@ -1,31 +1,42 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { Breadcrumbs } from '../components/Breadcrumbs'
 import { WhatsAppBrandIcon } from '../components/BrandIcons'
 import { Reveal, SectionHeading } from '../components/MotionSection'
-import { CONTACT_LINES, SIGNATURE_SHOWCASE, assetUrl, buildWhatsAppUrl } from '../data/restaurant'
+import { SeoHead } from '../components/SeoHead'
+import { BRAND_IMAGES, CONTACT_LINES, SIGNATURE_SHOWCASE, assetUrl, buildWhatsAppUrl } from '../data/restaurant'
+import { getRouteSeo } from '../seo/seoConfig'
 
 export function SignaturePage() {
+  const breadcrumbs = getRouteSeo('signature').breadcrumbs
+
   return (
     <>
+      <SeoHead routeKey="signature" />
+
       {/* Editorial Hero */}
       <section className="relative flex min-h-[56vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
-            src={assetUrl('images/dum-mutton-biryani.webp')}
-            alt="Traditional copper handi filled with signature biryani"
-            className="h-full w-full object-cover"
+            src={assetUrl(BRAND_IMAGES.dumMuttonBiryani.path)}
+            alt="Traditional copper handi filled with signature biryani at MSK Sahul Bhai Biryani Tirunelveli"
+            width={BRAND_IMAGES.dumMuttonBiryani.width}
+            height={BRAND_IMAGES.dumMuttonBiryani.height}
             fetchPriority="high"
+            className="h-full w-full object-cover"
           />
           <div className="hero-scrim-green absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+          <Breadcrumbs items={breadcrumbs} variant="dark" />
           <SectionHeading
+            as="h1"
             variant="dark"
             eyebrow="Signature & Special Dishes"
             title="Culinary Craft"
             accentWord="From the Handi"
-            description="An editorial showcase dedicated to MSK Sahul Bhai Biryani’s evening Mandi Specials, classic Biryani Collection, and aromatic spice-roasted specialties."
+            description="An editorial showcase dedicated to MSK Sahul Bhai Biryani’s evening Mandi Specials (6:30 PM onwards), Biryani Collection, and Malabar spice heritage in Melapalayam, Tirunelveli."
           />
         </div>
       </section>
@@ -44,6 +55,9 @@ export function SignaturePage() {
                         src={item.image}
                         alt={item.imageAlt}
                         loading="lazy"
+                        decoding="async"
+                        width={item.imageWidth}
+                        height={item.imageHeight}
                         className="h-[320px] w-full object-cover sm:h-[420px]"
                       />
                       <span className="absolute top-4 left-4 rounded-full border border-gold/70 bg-brand-primary px-3.5 py-1 font-serif text-sm text-white shadow-sm">
@@ -74,48 +88,53 @@ export function SignaturePage() {
 
         {/* Bottom Editorial Band */}
         <div className="mx-auto mt-20 max-w-7xl px-5 sm:px-8 lg:px-10">
-          <Reveal>
-            <div className="rounded-3xl border border-gold/50 bg-gradient-to-r from-brand-primary via-brand-primary to-brand-deep p-8 text-white shadow-lg sm:p-12">
-              <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
-                <div className="max-w-2xl">
-                  <span className="text-[11px] font-semibold tracking-[0.24em] text-gold-soft uppercase">
-                    Visit or Enquire
-                  </span>
-                  <h3 className="mt-2 font-serif text-3xl text-white sm:text-4xl">
-                    Ask About Today’s Signature &amp; Evening Mandi Offerings
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-cream/90">
-                    Visit MSK Sahul Bhai Biryani in person or connect via WhatsApp to confirm daily
-                    availability before coming by.
-                  </p>
-                </div>
+          <div className="rounded-3xl border border-gold/50 bg-gradient-to-r from-brand-primary via-brand-primary to-brand-deep p-8 text-white shadow-lg sm:p-12">
+            <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
+              <div className="max-w-2xl">
+                <span className="text-[11px] font-semibold tracking-[0.24em] text-gold-soft uppercase">
+                  Visit or Enquire
+                </span>
+                <h2 className="mt-2 font-serif text-3xl text-white sm:text-4xl">
+                  Ask About Today’s Signature Biryani &amp; Evening Mandi
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-cream/90">
+                  Visit MSK Sahul Bhai Biryani in Melapalayam, Tirunelveli, explore the full
+                  menu, or connect via WhatsApp before coming by.
+                </p>
+              </div>
 
-                <div className="flex flex-wrap gap-3.5">
-                  <a
-                    href={buildWhatsAppUrl(
-                      CONTACT_LINES[0].rawDigits,
-                      'Hello MSK Sahul Bhai Biryani, what Signature dishes and Mandi Specials are available today?'
-                    )}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2.5 rounded-lg border border-gold/70 bg-white px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-sm transition-colors hover:bg-cream"
-                  >
-                    <WhatsAppBrandIcon className="h-4 w-4 text-brand-primary" />
-                    <span>Enquire on WhatsApp</span>
-                    <ArrowUpRight className="h-4 w-4 text-brand-primary" />
-                  </a>
+              <div className="flex flex-wrap gap-3.5">
+                <a
+                  href={buildWhatsAppUrl(
+                    CONTACT_LINES[0].rawDigits,
+                    'Hello MSK Sahul Bhai Biryani, what Signature dishes and Mandi Specials are available today?'
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-lg border border-gold/70 bg-white px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-sm transition-colors hover:bg-cream"
+                >
+                  <WhatsAppBrandIcon className="h-4 w-4 text-brand-primary" />
+                  <span>Enquire on WhatsApp</span>
+                  <ArrowUpRight className="h-4 w-4 text-brand-primary" />
+                </a>
 
-                  <Link
-                    to="/menu"
-                    className="inline-flex items-center gap-2 rounded-lg border border-gold/60 bg-brand-deep/75 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:bg-brand-deep"
-                  >
-                    <span>Explore Full Menu</span>
-                    <ArrowRight className="h-4 w-4 text-gold-soft" />
-                  </Link>
-                </div>
+                <Link
+                  to="/menu/"
+                  className="inline-flex items-center gap-2 rounded-lg border border-gold/60 bg-brand-deep/75 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:bg-brand-deep"
+                >
+                  <span>Explore Full Menu</span>
+                  <ArrowRight className="h-4 w-4 text-gold-soft" />
+                </Link>
+
+                <Link
+                  to="/menu/mandi/"
+                  className="inline-flex items-center gap-2 rounded-lg border border-gold/45 bg-transparent px-5 py-3.5 text-xs font-semibold tracking-[0.14em] text-gold-soft uppercase transition-colors hover:border-gold hover:text-white"
+                >
+                  <span>Mandi Specials (6:30 PM)</span>
+                </Link>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
     </>
