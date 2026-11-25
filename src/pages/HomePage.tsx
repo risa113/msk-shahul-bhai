@@ -5,7 +5,7 @@ import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
 import { AvailabilityBadge } from '../components/menu/AvailabilityBadge'
 import { Reveal, SectionHeading } from '../components/MotionSection'
 import { MENU_DATA } from '../data/menuData'
-import { BRAND, CONTACT_LINES, assetUrl, buildWhatsAppUrl } from '../data/restaurant'
+import { ABOUT_STORY, BRAND, CONTACT_LINES, assetUrl, buildWhatsAppUrl } from '../data/restaurant'
 
 export function HomePage() {
   const shouldReduceMotion = useReducedMotion()
@@ -89,7 +89,9 @@ export function HomePage() {
             <span>Scroll to discover</span>
             <ArrowDown className="animate-scroll-cue h-4 w-4" />
           </a>
-          <span className="hidden md:inline">Dine-In Restaurant &amp; Catering</span>
+          <span className="hidden md:inline">
+            Serving Since {BRAND.establishedYear} · Dine-In &amp; Catering
+          </span>
         </div>
       </section>
 
@@ -99,10 +101,10 @@ export function HomePage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <Reveal className="lg:col-span-6">
               <SectionHeading
-                eyebrow="Welcome to MSK"
-                title="Hospitality Built Around"
-                accentWord="Authentic Flavour"
-                description="At MSK Sahul Bhai Biryani, every serving is shaped by fragrant spices, slow-cooked craft, and the warmth of a shared meal. Customers visit us in person to enjoy freshly prepared biryani ordered directly at the restaurant."
+                eyebrow={ABOUT_STORY.eyebrow}
+                title={ABOUT_STORY.title}
+                accentWord={ABOUT_STORY.accentWord}
+                description={ABOUT_STORY.shortSummary}
               />
 
               <div className="mt-8 flex flex-wrap items-center gap-5 rounded-2xl border border-gold/45 bg-white p-5 shadow-xs">
@@ -115,8 +117,16 @@ export function HomePage() {
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-serif text-xl font-medium text-ink">{BRAND.name}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-muted">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="font-serif text-xl font-medium text-ink">{BRAND.name}</p>
+                    <span className="rounded-full border border-gold/50 bg-cream px-2.5 py-0.5 text-[10px] font-semibold tracking-[0.14em] text-brand-primary uppercase">
+                      Est. {BRAND.establishedYear}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs font-medium text-brand-secondary">
+                    {BRAND.heritageTagline}
+                  </p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted">
                     {BRAND.orderingNotice}
                   </p>
                 </div>
@@ -127,7 +137,7 @@ export function HomePage() {
                   to="/about"
                   className="inline-flex items-center gap-2.5 border-b border-gold pb-1.5 text-xs font-semibold tracking-[0.16em] text-brand-primary uppercase transition-colors hover:border-brand-primary hover:text-brand-deep"
                 >
-                  <span>Read About Us &amp; Visit Info</span>
+                  <span>Read Our Story &amp; Visit Info</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

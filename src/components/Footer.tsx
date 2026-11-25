@@ -28,9 +28,12 @@ export function Footer() {
               </div>
             </Link>
 
-            <p className="mt-5 max-w-xs text-xs leading-relaxed text-cream/80">
-              {BRAND.heroHeadline} Authentic biryani and Arabian Mandi prepared with whole-spice
-              aroma and welcoming hospitality for dine-in guests and event catering.
+            <p className="mt-5 max-w-xs text-xs leading-relaxed text-cream/85">
+              <strong className="font-semibold text-gold-soft">
+                Since {BRAND.establishedYear} — {BRAND.heritageTagline}
+              </strong>{' '}
+              Signature biryanis, Arabian-style Mandi, speciality gravies, and welcoming catering
+              for weddings and celebrations.
             </p>
 
             <a

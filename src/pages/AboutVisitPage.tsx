@@ -2,6 +2,7 @@ import { ArrowUpRight, Clock, Mail, MapPin, Navigation, Phone } from 'lucide-rea
 import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
 import { Reveal, SectionHeading } from '../components/MotionSection'
 import {
+  ABOUT_STORY,
   BRAND,
   CONTACT_LINES,
   RESTAURANT_GALLERY,
@@ -13,7 +14,7 @@ export function AboutVisitPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative flex min-h-[52vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
+      <section className="relative flex min-h-[54vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl('images/restaurant-ambience.webp')}
@@ -27,25 +28,25 @@ export function AboutVisitPage() {
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
           <SectionHeading
             variant="dark"
-            eyebrow="About Us & Visit Us"
-            title="Rooted in Flavour."
-            accentWord="Always Welcoming."
-            description="Learn about MSK Sahul Bhai Biryani, explore our restaurant atmosphere, and find direct directions and contact numbers to visit us in person."
+            eyebrow={`About MSK Sahul Bhai Biryani · Since ${BRAND.establishedYear}`}
+            title={ABOUT_STORY.title}
+            accentWord={ABOUT_STORY.accentWord}
+            description={ABOUT_STORY.closingStatement}
           />
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className="border-t border-gold/30 bg-cream py-16 sm:py-24">
+      <section id="story" className="border-t border-gold/30 bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-            <Reveal className="lg:col-span-5">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+            <Reveal className="space-y-6 lg:sticky lg:top-28 lg:col-span-5">
               <div className="rounded-3xl border border-gold/55 bg-white p-8 text-center shadow-[0_18px_45px_-20px_rgba(38,60,48,0.18)]">
-                <span className="text-[10px] font-semibold tracking-[0.26em] text-brand-primary uppercase">
-                  Official Brand Mark
+                <span className="inline-block rounded-full border border-gold/55 bg-cream px-3.5 py-1 text-[10px] font-semibold tracking-[0.22em] text-brand-primary uppercase">
+                  Serving Since {BRAND.establishedYear}
                 </span>
                 <div className="my-6 flex justify-center">
-                  <div className="flex h-60 w-60 items-center justify-center rounded-full bg-cream/70 p-4 ring-1 ring-gold/60">
+                  <div className="flex h-56 w-56 items-center justify-center rounded-full bg-cream/70 p-4 ring-1 ring-gold/60">
                     <img
                       src={BRAND.logoPath}
                       alt="Official MSK Catering Service crest logo"
@@ -59,17 +60,64 @@ export function AboutVisitPage() {
                   {BRAND.cateringBrand}
                 </p>
               </div>
+
+              <div className="rounded-3xl border border-gold/50 bg-gradient-to-br from-brand-primary to-brand-deep p-7 text-center text-white shadow-md">
+                <p className="text-[10px] font-semibold tracking-[0.26em] text-gold-soft uppercase">
+                  Our Promise
+                </p>
+                <p className="mt-2.5 font-serif text-2xl leading-snug font-medium text-white italic">
+                  “{BRAND.heritageTagline}”
+                </p>
+                <div className="mx-auto mt-4 h-px w-14 bg-gold/70" />
+              </div>
             </Reveal>
 
             <Reveal delay={0.1} className="lg:col-span-7">
               <SectionHeading
-                eyebrow="Our Story & Hospitality"
-                title="Dedicated to Flavour,"
-                accentWord="Warmth & Gathering"
-                description="MSK Sahul Bhai Biryani brings together rich, aromatic biryani, Arabian Mandi, and thoughtful hospitality. Rather than automated delivery, we focus on serving guests face-to-face at the restaurant and crafting memorable catering spreads for life’s important occasions."
+                eyebrow={ABOUT_STORY.eyebrow}
+                title={ABOUT_STORY.title}
+                accentWord={ABOUT_STORY.accentWord}
               />
 
-              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="mt-6 space-y-5 rounded-3xl border border-brand-primary/14 bg-white p-6 shadow-xs sm:p-8">
+                {ABOUT_STORY.paragraphs.map((paragraph, idx) => (
+                  <p
+                    key={idx}
+                    className={`leading-relaxed ${
+                      idx === 0
+                        ? 'text-base font-medium text-ink sm:text-[1.0625rem]'
+                        : 'text-sm text-muted sm:text-[0.95rem]'
+                    }`}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+
+                <div className="border-t border-gold/40 pt-5">
+                  <p className="font-serif text-xl font-semibold text-brand-primary sm:text-2xl">
+                    {ABOUT_STORY.closingStatement}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {ABOUT_STORY.pillars.map((pillar) => (
+                  <div
+                    key={pillar.title}
+                    className="rounded-2xl border border-gold/40 bg-cream-soft p-5 shadow-xs"
+                  >
+                    <span className="text-[10px] font-semibold tracking-[0.2em] text-brand-primary uppercase">
+                      {pillar.label}
+                    </span>
+                    <h3 className="mt-1.5 font-serif text-xl font-medium text-ink">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-muted">{pillar.detail}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-brand-primary/14 bg-white p-5 shadow-xs">
                   <h3 className="font-serif text-2xl font-medium text-ink">
                     Visit &amp; Order Directly

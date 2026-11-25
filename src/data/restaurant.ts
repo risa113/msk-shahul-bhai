@@ -50,9 +50,11 @@ export function assetUrl(path: string): string {
 export const BRAND = {
   name: 'MSK Sahul Bhai Biryani',
   cateringBrand: 'MSK Catering Service',
+  establishedYear: '2016',
+  heritageTagline: 'A Decade of Flavour. A Tradition of Trust.',
   heroHeadline: 'A Taste Worth Gathering For.',
   heroSupporting:
-    'Discover authentic slow-cooked aroma, balanced whole spices, and generous hospitality prepared to bring every table together.',
+    'Since 2016, MSK Sahul Bhai Biryani has been serving food lovers with authentic slow-cooked aroma, rich spices, and warm hospitality.',
   logoPath: assetUrl('images/msk-logo.webp'),
   logoFallbackPath: assetUrl('images/msk-logo.png'),
   email: 'mskshahulbhaibiriyani@gmail.com',
@@ -70,6 +72,38 @@ export const BRAND = {
     'Opening hours to be confirmed — please call or message on WhatsApp before visiting.',
   orderingNotice:
     'MSK Sahul Bhai Biryani does not currently offer online ordering or delivery. Customers visit the restaurant in person and order directly.',
+} as const
+
+export const ABOUT_STORY = {
+  eyebrow: 'Since 2016',
+  title: 'A Decade of Taste,',
+  accentWord: 'Tradition & Trust',
+  closingStatement: 'MSK Sahul Bhai Biryani – A Decade of Flavour. A Tradition of Trust.',
+  shortSummary:
+    'Since 2016, MSK Sahul Bhai Biryani has grown through dedication, consistency, and customer trust — bringing people together around signature biryanis, Arabian-style Mandi, speciality gravies, grilled dishes, and celebration catering.',
+  paragraphs: [
+    'Since 2016, MSK Sahul Bhai Biryani has been serving food lovers with a passion for flavour, quality and memorable dining experiences. What began as a journey driven by a love for authentic biryani and delicious food has grown into a name built on dedication, consistency and the trust of our customers. For nearly a decade, we have believed that great food is more than just a meal – it is a way of bringing people together, creating happiness and making every occasion memorable.',
+    'At MSK Sahul Bhai Biryani, we take pride in preparing dishes that bring together rich spices, authentic flavours and the joy of sharing good food. From our signature biryanis and Arabian-style Mandi to our speciality gravies, grilled dishes and flavourful rice varieties, every offering is inspired by our commitment to taste and customer satisfaction. We strive to make every meal an experience worth remembering, whether you are visiting with friends, enjoying a family gathering or celebrating a special occasion.',
+    'Over the years, the appreciation and support of our customers have been an important part of our journey. Their trust inspires us to continue improving, serving with care and maintaining the passion that has been with us since the beginning. We also extend our food experience beyond the restaurant through bulk orders and catering services for weddings, celebrations, gatherings and special events.',
+    'As we move forward, our vision remains simple – to serve delicious food, welcome every customer with warmth and continue building a legacy of flavour, quality and trust.',
+  ],
+  pillars: [
+    {
+      label: 'Since 2016',
+      title: 'Nearly a Decade of Trust',
+      detail: 'A name built on dedication, consistency, and customer appreciation since 2016.',
+    },
+    {
+      label: 'Authentic Kitchen',
+      title: 'Flavour & Variety',
+      detail: 'Signature biryanis, Arabian-style Mandi, speciality gravies, grilled dishes, and rice varieties.',
+    },
+    {
+      label: 'For Every Occasion',
+      title: 'Dining & Celebration Catering',
+      detail: 'Warm restaurant hospitality plus bulk orders and catering for weddings and special events.',
+    },
+  ],
 } as const
 
 export const CONTACT_LINES: ContactLine[] = [
@@ -323,7 +357,7 @@ export const RESTAURANT_GALLERY: GalleryPhoto[] = [
   {
     id: 'rest-1',
     title: 'Warm Evening Dining Ambience',
-    caption: 'A welcoming dark-luxury setting crafted for unhurried meals together.',
+    caption: 'A warm, welcoming dining setting crafted for unhurried meals together.',
     image: assetUrl('images/restaurant-ambience.webp'),
     alt: 'Moody luxury restaurant dining room with brass lanterns and copper tableware',
   },
