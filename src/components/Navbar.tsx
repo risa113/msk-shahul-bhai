@@ -92,7 +92,18 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <a
+            href={BRAND.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Follow ${BRAND.name} on Instagram (${BRAND.instagramHandle})`}
+            title={`Instagram ${BRAND.instagramHandle}`}
+            className="msk-btn hidden h-9 w-9 items-center justify-center rounded-full border border-gold/55 bg-brand-deep/65 text-gold-soft hover:border-gold hover:bg-brand-secondary hover:text-white sm:inline-flex"
+          >
+            <InstagramBrandIcon className="h-4 w-4" />
+          </a>
+
           <a
             href={CONTACT_LINES[0].telHref}
             className="msk-btn group hidden items-center gap-2 rounded-full border border-gold/70 bg-white px-4 py-2 text-xs font-semibold tracking-[0.12em] text-brand-deep uppercase shadow-sm hover:bg-cream sm:inline-flex"

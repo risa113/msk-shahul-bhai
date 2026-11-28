@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import { BiryaniMandiSection } from '../components/BiryaniMandiSection'
 import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
 import { FeaturedSelectionsSection } from '../components/FeaturedSelectionsSection'
+import { InstagramShowcaseSection } from '../components/InstagramShowcaseSection'
 import { Reveal, SectionHeading } from '../components/MotionSection'
 import { SeoHead } from '../components/SeoHead'
 import { MENU_DATA } from '../data/menuData'
@@ -358,6 +359,9 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Instagram Kitchen Highlights */}
+      <InstagramShowcaseSection />
+
       {/* Restaurant Location, NAP & Visit Us */}
       <section className="border-t border-gold/30 bg-cream py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -384,7 +388,7 @@ export function HomePage() {
                     <strong className="font-semibold text-ink">Hours:</strong>{' '}
                     {BRAND.openingHoursStatus}
                   </p>
-                  <div className="flex flex-wrap gap-5 pt-2">
+                  <div className="flex flex-wrap gap-x-5 gap-y-3 pt-2">
                     {CONTACT_LINES.map((line) => (
                       <a
                         key={line.id}
@@ -395,6 +399,18 @@ export function HomePage() {
                         <span>{line.display}</span>
                       </a>
                     ))}
+                    <a
+                      href={buildWhatsAppUrl(
+                        CONTACT_LINES[0].rawDigits,
+                        'Hello MSK Shahul Bhai Biryani, I would like to enquire.'
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-brand-primary uppercase transition-colors hover:text-brand-deep"
+                    >
+                      <WhatsAppBrandIcon className="h-3.5 w-3.5 text-gold" />
+                      <span>WhatsApp: {CONTACT_LINES[0].display}</span>
+                    </a>
                   </div>
                 </div>
               </Reveal>
@@ -404,15 +420,27 @@ export function HomePage() {
                   href={BRAND.mapsUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="msk-btn group inline-flex items-center gap-2 rounded-lg bg-brand-primary px-5 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-sm hover:bg-brand-secondary"
+                  className="msk-btn group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-primary px-5 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-sm hover:bg-brand-secondary sm:w-auto"
                 >
                   <MapPin className="h-4 w-4 text-gold-soft" />
                   <span>Get Directions</span>
                   <ArrowUpRight className="msk-arrow-diag h-4 w-4 text-gold-soft" />
                 </a>
+                <a
+                  href={buildWhatsAppUrl(
+                    CONTACT_LINES[0].rawDigits,
+                    'Hello MSK Shahul Bhai Biryani, I would like to enquire.'
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="msk-btn group inline-flex w-full items-center justify-center gap-2 rounded-lg border border-brand-primary/30 bg-white px-5 py-3 text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:border-brand-primary sm:w-auto"
+                >
+                  <WhatsAppBrandIcon className="h-4 w-4 text-brand-primary" />
+                  <span>WhatsApp Us</span>
+                </a>
                 <Link
                   to="/about/"
-                  className="msk-btn group inline-flex items-center gap-2 rounded-lg border border-brand-primary/30 bg-white px-5 py-3 text-xs font-semibold tracking-[0.14em] text-ink uppercase hover:border-brand-primary hover:text-brand-primary"
+                  className="msk-btn group inline-flex w-full items-center justify-center gap-2 rounded-lg border border-brand-primary/30 bg-white px-5 py-3 text-xs font-semibold tracking-[0.14em] text-ink uppercase hover:border-brand-primary hover:text-brand-primary sm:w-auto"
                 >
                   <span>About &amp; Contact Us</span>
                   <ArrowRight className="msk-arrow-right h-4 w-4" />
@@ -421,7 +449,7 @@ export function HomePage() {
                   href={BRAND.instagramUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="msk-btn inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-white px-5 py-3 text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:border-brand-primary"
+                  className="msk-btn inline-flex w-full items-center justify-center gap-2 rounded-lg border border-gold/50 bg-white px-5 py-3 text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:border-brand-primary sm:w-auto"
                 >
                   <InstagramBrandIcon className="h-4 w-4 text-gold" />
                   <span>Instagram</span>

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Clock, Mail, MapPin, Navigation, Phone } from 'lucide-react'
 import { Breadcrumbs } from '../components/Breadcrumbs'
 import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
+import { InstagramShowcaseSection } from '../components/InstagramShowcaseSection'
 import { Reveal, SectionHeading } from '../components/MotionSection'
 import { SeoHead } from '../components/SeoHead'
 import {
@@ -233,6 +234,9 @@ export function AboutVisitPage() {
           </div>
         </div>
       </section>
+
+      {/* Instagram Feed Integration */}
+      <InstagramShowcaseSection />
 
       {/* Visit Us, Maps, Contact & Hours */}
       <section id="visit" className="border-t border-gold/30 bg-cream py-16 sm:py-24">

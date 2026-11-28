@@ -230,15 +230,22 @@ export function CateringPage() {
 
               <div className="mt-8 space-y-3 rounded-2xl border border-gold/50 bg-brand-deep p-6 text-xs text-cream shadow-md">
                 <p className="font-semibold tracking-[0.16em] text-gold uppercase">
-                  Call Directly
+                  Call or WhatsApp Directly
                 </p>
-                {CONTACT_LINES.map((line) => (
+                {CONTACT_LINES.map((line, idx) => (
                   <a
                     key={line.id}
                     href={line.telHref}
                     className="group flex items-center justify-between border-b border-gold/20 pb-2.5 text-sm text-white transition-colors last:border-b-0 last:pb-0 hover:text-gold-soft"
                   >
-                    <span>{line.display}</span>
+                    <span>
+                      {line.display}
+                      {idx === 0 && (
+                        <span className="ml-2 text-[11px] font-medium text-gold-soft">
+                          (Call &amp; WhatsApp)
+                        </span>
+                      )}
+                    </span>
                     <Phone className="h-4 w-4 text-gold transition-transform duration-300 group-hover:-rotate-12" />
                   </a>
                 ))}

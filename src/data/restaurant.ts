@@ -181,7 +181,7 @@ export const CONTACT_LINES: ContactLine[] = [
     display: '+91 78678 13000',
     rawDigits: '917867813000',
     telHref: 'tel:+917867813000',
-    note: 'General Dining & Catering Enquiries',
+    note: 'Primary Call & WhatsApp Number · General Dining & Catering',
   },
   {
     id: 'line-2',
@@ -191,6 +191,8 @@ export const CONTACT_LINES: ContactLine[] = [
     note: 'Direct Restaurant & Bulk Order Line',
   },
 ]
+
+export const PRIMARY_WHATSAPP_LINE = CONTACT_LINES[0]
 
 export function buildWhatsAppUrl(rawDigits: string, message: string): string {
   const cleanDigits = rawDigits.replace(/[^\d]/g, '')

@@ -107,6 +107,21 @@ export function Footer() {
               ))}
               <li>
                 <a
+                  href={buildWhatsAppUrl(
+                    CONTACT_LINES[0].rawDigits,
+                    'Hello MSK Shahul Bhai Biryani, I would like to enquire.'
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-2 transition-colors hover:text-gold-soft"
+                >
+                  <WhatsAppBrandIcon className="h-3.5 w-3.5 text-gold" />
+                  <span>WhatsApp: {CONTACT_LINES[0].display}</span>
+                  <ArrowUpRight className="msk-arrow-diag h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <a
                   href={BRAND.instagramUrl}
                   target="_blank"
                   rel="noreferrer"

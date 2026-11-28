@@ -105,7 +105,10 @@ function buildRestaurantNode() {
       { '@type': 'City', name: 'Tirunelveli' },
       { '@type': 'Place', name: 'Melapalayam, Tirunelveli' },
     ],
-    sameAs: [BRAND.instagramUrl],
+    sameAs: [
+      BRAND.instagramUrl,
+      `https://wa.me/${CONTACT_LINES[0].rawDigits}`,
+    ],
   }
 }
 
