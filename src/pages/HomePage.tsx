@@ -39,11 +39,11 @@ export function HomePage() {
       <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-brand-deep pt-28 pb-8 sm:pt-32 sm:pb-10">
         <div className="pointer-events-none absolute inset-0">
           <img
-            src={assetUrl(BRAND_IMAGES.heroBiryani.path)}
-            alt="Steaming authentic biryani served in a copper handi at MSK Shahul Bhai Biryani in Tirunelveli"
-            width={BRAND_IMAGES.heroBiryani.width}
-            height={BRAND_IMAGES.heroBiryani.height}
-            className="msk-hero-media h-full w-full object-cover object-center"
+            src={assetUrl(BRAND_IMAGES.founderPortrait.path)}
+            alt="Shahul Bhai, founder of MSK Shahul Bhai Biryani, with signature biryani platter and brand emblem"
+            width={BRAND_IMAGES.founderPortrait.width}
+            height={BRAND_IMAGES.founderPortrait.height}
+            className="msk-hero-media h-full w-full object-cover object-[center_20%]"
             fetchPriority="high"
           />
           <div className="hero-scrim-green absolute inset-0" />
