@@ -13,7 +13,7 @@ export function MenuPage() {
       <SeoHead routeKey="menu" />
 
       {/* Page Hero */}
-      <section className="relative flex min-h-[52vh] items-end overflow-hidden bg-brand-deep pt-36 pb-14 sm:pt-44 sm:pb-16">
+      <section className="relative flex min-h-[44vh] items-end overflow-hidden bg-brand-deep pt-28 pb-12 sm:min-h-[52vh] sm:pt-44 sm:pb-16">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.chickenBiryani.path)}

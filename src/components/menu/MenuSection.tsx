@@ -132,7 +132,7 @@ export function MenuSection() {
                 )}
                 target="_blank"
                 rel="noreferrer"
-                className="msk-btn group inline-flex shrink-0 items-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase hover:bg-brand-secondary"
+                className="msk-btn group inline-flex w-full shrink-0 items-center justify-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase hover:bg-brand-secondary sm:w-auto"
               >
                 <WhatsAppBrandIcon className="h-4 w-4 text-gold-soft" />
                 <span>Enquire on WhatsApp</span>

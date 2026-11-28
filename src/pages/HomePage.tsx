@@ -36,8 +36,9 @@ export function HomePage() {
       <SeoHead routeKey="home" />
 
       {/* Full-Screen Cinematic Hero */}
-      <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-brand-deep pt-28 pb-8 sm:pt-32 sm:pb-10">
-        <div className="pointer-events-none absolute inset-0">
+      <section className="relative flex flex-col justify-between overflow-hidden bg-gradient-to-b from-brand-deep via-brand-primary to-brand-deep pt-24 pb-8 sm:pt-28 lg:min-h-[100svh] lg:pt-32 lg:pb-10">
+        {/* Desktop & Landscape Full-Bleed Hero Banner */}
+        <div className="pointer-events-none absolute inset-0 hidden lg:block">
           <img
             src={assetUrl(BRAND_IMAGES.founderPortrait.path)}
             alt="Shahul Bhai, founder of MSK Shahul Bhai Biryani, with signature biryani platter and brand emblem"
@@ -50,19 +51,34 @@ export function HomePage() {
         </div>
 
         <div className="relative z-10 mx-auto my-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+          {/* Mobile & Portrait Tablet Uncropped Banner Frame */}
+          <div
+            className="msk-hero-stagger mb-6 overflow-hidden rounded-2xl border border-gold/45 bg-brand-deep/70 shadow-xl lg:hidden"
+            style={{ '--msk-hero-delay': '20ms' } as CSSProperties}
+          >
+            <img
+              src={assetUrl(BRAND_IMAGES.founderPortrait.path)}
+              alt="Shahul Bhai, founder of MSK Shahul Bhai Biryani, with signature biryani platter and brand emblem"
+              width={BRAND_IMAGES.founderPortrait.width}
+              height={BRAND_IMAGES.founderPortrait.height}
+              className="msk-hero-media aspect-[16/9] w-full object-cover object-top"
+              fetchPriority="high"
+            />
+          </div>
+
           <div className="max-w-3xl">
             <div
-              className="msk-hero-stagger mb-6 inline-flex items-center gap-3 rounded-full border border-gold/60 bg-brand-deep/80 px-4 py-1.5 backdrop-blur-sm"
+              className="msk-hero-stagger mb-5 inline-flex items-center gap-2.5 rounded-full border border-gold/60 bg-brand-deep/80 px-3.5 py-1.5 backdrop-blur-sm sm:mb-6 sm:gap-3 sm:px-4"
               style={{ '--msk-hero-delay': '40ms' } as CSSProperties}
             >
-              <Sparkles className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-              <span className="text-[11px] font-semibold tracking-[0.22em] text-gold-soft uppercase">
+              <Sparkles className="h-3.5 w-3.5 shrink-0 text-gold" aria-hidden="true" />
+              <span className="text-[10px] font-semibold tracking-[0.18em] text-gold-soft uppercase sm:text-[11px] sm:tracking-[0.22em]">
                 Melapalayam, Tirunelveli · Since {BRAND.establishedYear}
               </span>
             </div>
 
             <h1
-              className="msk-hero-headline font-serif text-4xl leading-[1.06] font-extrabold tracking-tight text-white drop-shadow-[0_2px_14px_rgba(36,6,12,0.68)] sm:text-5xl lg:text-[4.25rem]"
+              className="msk-hero-headline font-serif text-[2rem] leading-[1.08] font-extrabold tracking-tight text-white drop-shadow-[0_2px_14px_rgba(36,6,12,0.68)] sm:text-5xl lg:text-[4.25rem]"
               style={{ '--msk-hero-delay': '120ms' } as CSSProperties}
             >
               MSK Shahul Bhai Biryani – <br className="hidden sm:block" />
@@ -70,19 +86,19 @@ export function HomePage() {
             </h1>
 
             <p
-              className="msk-hero-copy mt-6 max-w-xl text-base leading-relaxed text-cream/95 drop-shadow-[0_1px_10px_rgba(36,6,12,0.68)] sm:text-lg"
+              className="msk-hero-copy mt-4 max-w-xl text-sm leading-relaxed text-cream/95 drop-shadow-[0_1px_10px_rgba(36,6,12,0.68)] sm:mt-6 sm:text-lg"
               style={{ '--msk-hero-delay': '210ms' } as CSSProperties}
             >
               {BRAND.heroSupporting}
             </p>
 
             <div
-              className="msk-hero-actions mt-9 flex flex-wrap items-center gap-3.5 sm:gap-4"
+              className="msk-hero-actions mt-7 grid grid-cols-1 gap-3 sm:mt-9 sm:flex sm:flex-wrap sm:items-center sm:gap-4"
               style={{ '--msk-hero-delay': '290ms' } as CSSProperties}
             >
               <Link
                 to="/menu/"
-                className="msk-btn group inline-flex min-h-[50px] items-center justify-center gap-3 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md hover:bg-brand-secondary"
+                className="msk-btn group inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md hover:bg-brand-secondary sm:min-h-[50px] sm:w-auto"
               >
                 <span>Explore Our Menu</span>
                 <ArrowRight className="msk-arrow-right h-4 w-4 text-gold-soft" />
@@ -90,14 +106,14 @@ export function HomePage() {
 
               <Link
                 to="/catering/"
-                className="msk-btn inline-flex min-h-[50px] items-center justify-center gap-2.5 rounded-lg border border-gold/50 bg-brand-secondary/95 px-6 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md hover:bg-brand-primary"
+                className="msk-btn inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-lg border border-gold/50 bg-brand-secondary/95 px-6 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md hover:bg-brand-primary sm:min-h-[50px] sm:w-auto"
               >
                 <span>Catering Enquiry</span>
               </Link>
 
               <Link
                 to="/about/"
-                className="msk-btn inline-flex min-h-[50px] items-center justify-center gap-2.5 rounded-lg border border-gold/50 bg-white/95 px-6 py-3 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-md hover:bg-cream"
+                className="msk-btn inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-lg border border-gold/50 bg-white/95 px-6 py-3 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-md hover:bg-cream sm:min-h-[50px] sm:w-auto"
               >
                 <MapPin className="h-4 w-4 text-brand-primary" />
                 <span>Visit Us</span>
@@ -107,7 +123,7 @@ export function HomePage() {
         </div>
 
         <div
-          className="msk-hero-bar relative z-10 mx-auto mt-12 flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-gold/30 px-5 pt-5 text-[11px] tracking-[0.2em] text-cream/90 uppercase sm:px-8 lg:px-10"
+          className="msk-hero-bar relative z-10 mx-auto mt-8 flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-gold/30 px-5 pt-5 text-[11px] tracking-[0.2em] text-cream/90 uppercase sm:px-8 lg:mt-12 lg:px-10"
           style={{ '--msk-hero-delay': '380ms' } as CSSProperties}
         >
           <span className="hidden sm:inline">{BRAND.areaSummary}</span>
@@ -190,7 +206,7 @@ export function HomePage() {
                       decoding="async"
                       width={BRAND_IMAGES.founderPortrait.width}
                       height={BRAND_IMAGES.founderPortrait.height}
-                      className="msk-img-zoom aspect-[16/9] w-full object-cover object-center"
+                      className="msk-img-zoom aspect-[16/9] w-full object-cover object-top"
                     />
                   </div>
                 </div>
@@ -206,7 +222,7 @@ export function HomePage() {
                       decoding="async"
                       width={BRAND_IMAGES.restaurantAmbience.width}
                       height={BRAND_IMAGES.restaurantAmbience.height}
-                      className="msk-img-zoom h-[340px] w-full object-cover sm:h-[420px]"
+                      className="msk-img-zoom aspect-[16/10] w-full object-cover sm:aspect-auto sm:h-[420px]"
                     />
                   </div>
                   <div className="px-5 py-3.5 text-xs font-medium tracking-[0.14em] text-brand-primary uppercase">
@@ -239,7 +255,7 @@ export function HomePage() {
                     decoding="async"
                     width={BRAND_IMAGES.dumMuttonBiryani.width}
                     height={BRAND_IMAGES.dumMuttonBiryani.height}
-                    className="msk-img-zoom h-[360px] w-full object-cover sm:h-[450px]"
+                    className="msk-img-zoom aspect-[4/3] w-full object-cover sm:aspect-auto sm:h-[450px]"
                   />
                   <span className="absolute top-4 left-4 rounded-full border border-gold/70 bg-brand-primary px-4 py-1.5 text-[10px] font-semibold tracking-[0.2em] text-white uppercase shadow-sm">
                     Signature Category
@@ -333,7 +349,7 @@ export function HomePage() {
                     decoding="async"
                     width={BRAND_IMAGES.weddingCatering.width}
                     height={BRAND_IMAGES.weddingCatering.height}
-                    className="msk-img-zoom h-[320px] w-full object-cover sm:h-[400px]"
+                    className="msk-img-zoom aspect-[16/10] w-full object-cover sm:aspect-auto sm:h-[400px]"
                   />
                 </div>
               </div>

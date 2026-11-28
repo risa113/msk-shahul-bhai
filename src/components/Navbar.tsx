@@ -57,10 +57,10 @@ export function Navbar() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-serif text-lg leading-tight font-semibold tracking-wide text-white sm:text-xl">
+            <span className="font-serif text-base leading-tight font-semibold tracking-wide text-white sm:text-xl">
               MSK Shahul Bhai
             </span>
-            <span className="text-[10px] font-medium tracking-[0.24em] text-gold-soft uppercase">
+            <span className="text-[9px] font-medium tracking-[0.16em] text-gold-soft uppercase sm:text-[10px] sm:tracking-[0.24em]">
               Biryani &amp; Catering
             </span>
           </div>

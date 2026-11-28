@@ -15,7 +15,7 @@ export function SignaturePage() {
       <SeoHead routeKey="signature" />
 
       {/* Editorial Hero */}
-      <section className="relative flex min-h-[56vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
+      <section className="relative flex min-h-[46vh] items-end overflow-hidden bg-brand-deep pt-28 pb-12 sm:min-h-[56vh] sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.dumMuttonBiryani.path)}
@@ -66,7 +66,7 @@ export function SignaturePage() {
                       decoding="async"
                       width={item.imageWidth}
                       height={item.imageHeight}
-                      className="msk-img-zoom h-[320px] w-full object-cover sm:h-[420px]"
+                      className="msk-img-zoom aspect-[16/10] w-full object-cover sm:aspect-auto sm:h-[420px]"
                     />
                     <span className="absolute top-4 left-4 rounded-full border border-gold/70 bg-brand-primary px-3.5 py-1 font-serif text-sm text-white shadow-sm">
                       {item.number}

@@ -40,12 +40,12 @@ export function MenuFoodCard({ dish, index = 0 }: MenuFoodCardProps) {
           </div>
         </div>
 
-        <div className="flex flex-1 flex-col justify-between p-5">
+        <div className="flex flex-1 flex-col justify-between p-4 sm:p-5">
           <div>
             <p className="text-[10px] font-semibold tracking-[0.2em] text-brand-secondary uppercase">
               {dish.categoryTitle}
             </p>
-            <h3 className="mt-1.5 font-serif text-2xl leading-snug font-bold text-ink transition-colors duration-200 group-hover:text-brand-primary">
+            <h3 className="mt-1.5 font-serif text-xl leading-snug font-bold text-ink transition-colors duration-200 group-hover:text-brand-primary sm:text-2xl">
               {dish.name}
             </h3>
           </div>

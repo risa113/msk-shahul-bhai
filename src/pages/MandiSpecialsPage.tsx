@@ -19,7 +19,7 @@ export function MandiSpecialsPage() {
       <SeoHead routeKey="mandi" />
 
       {/* Hero */}
-      <section className="relative flex min-h-[54vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
+      <section className="relative flex min-h-[44vh] items-end overflow-hidden bg-brand-deep pt-28 pb-12 sm:min-h-[54vh] sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.alfahamMandi.path)}

@@ -49,7 +49,7 @@ export function CateringPage() {
       <SeoHead routeKey="catering" />
 
       {/* Catering Hero */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
+      <section className="relative flex min-h-[48vh] items-end overflow-hidden bg-brand-deep pt-28 pb-12 sm:min-h-[60vh] sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.weddingCatering.path)}
@@ -76,7 +76,7 @@ export function CateringPage() {
             description="At MSK Shahul Bhai Biryani, we bring the flavour of our kitchen to your celebrations. From weddings and family gatherings to special functions and large events, our catering and bulk food services are designed to help make every occasion memorable."
           />
 
-          <div className="msk-hero-actions mt-8 flex flex-wrap gap-3.5">
+          <div className="msk-hero-actions mt-8 flex flex-wrap gap-3 sm:gap-3.5">
             <a
               href={buildWhatsAppUrl(
                 CONTACT_LINES[0].rawDigits,
@@ -84,7 +84,7 @@ export function CateringPage() {
               )}
               target="_blank"
               rel="noreferrer"
-              className="msk-btn group inline-flex items-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md hover:bg-brand-secondary"
+              className="msk-btn group inline-flex w-full items-center justify-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md hover:bg-brand-secondary sm:w-auto"
             >
               <WhatsAppBrandIcon className="h-4 w-4 text-gold-soft" />
               <span>Enquire for Catering</span>
@@ -93,14 +93,14 @@ export function CateringPage() {
 
             <a
               href="#catering-enquiry-form"
-              className="msk-btn inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-white/95 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-md hover:bg-cream"
+              className="msk-btn inline-flex w-full items-center justify-center gap-2 rounded-lg border border-gold/50 bg-white/95 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-md hover:bg-cream sm:w-auto"
             >
               <span>Prepare WhatsApp Message</span>
             </a>
 
             <Link
               to="/wedding-catering/"
-              className="msk-btn group inline-flex items-center gap-2 rounded-lg border border-gold/55 bg-brand-deep/75 px-5 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase hover:bg-brand-deep"
+              className="msk-btn group inline-flex w-full items-center justify-center gap-2 rounded-lg border border-gold/55 bg-brand-deep/75 px-5 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase hover:bg-brand-deep sm:w-auto"
             >
               <span>Wedding &amp; Bulk Orders</span>
               <ArrowRight className="msk-arrow-right h-4 w-4 text-gold-soft" />
@@ -189,7 +189,7 @@ export function CateringPage() {
             {CATERING_GALLERY.map((photo, idx) => (
               <Reveal key={photo.id} as="figure" variant="image-curtain" delay={idx * 0.08} className="h-full">
                 <div className="luxury-panel group h-full overflow-hidden">
-                  <div className="relative h-64 overflow-hidden bg-cream">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-cream sm:aspect-auto sm:h-64">
                     <img
                       src={photo.image}
                       alt={photo.alt}

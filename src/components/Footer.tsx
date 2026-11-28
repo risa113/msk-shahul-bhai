@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="border-t-2 border-gold/45 bg-brand-deep text-cream">
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-5 pt-16 pb-24 sm:px-8 sm:py-16 lg:px-10">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12">
           <Reveal variant="fade-up" className="lg:col-span-4">
             <Link to="/" className="group inline-flex items-center gap-3.5">

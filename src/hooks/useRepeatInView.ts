@@ -81,9 +81,9 @@ export function useRepeatInView<T extends HTMLElement = HTMLDivElement>(
 ) {
   const {
     once = false,
-    threshold = 0.1,
-    rootMargin = '0px 0px -6% 0px',
-    minIntersectHeight = 72,
+    threshold = 0.08,
+    rootMargin = '0px 0px -2% 0px',
+    minIntersectHeight = 48,
     disabled = false,
   } = options
 
@@ -107,7 +107,7 @@ export function useRepeatInView<T extends HTMLElement = HTMLDivElement>(
 
     const rect = el.getBoundingClientRect()
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight
-    const initiallyVisible = rect.bottom > 0 && rect.top < viewportHeight * 0.94
+    const initiallyVisible = rect.bottom > 0 && rect.top < viewportHeight * 0.96
 
     setState(initiallyVisible ? 'visible' : 'waiting')
 
@@ -120,7 +120,7 @@ export function useRepeatInView<T extends HTMLElement = HTMLDivElement>(
       }
 
       const targetHeight = entry.boundingClientRect.height
-      const smallTargetRatio = targetHeight <= 140 ? Math.max(threshold, 0.14) : threshold
+      const smallTargetRatio = targetHeight <= 140 ? Math.max(threshold, 0.08) : threshold
       const isEntering =
         entry.isIntersecting &&
         (entry.intersectionRatio >= smallTargetRatio ||

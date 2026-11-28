@@ -1,74 +1,18 @@
-import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, MoonStar, UtensilsCrossed } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { BRAND_IMAGES, assetUrl } from '../data/restaurant'
-
-type AnimState = 'ssr' | 'waiting' | 'visible'
+import { useRepeatInView } from '../hooks/useRepeatInView'
 
 export function BiryaniMandiSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [animState, setAnimState] = useState<AnimState>('ssr')
-
-  useEffect(() => {
-    const node = sectionRef.current
-    if (!node) return
-
-    const prefersReduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    if (prefersReduced || typeof IntersectionObserver === 'undefined') {
-      setAnimState('visible')
-      return
-    }
-
-    let firstRaf = 0
-    let secondRaf = 0
-
-    const rect = node.getBoundingClientRect()
-    const initiallyVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0
-
-    if (initiallyVisible) {
-      setAnimState('waiting')
-      firstRaf = window.requestAnimationFrame(() => {
-        secondRaf = window.requestAnimationFrame(() => setAnimState('visible'))
-      })
-    } else {
-      setAnimState('waiting')
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          setAnimState('waiting')
-          return
-        }
-
-        if (entry.intersectionRatio >= 0.14 || entry.intersectionRect.height >= 110) {
-          setAnimState('visible')
-        }
-      },
-      { threshold: [0, 0.14] }
-    )
-
-    observer.observe(node)
-
-    return () => {
-      if (firstRaf) window.cancelAnimationFrame(firstRaf)
-      if (secondRaf) window.cancelAnimationFrame(secondRaf)
-      observer.disconnect()
-    }
-  }, [])
+  const headingView = useRepeatInView<HTMLDivElement>({ threshold: 0.1, minIntersectHeight: 40 })
+  const leftCardView = useRepeatInView<HTMLElement>({ threshold: 0.08, minIntersectHeight: 48 })
+  const rightCardView = useRepeatInView<HTMLElement>({ threshold: 0.08, minIntersectHeight: 48 })
 
   return (
-    <section
-      ref={sectionRef}
-      data-bm-state={animState}
-      className="bm-section overflow-x-clip border-t border-gold/30 bg-white py-16 sm:py-24"
-    >
+    <section className="overflow-x-clip border-t border-gold/30 bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         {/* Section Heading */}
-        <div className="max-w-2xl">
+        <div ref={headingView.ref} data-bm-state={headingView.state} className="bm-section max-w-2xl">
           <div className="bm-eyebrow mb-4 inline-flex items-center gap-3 text-[11px] font-semibold tracking-[0.26em] text-brand-primary uppercase">
             <span className="h-px w-7 bg-gold" aria-hidden="true" />
             <span>House Kitchen Specialities</span>
@@ -94,84 +38,88 @@ export function BiryaniMandiSection() {
         {/* Two Feature Cards */}
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Left Card: Biryani Collection */}
-          <article className="bm-card bm-card-left luxury-panel group flex flex-col justify-between overflow-hidden bg-cream-soft sm:flex-row">
-            <div className="bm-card-media relative h-56 shrink-0 overflow-hidden sm:h-auto sm:w-52">
-              <div className="bm-card-img-reveal h-full w-full">
-                <img
-                  src={assetUrl(BRAND_IMAGES.chickenBiryani.path)}
-                  alt="Chicken Biryani prepared with aromatic whole spices at MSK Shahul Bhai Biryani Tirunelveli"
-                  loading="lazy"
-                  decoding="async"
-                  width={BRAND_IMAGES.chickenBiryani.width}
-                  height={BRAND_IMAGES.chickenBiryani.height}
-                  className="bm-card-img h-full w-full object-cover"
-                />
+          <div ref={leftCardView.ref as never} data-bm-state={leftCardView.state} className="bm-section">
+            <article className="bm-card bm-card-left luxury-panel group flex h-full flex-col justify-between overflow-hidden bg-cream-soft sm:flex-row">
+              <div className="bm-card-media relative aspect-[16/10] w-full shrink-0 overflow-hidden sm:aspect-auto sm:h-auto sm:w-52">
+                <div className="bm-card-img-reveal h-full w-full">
+                  <img
+                    src={assetUrl(BRAND_IMAGES.chickenBiryani.path)}
+                    alt="Chicken Biryani prepared with aromatic whole spices at MSK Shahul Bhai Biryani Tirunelveli"
+                    loading="lazy"
+                    decoding="async"
+                    width={BRAND_IMAGES.chickenBiryani.width}
+                    height={BRAND_IMAGES.chickenBiryani.height}
+                    className="bm-card-img h-full w-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="flex flex-1 flex-col justify-between p-6">
-              <div>
-                <span className="bm-stagger bm-stagger-1 inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
-                  <UtensilsCrossed className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                  <span>Morning to Night</span>
-                </span>
-                <h3 className="bm-stagger bm-stagger-2 mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
-                  Biryani Collection
-                </h3>
-                <p className="bm-stagger bm-stagger-3 mt-2 text-xs leading-relaxed text-muted">
-                  Mutton Biryani, Chicken Biryani, Fish Biryani, Prawn Biryani, Hyderabadi Biryani,
-                  Egg Biryani, White Biryani, and Thokku Biryani.
-                </p>
+              <div className="flex flex-1 flex-col justify-between p-6">
+                <div>
+                  <span className="bm-stagger bm-stagger-1 inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
+                    <UtensilsCrossed className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                    <span>Morning to Night</span>
+                  </span>
+                  <h3 className="bm-stagger bm-stagger-2 mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
+                    Biryani Collection
+                  </h3>
+                  <p className="bm-stagger bm-stagger-3 mt-2 text-xs leading-relaxed text-muted">
+                    Mutton Biryani, Chicken Biryani, Fish Biryani, Prawn Biryani, Hyderabadi Biryani,
+                    Egg Biryani, White Biryani, and Thokku Biryani.
+                  </p>
+                </div>
+                <Link
+                  to="/menu/#category-biryani"
+                  className="bm-stagger bm-stagger-4 bm-cta-link mt-5 inline-flex items-center gap-2 self-start text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:text-brand-deep"
+                >
+                  <span>Explore Biryani Menu</span>
+                  <ArrowRight className="bm-cta-arrow h-4 w-4" />
+                </Link>
               </div>
-              <Link
-                to="/menu/#category-biryani"
-                className="bm-stagger bm-stagger-4 bm-cta-link mt-5 inline-flex items-center gap-2 self-start text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:text-brand-deep"
-              >
-                <span>Explore Biryani Menu</span>
-                <ArrowRight className="bm-cta-arrow h-4 w-4" />
-              </Link>
-            </div>
-          </article>
+            </article>
+          </div>
 
           {/* Right Card: Arabian Mandi Specials */}
-          <article className="bm-card bm-card-right luxury-panel group flex flex-col justify-between overflow-hidden border-gold/60 bg-cream-soft sm:flex-row">
-            <div className="bm-card-media relative h-56 shrink-0 overflow-hidden sm:h-auto sm:w-52">
-              <div className="bm-card-img-reveal h-full w-full">
-                <img
-                  src={assetUrl(BRAND_IMAGES.alfahamMandi.path)}
-                  alt="Alfaham Mandi served fresh from 6:30 PM onwards at MSK Shahul Bhai Biryani Melapalayam"
-                  loading="lazy"
-                  decoding="async"
-                  width={BRAND_IMAGES.alfahamMandi.width}
-                  height={BRAND_IMAGES.alfahamMandi.height}
-                  className="bm-card-img h-full w-full object-cover"
-                />
+          <div ref={rightCardView.ref as never} data-bm-state={rightCardView.state} className="bm-section">
+            <article className="bm-card bm-card-right luxury-panel group flex h-full flex-col justify-between overflow-hidden border-gold/60 bg-cream-soft sm:flex-row">
+              <div className="bm-card-media relative aspect-[16/10] w-full shrink-0 overflow-hidden sm:aspect-auto sm:h-auto sm:w-52">
+                <div className="bm-card-img-reveal h-full w-full">
+                  <img
+                    src={assetUrl(BRAND_IMAGES.alfahamMandi.path)}
+                    alt="Alfaham Mandi served fresh from 6:30 PM onwards at MSK Shahul Bhai Biryani Melapalayam"
+                    loading="lazy"
+                    decoding="async"
+                    width={BRAND_IMAGES.alfahamMandi.width}
+                    height={BRAND_IMAGES.alfahamMandi.height}
+                    className="bm-card-img h-full w-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="flex flex-1 flex-col justify-between p-6">
-              <div>
-                <span className="bm-stagger bm-stagger-1 inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
-                  <MoonStar className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                  <span>Evening Speciality · 6:30 PM Onwards</span>
-                </span>
-                <h3 className="bm-stagger bm-stagger-2 mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
-                  Arabian Mandi Specials
-                </h3>
-                <p className="bm-stagger bm-stagger-3 mt-2 text-xs leading-relaxed text-muted">
-                  Served freshly each evening from 6:30 PM onwards: Chicken Mandi, Alfaham Mandi,
-                  Fish Mandi, Golden Mandi, and Masala Peri Peri Mandi.
-                </p>
+              <div className="flex flex-1 flex-col justify-between p-6">
+                <div>
+                  <span className="bm-stagger bm-stagger-1 inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
+                    <MoonStar className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                    <span>Evening Speciality · 6:30 PM Onwards</span>
+                  </span>
+                  <h3 className="bm-stagger bm-stagger-2 mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
+                    Arabian Mandi Specials
+                  </h3>
+                  <p className="bm-stagger bm-stagger-3 mt-2 text-xs leading-relaxed text-muted">
+                    Served freshly each evening from 6:30 PM onwards: Chicken Mandi, Alfaham Mandi,
+                    Fish Mandi, Golden Mandi, and Masala Peri Peri Mandi.
+                  </p>
+                </div>
+                <Link
+                  to="/menu/mandi/"
+                  className="bm-stagger bm-stagger-4 bm-cta-link mt-5 inline-flex items-center gap-2 self-start text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:text-brand-deep"
+                >
+                  <span>View Evening Mandi Page</span>
+                  <ArrowRight className="bm-cta-arrow h-4 w-4" />
+                </Link>
               </div>
-              <Link
-                to="/menu/mandi/"
-                className="bm-stagger bm-stagger-4 bm-cta-link mt-5 inline-flex items-center gap-2 self-start text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:text-brand-deep"
-              >
-                <span>View Evening Mandi Page</span>
-                <ArrowRight className="bm-cta-arrow h-4 w-4" />
-              </Link>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </div>
     </section>

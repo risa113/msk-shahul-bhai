@@ -43,7 +43,7 @@ export function Layout({ children }: { children: ReactNode }) {
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp Enquiry"
-        className="msk-whatsapp-float msk-btn group fixed right-5 bottom-5 z-40 inline-flex items-center gap-2.5 rounded-full border border-gold/70 bg-brand-primary px-4 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_28px_rgba(63,9,19,0.28)] backdrop-blur-md hover:border-gold hover:bg-brand-secondary"
+        className="msk-whatsapp-float msk-btn group fixed right-4 bottom-4 z-40 inline-flex items-center gap-2.5 rounded-full border border-gold/70 bg-brand-primary px-3.5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_28px_rgba(63,9,19,0.28)] backdrop-blur-md hover:border-gold hover:bg-brand-secondary sm:right-5 sm:bottom-5 sm:px-4"
       >
         <WhatsAppBrandIcon className="h-4 w-4 text-gold-soft transition-transform duration-300 group-hover:-rotate-12" />
         <span className="hidden sm:inline">WhatsApp</span>

@@ -22,7 +22,7 @@ export function AboutVisitPage() {
       <SeoHead routeKey="about" />
 
       {/* Page Hero */}
-      <section className="relative flex min-h-[54vh] items-end overflow-hidden bg-brand-deep pt-36 pb-16 sm:pt-44 sm:pb-20">
+      <section className="relative flex min-h-[44vh] items-end overflow-hidden bg-brand-deep pt-28 pb-12 sm:min-h-[54vh] sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={assetUrl(BRAND_IMAGES.restaurantAmbience.path)}
@@ -66,7 +66,7 @@ export function AboutVisitPage() {
                       decoding="async"
                       width={BRAND_IMAGES.founderPortrait.width}
                       height={BRAND_IMAGES.founderPortrait.height}
-                      className="msk-img-zoom aspect-[16/9] w-full object-cover object-center"
+                      className="msk-img-zoom aspect-[16/9] w-full object-cover object-top"
                     />
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export function AboutVisitPage() {
                     Serving Since {BRAND.establishedYear}
                   </span>
                   <div className="my-6 flex justify-center">
-                    <div className="flex h-56 w-56 items-center justify-center rounded-full bg-cream/70 p-4 ring-1 ring-gold/60">
+                    <div className="flex h-40 w-40 items-center justify-center rounded-full bg-cream/70 p-4 ring-1 ring-gold/60 sm:h-56 sm:w-56">
                       <img
                         src={BRAND.logoPath}
                         alt="Official MSK Catering Service crest logo"
@@ -210,7 +210,7 @@ export function AboutVisitPage() {
             {RESTAURANT_GALLERY.map((photo, idx) => (
               <Reveal key={photo.id} as="figure" variant="card-stagger" delay={idx * 0.07} className="h-full">
                 <div className="luxury-panel group h-full overflow-hidden">
-                  <div className="h-64 overflow-hidden bg-cream">
+                  <div className="aspect-[4/3] overflow-hidden bg-cream sm:aspect-auto sm:h-64">
                     <img
                       src={photo.image}
                       alt={photo.alt}
@@ -323,7 +323,7 @@ export function AboutVisitPage() {
                         <span className="text-[10px] font-semibold tracking-[0.2em] text-brand-secondary uppercase">
                           Phone Line 0{idx + 1}
                         </span>
-                        <p className="mt-1 font-serif text-3xl text-ink">{line.display}</p>
+                        <p className="mt-1 font-serif text-2xl text-ink sm:text-3xl">{line.display}</p>
                         <p className="mt-1 text-[11px] text-muted">{line.note}</p>
 
                         <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">

@@ -12,7 +12,7 @@ export function MenuCategoryNavigation({
   onSelectCategory,
 }: MenuCategoryNavigationProps) {
   return (
-    <div className="sticky top-[68px] z-30 border-y border-gold/30 bg-white/95 shadow-xs backdrop-blur-md sm:top-[76px]">
+    <div className="sticky top-[72px] z-30 border-y border-gold/30 bg-white/95 shadow-xs backdrop-blur-md sm:top-[76px]">
       <nav
         aria-label="Menu Categories"
         className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-5 py-3.5 sm:px-8 lg:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
