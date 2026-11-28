@@ -41,6 +41,11 @@ export function assetUrl(path: string): string {
 }
 
 export const BRAND_IMAGES = {
+  founderPortrait: {
+    path: 'images/msk-shahul-bhai-biryani-founder.webp',
+    width: 1024,
+    height: 576,
+  },
   logoWebp: {
     path: 'images/msk-shahul-bhai-biryani-logo.webp',
     width: 420,

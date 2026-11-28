@@ -53,6 +53,20 @@ export function AboutVisitPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
             <Reveal className="space-y-6 lg:sticky lg:top-28 lg:col-span-5">
+              <div className="overflow-hidden rounded-3xl border border-gold/55 bg-white p-2 shadow-[0_18px_45px_-20px_rgba(38,60,48,0.18)]">
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src={assetUrl(BRAND_IMAGES.founderPortrait.path)}
+                    alt="Shahul Bhai, founder of MSK Shahul Bhai Biryani in Tirunelveli"
+                    loading="lazy"
+                    decoding="async"
+                    width={BRAND_IMAGES.founderPortrait.width}
+                    height={BRAND_IMAGES.founderPortrait.height}
+                    className="aspect-[16/9] w-full object-cover object-center"
+                  />
+                </div>
+              </div>
+
               <div className="rounded-3xl border border-gold/55 bg-white p-8 text-center shadow-[0_18px_45px_-20px_rgba(38,60,48,0.18)]">
                 <span className="inline-block rounded-full border border-gold/55 bg-cream px-3.5 py-1 text-[10px] font-semibold tracking-[0.22em] text-brand-primary uppercase">
                   Serving Since {BRAND.establishedYear}

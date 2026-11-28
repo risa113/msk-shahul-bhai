@@ -160,7 +160,21 @@ export function HomePage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.1} className="lg:col-span-6">
+            <Reveal delay={0.1} className="space-y-5 lg:col-span-6">
+              <div className="overflow-hidden rounded-3xl border border-gold/40 bg-white p-2 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.22)]">
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src={assetUrl(BRAND_IMAGES.founderPortrait.path)}
+                    alt="Shahul Bhai, founder of MSK Shahul Bhai Biryani in Tirunelveli"
+                    loading="lazy"
+                    decoding="async"
+                    width={BRAND_IMAGES.founderPortrait.width}
+                    height={BRAND_IMAGES.founderPortrait.height}
+                    className="aspect-[16/9] w-full object-cover object-center"
+                  />
+                </div>
+              </div>
+
               <div className="overflow-hidden rounded-3xl border border-gold/40 bg-white p-2 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.22)]">
                 <div className="overflow-hidden rounded-2xl">
                   <img
