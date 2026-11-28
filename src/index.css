@@ -112,3 +112,240 @@
     animation: none !important;
   }
 }
+
+/* Home Biryani & Evening Mandi Section Scroll & Hover Animations */
+.bm-section {
+  --bm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bm-heading-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+.bm-heading-line {
+  display: inline-block;
+}
+
+.bm-section[data-bm-state="waiting"] .bm-eyebrow {
+  opacity: 0;
+  transform: translate3d(0, -14px, 0);
+}
+
+.bm-section[data-bm-state="waiting"] .bm-heading-line {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+.bm-section[data-bm-state="waiting"] .bm-description {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+.bm-section[data-bm-state="waiting"] .bm-card-left {
+  opacity: 0;
+  transform: translate3d(-28px, 12px, 0);
+}
+
+.bm-section[data-bm-state="waiting"] .bm-card-right {
+  opacity: 0;
+  transform: translate3d(28px, 12px, 0);
+}
+
+.bm-section[data-bm-state="waiting"] .bm-card-left .bm-card-media {
+  clip-path: inset(0 100% 0 0);
+  opacity: 0.2;
+}
+
+.bm-section[data-bm-state="waiting"] .bm-card-right .bm-card-media {
+  clip-path: inset(0 0 0 100%);
+  opacity: 0.2;
+}
+
+.bm-section[data-bm-state="waiting"] .bm-card-img-reveal {
+  transform: scale(1.08);
+}
+
+.bm-section[data-bm-state="waiting"] .bm-stagger {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+}
+
+.bm-section[data-bm-state="visible"] .bm-eyebrow {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.65s var(--bm-ease) 0.04s, transform 0.65s var(--bm-ease) 0.04s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-line-1 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.72s var(--bm-ease) 0.14s, transform 0.72s var(--bm-ease) 0.14s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-line-2 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.76s var(--bm-ease) 0.24s, transform 0.76s var(--bm-ease) 0.24s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-description {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.72s var(--bm-ease) 0.34s, transform 0.72s var(--bm-ease) 0.34s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-left {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.78s var(--bm-ease) 0.28s,
+    transform 0.78s var(--bm-ease) 0.28s,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-right {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.78s var(--bm-ease) 0.38s,
+    transform 0.78s var(--bm-ease) 0.38s,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-left .bm-card-media {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transition: clip-path 0.86s var(--bm-ease) 0.36s, opacity 0.6s ease 0.36s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-right .bm-card-media {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transition: clip-path 0.86s var(--bm-ease) 0.46s, opacity 0.6s ease 0.46s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-left .bm-card-img-reveal {
+  transform: scale(1);
+  transition: transform 1.05s var(--bm-ease) 0.36s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-right .bm-card-img-reveal {
+  transform: scale(1);
+  transition: transform 1.05s var(--bm-ease) 0.46s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-left .bm-stagger-1 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.58s var(--bm-ease) 0.44s, transform 0.58s var(--bm-ease) 0.44s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-left .bm-stagger-2 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.62s var(--bm-ease) 0.52s, transform 0.62s var(--bm-ease) 0.52s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-left .bm-stagger-3 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.62s var(--bm-ease) 0.60s, transform 0.62s var(--bm-ease) 0.60s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-left .bm-stagger-4 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.62s var(--bm-ease) 0.68s, transform 0.62s var(--bm-ease) 0.68s, color 0.25s ease;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-right .bm-stagger-1 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.58s var(--bm-ease) 0.54s, transform 0.58s var(--bm-ease) 0.54s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-right .bm-stagger-2 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.62s var(--bm-ease) 0.62s, transform 0.62s var(--bm-ease) 0.62s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-right .bm-stagger-3 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.62s var(--bm-ease) 0.70s, transform 0.62s var(--bm-ease) 0.70s;
+}
+
+.bm-section[data-bm-state="visible"] .bm-card-right .bm-stagger-4 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.62s var(--bm-ease) 0.78s, transform 0.62s var(--bm-ease) 0.78s, color 0.25s ease;
+}
+
+.bm-card-img {
+  transition: transform 0.75s var(--bm-ease);
+  will-change: transform;
+}
+
+.bm-card:hover .bm-card-img {
+  transform: scale(1.06);
+}
+
+.bm-cta-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.bm-cta-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.32s var(--bm-ease);
+}
+
+.bm-cta-link:hover::after {
+  transform: scaleX(1);
+}
+
+.bm-cta-arrow {
+  transition: transform 0.32s var(--bm-ease);
+}
+
+.bm-cta-link:hover .bm-cta-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 639px) {
+  .bm-section[data-bm-state="waiting"] .bm-card-left {
+    transform: translate3d(-14px, 12px, 0);
+  }
+  .bm-section[data-bm-state="waiting"] .bm-card-right {
+    transform: translate3d(14px, 12px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bm-section[data-bm-state] * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  .bm-card:hover .bm-card-img,
+  .bm-cta-link:hover .bm-cta-arrow {
+    transform: none !important;
+  }
+}

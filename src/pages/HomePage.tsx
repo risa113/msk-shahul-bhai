@@ -3,12 +3,11 @@ import {
   ArrowRight,
   ArrowUpRight,
   MapPin,
-  MoonStar,
   Phone,
   Sparkles,
-  UtensilsCrossed,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { BiryaniMandiSection } from '../components/BiryaniMandiSection'
 import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
 import { AvailabilityBadge } from '../components/menu/AvailabilityBadge'
 import { Reveal, SectionHeading } from '../components/MotionSection'
@@ -197,90 +196,7 @@ export function HomePage() {
       </section>
 
       {/* Biryani & Evening Mandi Specialities */}
-      <section className="border-t border-gold/30 bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <SectionHeading
-            eyebrow="House Kitchen Specialities"
-            title="Authentic Biryani &"
-            accentWord="Evening Mandi"
-            description="Visit MSK Shahul Bhai Biryani in person for morning-to-night biryani, gravies, and Malabar Chukka, or join us from 6:30 PM onwards for Arabian-style Mandi."
-          />
-
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <article className="luxury-panel flex flex-col justify-between overflow-hidden bg-cream-soft sm:flex-row">
-              <div className="relative h-56 shrink-0 overflow-hidden sm:h-auto sm:w-52">
-                <img
-                  src={assetUrl(BRAND_IMAGES.chickenBiryani.path)}
-                  alt="Chicken Biryani prepared with aromatic whole spices at MSK Shahul Bhai Biryani Tirunelveli"
-                  loading="lazy"
-                  decoding="async"
-                  width={BRAND_IMAGES.chickenBiryani.width}
-                  height={BRAND_IMAGES.chickenBiryani.height}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-1 flex-col justify-between p-6">
-                <div>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
-                    <UtensilsCrossed className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                    <span>Morning to Night</span>
-                  </span>
-                  <h3 className="mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
-                    Biryani Collection
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted">
-                    Mutton Biryani, Chicken Biryani, Fish Biryani, Prawn Biryani, Hyderabadi Biryani,
-                    Egg Biryani, White Biryani, and Thokku Biryani.
-                  </p>
-                </div>
-                <Link
-                  to="/menu/#category-biryani"
-                  className="mt-5 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:text-brand-deep"
-                >
-                  <span>Explore Biryani Menu</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </article>
-
-            <article className="luxury-panel flex flex-col justify-between overflow-hidden border-gold/60 bg-cream-soft sm:flex-row">
-              <div className="relative h-56 shrink-0 overflow-hidden sm:h-auto sm:w-52">
-                <img
-                  src={assetUrl(BRAND_IMAGES.alfahamMandi.path)}
-                  alt="Alfaham Mandi served fresh from 6:30 PM onwards at MSK Shahul Bhai Biryani Melapalayam"
-                  loading="lazy"
-                  decoding="async"
-                  width={BRAND_IMAGES.alfahamMandi.width}
-                  height={BRAND_IMAGES.alfahamMandi.height}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-1 flex-col justify-between p-6">
-                <div>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.18em] text-brand-primary uppercase">
-                    <MoonStar className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                    <span>Evening Speciality · 6:30 PM Onwards</span>
-                  </span>
-                  <h3 className="mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
-                    Arabian Mandi Specials
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted">
-                    Served freshly each evening from 6:30 PM onwards: Chicken Mandi, Alfaham Mandi,
-                    Fish Mandi, Golden Mandi, and Masala Peri Peri Mandi.
-                  </p>
-                </div>
-                <Link
-                  to="/menu/mandi/"
-                  className="mt-5 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:text-brand-deep"
-                >
-                  <span>View Evening Mandi Page</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      <BiryaniMandiSection />
 
       {/* Featured Menu Preview */}
       <section className="border-t border-gold/30 bg-cream-soft py-20 sm:py-28">
