@@ -125,7 +125,7 @@ export function CateringPage() {
                   <span className="text-[10px] font-semibold tracking-[0.22em] text-brand-secondary uppercase">
                     {item.subtitle}
                   </span>
-                  <h3 className="mt-2 font-serif text-2xl font-medium text-ink">
+                  <h3 className="mt-2 font-serif text-2xl font-bold text-ink">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-xs leading-relaxed text-muted">
@@ -193,7 +193,7 @@ export function CateringPage() {
                   />
                 </div>
                 <figcaption className="p-5">
-                  <h3 className="font-serif text-2xl font-medium text-ink">{photo.title}</h3>
+                  <h3 className="font-serif text-2xl font-bold text-ink">{photo.title}</h3>
                   <p className="mt-1.5 text-xs leading-relaxed text-muted">
                     {photo.caption}
                   </p>

@@ -70,7 +70,7 @@ export function SignaturePage() {
                     <span className="text-[11px] font-semibold tracking-[0.24em] text-brand-primary uppercase">
                       {item.eyebrow}
                     </span>
-                    <h2 className="mt-3 font-serif text-4xl leading-tight font-normal text-ink sm:text-5xl">
+                    <h2 className="mt-3 font-serif text-3xl leading-tight font-bold text-ink sm:text-5xl">
                       {item.title}
                     </h2>
                     <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -94,7 +94,7 @@ export function SignaturePage() {
                 <span className="text-[11px] font-semibold tracking-[0.24em] text-gold-soft uppercase">
                   Visit or Enquire
                 </span>
-                <h2 className="mt-2 font-serif text-3xl text-white sm:text-4xl">
+                <h2 className="mt-2 font-serif text-3xl font-bold text-white sm:text-4xl">
                   Ask About Today’s Signature Biryani &amp; Evening Mandi
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-cream/90">

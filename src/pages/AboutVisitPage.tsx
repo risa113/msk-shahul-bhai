@@ -84,7 +84,7 @@ export function AboutVisitPage() {
                     />
                   </div>
                 </div>
-                <h2 className="font-serif text-3xl text-ink">{BRAND.name}</h2>
+                <h2 className="font-serif text-3xl font-bold text-ink">{BRAND.name}</h2>
                 <p className="mt-1 text-xs font-medium tracking-[0.18em] text-brand-secondary uppercase">
                   {BRAND.cateringBrand}
                 </p>
@@ -138,7 +138,7 @@ export function AboutVisitPage() {
                     <span className="text-[10px] font-semibold tracking-[0.2em] text-brand-primary uppercase">
                       {pillar.label}
                     </span>
-                    <h3 className="mt-1.5 font-serif text-xl font-medium text-ink">
+                    <h3 className="mt-1.5 font-serif text-xl font-bold text-ink">
                       {pillar.title}
                     </h3>
                     <p className="mt-2 text-xs leading-relaxed text-muted">{pillar.detail}</p>
@@ -148,7 +148,7 @@ export function AboutVisitPage() {
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-brand-primary/14 bg-white p-5 shadow-xs">
-                  <h3 className="font-serif text-2xl font-medium text-ink">
+                  <h3 className="font-serif text-2xl font-bold text-ink">
                     Visit &amp; Order Directly
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted">
@@ -156,7 +156,7 @@ export function AboutVisitPage() {
                   </p>
                 </div>
                 <div className="rounded-2xl border border-brand-primary/14 bg-white p-5 shadow-xs">
-                  <h3 className="font-serif text-2xl font-medium text-ink">
+                  <h3 className="font-serif text-2xl font-bold text-ink">
                     Follow Our Journey
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted">
@@ -207,7 +207,7 @@ export function AboutVisitPage() {
                   />
                 </div>
                 <figcaption className="p-5">
-                  <h3 className="font-serif text-xl font-medium text-ink">{photo.title}</h3>
+                  <h3 className="font-serif text-xl font-bold text-ink">{photo.title}</h3>
                   <p className="mt-1.5 text-xs leading-relaxed text-muted">
                     {photo.caption}
                   </p>
@@ -234,7 +234,7 @@ export function AboutVisitPage() {
             <Reveal className="lg:col-span-6">
               <div className="flex h-full flex-col justify-between rounded-3xl border border-brand-primary/14 bg-white p-6 shadow-sm sm:p-8">
                 <div>
-                  <h3 className="font-serif text-3xl text-ink">{BRAND.areaSummary}</h3>
+                  <h3 className="font-serif text-3xl font-bold text-ink">{BRAND.areaSummary}</h3>
 
                   <div className="mt-6 space-y-4 text-xs leading-relaxed text-muted sm:text-sm">
                     <div className="flex items-start gap-3">
@@ -292,7 +292,7 @@ export function AboutVisitPage() {
             <Reveal delay={0.1} className="lg:col-span-6">
               <div className="flex h-full flex-col justify-between rounded-3xl border border-gold/50 bg-gradient-to-br from-brand-primary to-brand-deep p-6 text-white shadow-md sm:p-8">
                 <div>
-                  <h3 className="font-serif text-3xl text-white">Call or WhatsApp Us</h3>
+                  <h3 className="font-serif text-3xl font-bold text-white">Call or WhatsApp Us</h3>
                   <p className="mt-2 text-xs leading-relaxed text-cream/90">
                     Click either number below to call directly or open a WhatsApp conversation using
                     India’s international `+91` format.

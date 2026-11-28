@@ -79,7 +79,7 @@ export function MenuSection() {
                     </div>
                     <h2
                       id={`heading-${category.id}`}
-                      className="font-serif text-3xl font-normal text-ink sm:text-4xl lg:text-5xl"
+                      className="font-serif text-3xl font-bold text-ink sm:text-4xl lg:text-5xl"
                     >
                       {category.title}
                     </h2>
@@ -111,7 +111,7 @@ export function MenuSection() {
 
           <div className="mt-16 flex flex-col items-start justify-between gap-5 rounded-2xl border border-gold/50 bg-brand-deep p-7 text-cream shadow-md sm:flex-row sm:items-center sm:p-8">
             <div>
-              <h3 className="font-serif text-2xl text-white sm:text-3xl">
+              <h3 className="font-serif text-2xl font-bold text-white sm:text-3xl">
                 Planning a Visit or Function Order in Tirunelveli?
               </h3>
               <p className="mt-1.5 text-xs leading-relaxed text-cream/85 sm:text-sm">

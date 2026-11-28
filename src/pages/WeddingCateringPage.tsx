@@ -124,7 +124,7 @@ export function WeddingCateringPage() {
               <div key={item.title} className="luxury-panel flex flex-col justify-between p-6">
                 <div>
                   <CheckCircle2 className="h-5 w-5 text-brand-primary" aria-hidden="true" />
-                  <h2 className="mt-3 font-serif text-2xl font-medium text-ink">{item.title}</h2>
+                  <h2 className="mt-3 font-serif text-2xl font-bold text-ink">{item.title}</h2>
                   <p className="mt-2.5 text-sm leading-relaxed text-muted">{item.description}</p>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export function WeddingCateringPage() {
                   <UtensilsCrossed className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
                   <span>Direct Team Coordination</span>
                 </span>
-                <h2 className="mt-2 font-serif text-3xl font-normal text-ink sm:text-4xl">
+                <h2 className="mt-2 font-serif text-3xl font-bold text-ink sm:text-4xl">
                   How Catering &amp; Bulk Orders Work
                 </h2>
               </div>
@@ -156,7 +156,7 @@ export function WeddingCateringPage() {
               {ENQUIRY_STEPS.map((step) => (
                 <div key={step.step} className="rounded-2xl border border-brand-primary/14 bg-cream-soft p-5">
                   <span className="font-serif text-2xl font-medium text-gold">{step.step}</span>
-                  <h3 className="mt-2 font-serif text-xl font-medium text-ink">{step.title}</h3>
+                  <h3 className="mt-2 font-serif text-xl font-bold text-ink">{step.title}</h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted">{step.detail}</p>
                 </div>
               ))}
@@ -179,7 +179,7 @@ export function WeddingCateringPage() {
                   />
                 </div>
                 <figcaption className="p-5">
-                  <h3 className="font-serif text-2xl font-medium text-ink">{photo.title}</h3>
+                  <h3 className="font-serif text-2xl font-bold text-ink">{photo.title}</h3>
                   <p className="mt-1.5 text-xs leading-relaxed text-muted">{photo.caption}</p>
                 </figcaption>
               </figure>
@@ -192,7 +192,7 @@ export function WeddingCateringPage() {
               <p className="text-[11px] font-semibold tracking-[0.22em] text-gold-soft uppercase">
                 {BRAND.areaSummary}
               </p>
-              <h2 className="mt-2 font-serif text-3xl text-white sm:text-4xl">
+              <h2 className="mt-2 font-serif text-3xl font-bold text-white sm:text-4xl">
                 Connect Directly With {BRAND.cateringBrand}
               </h2>
               <p className="mt-2.5 text-sm leading-relaxed text-cream/85">

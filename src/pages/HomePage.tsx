@@ -58,9 +58,9 @@ export function HomePage() {
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl leading-[1.02] font-normal tracking-tight text-white sm:text-6xl lg:text-[4.65rem]">
+            <h1 className="font-serif text-4xl leading-[1.06] font-extrabold tracking-tight text-white sm:text-5xl lg:text-[4.25rem]">
               MSK Shahul Bhai Biryani – <br className="hidden sm:block" />
-              <em className="font-normal text-gold italic">A Taste Worth Gathering For</em>
+              <em className="text-gold italic">A Taste Worth Gathering For</em>
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/95 sm:text-lg">
@@ -225,7 +225,7 @@ export function HomePage() {
                     <UtensilsCrossed className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
                     <span>Morning to Night</span>
                   </span>
-                  <h3 className="mt-2 font-serif text-2xl font-medium text-ink sm:text-3xl">
+                  <h3 className="mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
                     Biryani Collection
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted">
@@ -261,7 +261,7 @@ export function HomePage() {
                     <MoonStar className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
                     <span>Evening Speciality · 6:30 PM Onwards</span>
                   </span>
-                  <h3 className="mt-2 font-serif text-2xl font-medium text-ink sm:text-3xl">
+                  <h3 className="mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
                     Arabian Mandi Specials
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted">
@@ -330,7 +330,7 @@ export function HomePage() {
                   <span className="text-[10px] font-semibold tracking-[0.2em] text-brand-secondary uppercase">
                     {dish.categoryTitle}
                   </span>
-                  <h3 className="mt-1.5 font-serif text-2xl font-medium text-ink transition-colors group-hover:text-brand-primary">
+                  <h3 className="mt-1.5 font-serif text-2xl font-bold text-ink transition-colors group-hover:text-brand-primary">
                     {dish.name}
                   </h3>
                   <div className="mt-4 h-px w-10 bg-gold/60 transition-all duration-300 group-hover:w-16" />
@@ -395,9 +395,9 @@ export function HomePage() {
                 <span className="h-px w-7 bg-gold" />
                 <span>Catering &amp; Bulk Orders · Tirunelveli</span>
               </div>
-              <h2 className="font-serif text-4xl leading-[1.06] font-normal text-white sm:text-5xl">
+              <h2 className="font-serif text-3xl leading-[1.1] font-bold text-white sm:text-5xl">
                 We Make Every Celebration{' '}
-                <em className="font-normal text-gold italic">Memorable.</em>
+                <em className="text-gold italic">Memorable.</em>
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-cream/90 sm:text-base">
                 From marriage functions and wedding catering in Tirunelveli to family gatherings and

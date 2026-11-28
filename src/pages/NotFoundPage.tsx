@@ -10,7 +10,7 @@ export function NotFoundPage() {
         <span className="text-[11px] font-semibold tracking-[0.26em] text-brand-primary uppercase">
           Page Not Found
         </span>
-        <h1 className="mt-4 font-serif text-5xl font-normal text-ink sm:text-6xl">
+        <h1 className="mt-4 font-serif text-4xl font-extrabold text-ink sm:text-6xl">
           Return to the <em className="text-brand-primary italic">Table</em>
         </h1>
         <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">

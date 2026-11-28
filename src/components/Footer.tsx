@@ -24,7 +24,7 @@ export function Footer() {
                 />
               </div>
               <div>
-                <p className="font-serif text-2xl font-normal text-white">{BRAND.name}</p>
+                <p className="font-serif text-2xl font-bold text-white">{BRAND.name}</p>
                 <p className="text-[10px] tracking-[0.22em] text-gold uppercase">
                   {BRAND.cateringBrand}
                 </p>
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
+            <h3 className="font-sans text-[11px] font-bold tracking-[0.22em] text-gold uppercase">
               Explore Pages
             </h3>
             <ul className="mt-4 space-y-2.5 text-xs text-cream/85">
@@ -89,7 +89,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
+            <h3 className="font-sans text-[11px] font-bold tracking-[0.22em] text-gold uppercase">
               Contact &amp; Social
             </h3>
             <ul className="mt-4 space-y-3 text-xs text-cream/85">
@@ -132,7 +132,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
+            <h3 className="font-sans text-[11px] font-bold tracking-[0.22em] text-gold uppercase">
               Visit Us
             </h3>
             <div className="mt-4 space-y-3 text-xs leading-relaxed text-cream/80">

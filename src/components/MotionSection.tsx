@@ -46,14 +46,14 @@ export function SectionHeading({
         {isCentered && <span className="h-px w-7 bg-gold" aria-hidden="true" />}
       </div>
       <HeadingTag
-        className={`font-serif text-4xl leading-[1.06] font-normal tracking-tight sm:text-5xl lg:text-[3.35rem] ${
-          isDark ? 'text-white' : 'text-ink'
-        }`}
+        className={`font-serif text-3xl leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.15rem] ${
+          as === 'h1' ? 'font-extrabold' : 'font-bold'
+        } ${isDark ? 'text-white' : 'text-ink'}`}
       >
         {title}{' '}
         {accentWord && (
           <em
-            className={`font-normal italic ${isDark ? 'text-gold' : 'text-brand-primary'}`}
+            className={`italic ${isDark ? 'text-gold' : 'text-brand-primary'}`}
           >
             {accentWord}
           </em>

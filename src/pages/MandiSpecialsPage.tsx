@@ -54,7 +54,7 @@ export function MandiSpecialsPage() {
                 <MoonStar className="h-3.5 w-3.5 text-gold-soft" aria-hidden="true" />
                 <span>Served Daily From 6:30 PM Onwards</span>
               </div>
-              <h2 className="mt-4 font-serif text-3xl font-normal text-ink sm:text-4xl">
+              <h2 className="mt-4 font-serif text-3xl font-bold text-ink sm:text-4xl">
                 Five Distinct Mandi Varieties Prepared Every Evening
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -92,7 +92,7 @@ export function MandiSpecialsPage() {
           {/* Cross-Links & Visit Strip */}
           <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="rounded-3xl border border-gold/45 bg-cream-soft p-7 shadow-xs">
-              <h2 className="font-serif text-2xl font-medium text-ink sm:text-3xl">
+              <h2 className="font-serif text-2xl font-bold text-ink sm:text-3xl">
                 Explore Morning-to-Night Biryanis &amp; Grills
               </h2>
               <p className="mt-2.5 text-sm leading-relaxed text-muted">
@@ -117,7 +117,7 @@ export function MandiSpecialsPage() {
             </div>
 
             <div className="rounded-3xl border border-gold/50 bg-brand-deep p-7 text-cream shadow-md">
-              <h2 className="font-serif text-2xl font-medium text-white sm:text-3xl">
+              <h2 className="font-serif text-2xl font-bold text-white sm:text-3xl">
                 Visit {BRAND.name}
               </h2>
               <p className="mt-2.5 text-sm leading-relaxed text-cream/85">

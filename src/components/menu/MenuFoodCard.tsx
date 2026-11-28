@@ -38,7 +38,7 @@ export function MenuFoodCard({ dish }: MenuFoodCardProps) {
           <p className="text-[10px] font-semibold tracking-[0.2em] text-brand-secondary uppercase">
             {dish.categoryTitle}
           </p>
-          <h3 className="mt-1.5 font-serif text-2xl leading-snug font-medium text-ink transition-colors group-hover:text-brand-primary">
+          <h3 className="mt-1.5 font-serif text-2xl leading-snug font-bold text-ink transition-colors group-hover:text-brand-primary">
             {dish.name}
           </h3>
         </div>
