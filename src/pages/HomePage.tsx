@@ -62,7 +62,7 @@ export function HomePage() {
             </div>
 
             <h1
-              className="msk-hero-headline font-serif text-4xl leading-[1.06] font-extrabold tracking-tight text-white sm:text-5xl lg:text-[4.25rem]"
+              className="msk-hero-headline font-serif text-4xl leading-[1.06] font-extrabold tracking-tight text-white drop-shadow-[0_2px_14px_rgba(18,32,24,0.6)] sm:text-5xl lg:text-[4.25rem]"
               style={{ '--msk-hero-delay': '120ms' } as CSSProperties}
             >
               MSK Shahul Bhai Biryani – <br className="hidden sm:block" />
@@ -70,7 +70,7 @@ export function HomePage() {
             </h1>
 
             <p
-              className="msk-hero-copy mt-6 max-w-xl text-base leading-relaxed text-cream/95 sm:text-lg"
+              className="msk-hero-copy mt-6 max-w-xl text-base leading-relaxed text-cream/95 drop-shadow-[0_1px_10px_rgba(18,32,24,0.65)] sm:text-lg"
               style={{ '--msk-hero-delay': '210ms' } as CSSProperties}
             >
               {BRAND.heroSupporting}

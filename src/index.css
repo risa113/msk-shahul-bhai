@@ -87,8 +87,30 @@
 
 .hero-scrim-green {
   background:
-    linear-gradient(95deg, rgba(38, 60, 48, 0.92) 0%, rgba(53, 107, 79, 0.74) 48%, rgba(38, 60, 48, 0.34) 100%),
-    linear-gradient(180deg, rgba(38, 60, 48, 0.56) 0%, rgba(38, 60, 48, 0.2) 38%, rgba(38, 60, 48, 0.88) 100%);
+    linear-gradient(
+      95deg,
+      rgba(28, 46, 36, 0.72) 0%,
+      rgba(38, 60, 48, 0.48) 44%,
+      rgba(38, 60, 48, 0.16) 76%,
+      rgba(38, 60, 48, 0.08) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(28, 46, 36, 0.24) 0%,
+      rgba(28, 46, 36, 0.04) 42%,
+      rgba(28, 46, 36, 0.58) 100%
+    );
+}
+
+@media (max-width: 767px) {
+  .hero-scrim-green {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 46, 36, 0.52) 0%,
+      rgba(28, 46, 36, 0.44) 48%,
+      rgba(28, 46, 36, 0.74) 100%
+    );
+  }
 }
 
 @keyframes gentle-float {
