@@ -21,16 +21,19 @@ export function MenuPage() {
             width={BRAND_IMAGES.chickenBiryani.width}
             height={BRAND_IMAGES.chickenBiryani.height}
             fetchPriority="high"
-            className="h-full w-full object-cover"
+            className="msk-hero-media h-full w-full object-cover"
           />
           <div className="hero-scrim-green absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
-          <Breadcrumbs items={breadcrumbs} variant="dark" />
+          <div className="msk-hero-stagger">
+            <Breadcrumbs items={breadcrumbs} variant="dark" />
+          </div>
           <SectionHeading
             as="h1"
             variant="dark"
+            animateMode="hero"
             eyebrow="Our Menu · Melapalayam, Tirunelveli"
             title="Biryani, Mandi &"
             accentWord="Special Dishes"

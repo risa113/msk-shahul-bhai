@@ -2,7 +2,7 @@ import { ArrowRight, ArrowUpRight, CheckCircle2, MapPin, Phone, UtensilsCrossed 
 import { Link } from 'react-router-dom'
 import { Breadcrumbs } from '../components/Breadcrumbs'
 import { WhatsAppBrandIcon } from '../components/BrandIcons'
-import { SectionHeading } from '../components/MotionSection'
+import { Reveal, SectionHeading } from '../components/MotionSection'
 import { SeoHead } from '../components/SeoHead'
 import {
   BRAND,
@@ -69,23 +69,26 @@ export function WeddingCateringPage() {
             width={BRAND_IMAGES.marriageCatering.width}
             height={BRAND_IMAGES.marriageCatering.height}
             fetchPriority="high"
-            className="h-full w-full object-cover"
+            className="msk-hero-media h-full w-full object-cover"
           />
           <div className="hero-scrim-green absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
-          <Breadcrumbs items={breadcrumbs} variant="dark" />
+          <div className="msk-hero-stagger">
+            <Breadcrumbs items={breadcrumbs} variant="dark" />
+          </div>
           <SectionHeading
             as="h1"
             variant="dark"
+            animateMode="hero"
             eyebrow={`${BRAND.cateringBrand} · Tirunelveli & Melapalayam`}
             title="Wedding Catering &"
             accentWord="Bulk Biryani Orders"
             description="Since 2016, MSK Shahul Bhai Biryani extends the warmth and authentic flavour of our kitchen to weddings, marriage functions, family gatherings, and bulk food orders."
           />
 
-          <div className="mt-8 flex flex-wrap gap-3.5">
+          <div className="msk-hero-actions mt-8 flex flex-wrap gap-3.5">
             <a
               href={buildWhatsAppUrl(
                 CONTACT_LINES[0].rawDigits,
@@ -93,15 +96,15 @@ export function WeddingCateringPage() {
               )}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md transition-colors hover:bg-brand-secondary"
+              className="msk-btn group inline-flex items-center gap-2.5 rounded-lg border border-gold/60 bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-md hover:bg-brand-secondary"
             >
               <WhatsAppBrandIcon className="h-4 w-4 text-gold-soft" />
               <span>Enquire on WhatsApp</span>
-              <ArrowUpRight className="h-4 w-4 text-gold-soft" />
+              <ArrowUpRight className="msk-arrow-diag h-4 w-4 text-gold-soft" />
             </a>
             <Link
               to="/catering/#catering-enquiry-form"
-              className="inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-white/95 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-md transition-colors hover:bg-cream"
+              className="msk-btn inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-white/95 px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-brand-deep uppercase shadow-md hover:bg-cream"
             >
               <span>Open Catering Enquiry Form</span>
             </Link>
@@ -112,114 +115,126 @@ export function WeddingCateringPage() {
       {/* Wedding & Bulk Focus */}
       <section className="border-t border-gold/30 bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <SectionHeading
-            eyebrow="Celebration Hospitality"
-            title="Crafted for Marriage Functions"
-            accentWord="Across Tirunelveli"
-            description="Whether hosting an intimate home function in Melapalayam or coordinating a multi-family wedding celebration in Tirunelveli, our kitchen prepares traditional dishes rooted in consistent flavour."
-          />
+          <Reveal variant="mask-reveal">
+            <SectionHeading
+              eyebrow="Celebration Hospitality"
+              title="Crafted for Marriage Functions"
+              accentWord="Across Tirunelveli"
+              description="Whether hosting an intimate home function in Melapalayam or coordinating a multi-family wedding celebration in Tirunelveli, our kitchen prepares traditional dishes rooted in consistent flavour."
+            />
+          </Reveal>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {WEDDING_HIGHLIGHTS.map((item) => (
-              <div key={item.title} className="luxury-panel flex flex-col justify-between p-6">
-                <div>
-                  <CheckCircle2 className="h-5 w-5 text-brand-primary" aria-hidden="true" />
-                  <h2 className="mt-3 font-serif text-2xl font-bold text-ink">{item.title}</h2>
-                  <p className="mt-2.5 text-sm leading-relaxed text-muted">{item.description}</p>
+            {WEDDING_HIGHLIGHTS.map((item, idx) => (
+              <Reveal key={item.title} variant="card-stagger" delay={idx * 0.08} className="h-full">
+                <div className="luxury-panel flex h-full flex-col justify-between p-6">
+                  <div>
+                    <CheckCircle2 className="h-5 w-5 text-brand-primary" aria-hidden="true" />
+                    <h2 className="mt-3 font-serif text-2xl font-bold text-ink">{item.title}</h2>
+                    <p className="mt-2.5 text-sm leading-relaxed text-muted">{item.description}</p>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
           {/* Enquiry Workflow */}
-          <div className="mt-16 rounded-3xl border border-gold/50 bg-white p-7 shadow-sm sm:p-10">
-            <div className="flex flex-col justify-between gap-4 border-b border-gold/30 pb-6 sm:flex-row sm:items-end">
-              <div>
-                <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] text-brand-primary uppercase">
-                  <UtensilsCrossed className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                  <span>Direct Team Coordination</span>
-                </span>
-                <h2 className="mt-2 font-serif text-3xl font-bold text-ink sm:text-4xl">
-                  How Catering &amp; Bulk Orders Work
-                </h2>
-              </div>
-              <Link
-                to="/menu/"
-                className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase hover:text-brand-deep"
-              >
-                <span>Browse Confirmed Menu Items</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-              {ENQUIRY_STEPS.map((step) => (
-                <div key={step.step} className="rounded-2xl border border-brand-primary/14 bg-cream-soft p-5">
-                  <span className="font-serif text-2xl font-medium text-gold">{step.step}</span>
-                  <h3 className="mt-2 font-serif text-xl font-bold text-ink">{step.title}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted">{step.detail}</p>
+          <Reveal variant="fade-up">
+            <div className="mt-16 rounded-3xl border border-gold/50 bg-white p-7 shadow-sm sm:p-10">
+              <div className="flex flex-col justify-between gap-4 border-b border-gold/30 pb-6 sm:flex-row sm:items-end">
+                <div>
+                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] text-brand-primary uppercase">
+                    <UtensilsCrossed className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                    <span>Direct Team Coordination</span>
+                  </span>
+                  <h2 className="mt-2 font-serif text-3xl font-bold text-ink sm:text-4xl">
+                    How Catering &amp; Bulk Orders Work
+                  </h2>
                 </div>
-              ))}
+                <Link
+                  to="/menu/"
+                  className="group inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-brand-primary uppercase transition-colors hover:text-brand-deep"
+                >
+                  <span>Browse Confirmed Menu Items</span>
+                  <ArrowRight className="msk-arrow-right h-4 w-4" />
+                </Link>
+              </div>
+
+              <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+                {ENQUIRY_STEPS.map((step, idx) => (
+                  <Reveal key={step.step} variant="editorial" delay={idx * 0.08} className="h-full">
+                    <div className="msk-card-hover h-full rounded-2xl border border-brand-primary/14 bg-cream-soft p-5">
+                      <span className="font-serif text-2xl font-medium text-gold">{step.step}</span>
+                      <h3 className="mt-2 font-serif text-xl font-bold text-ink">{step.title}</h3>
+                      <p className="mt-2 text-xs leading-relaxed text-muted">{step.detail}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Event Photos */}
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {CATERING_GALLERY.map((photo) => (
-              <figure key={photo.id} className="luxury-panel overflow-hidden">
-                <div className="relative h-64 overflow-hidden bg-cream">
-                  <img
-                    src={photo.image}
-                    alt={photo.alt}
-                    loading="lazy"
-                    decoding="async"
-                    width={photo.width}
-                    height={photo.height}
-                    className="h-full w-full object-cover"
-                  />
+            {CATERING_GALLERY.map((photo, idx) => (
+              <Reveal key={photo.id} as="figure" variant="image-curtain" delay={idx * 0.08} className="h-full">
+                <div className="luxury-panel group h-full overflow-hidden">
+                  <div className="relative h-64 overflow-hidden bg-cream">
+                    <img
+                      src={photo.image}
+                      alt={photo.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={photo.width}
+                      height={photo.height}
+                      className="msk-img-zoom h-full w-full object-cover"
+                    />
+                  </div>
+                  <figcaption className="p-5">
+                    <h3 className="font-serif text-2xl font-bold text-ink">{photo.title}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted">{photo.caption}</p>
+                  </figcaption>
                 </div>
-                <figcaption className="p-5">
-                  <h3 className="font-serif text-2xl font-bold text-ink">{photo.title}</h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-muted">{photo.caption}</p>
-                </figcaption>
-              </figure>
+              </Reveal>
             ))}
           </div>
 
           {/* Bottom Direct Contact Banner */}
-          <div className="mt-16 flex flex-col items-start justify-between gap-6 rounded-3xl border border-gold/50 bg-brand-deep p-7 text-cream shadow-md sm:p-10 lg:flex-row lg:items-center">
-            <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold tracking-[0.22em] text-gold-soft uppercase">
-                {BRAND.areaSummary}
-              </p>
-              <h2 className="mt-2 font-serif text-3xl font-bold text-white sm:text-4xl">
-                Connect Directly With {BRAND.cateringBrand}
-              </h2>
-              <p className="mt-2.5 text-sm leading-relaxed text-cream/85">
-                Speak directly with our team by phone or WhatsApp to plan your marriage function,
-                wedding feast, or bulk biryani requirement in Tirunelveli.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {CONTACT_LINES.map((line) => (
-                <a
-                  key={line.id}
-                  href={line.telHref}
-                  className="inline-flex items-center gap-2 rounded-lg border border-gold/60 bg-white px-5 py-3 text-xs font-semibold tracking-[0.12em] text-brand-deep uppercase transition-colors hover:bg-cream"
+          <Reveal variant="cta-scale">
+            <div className="mt-16 flex flex-col items-start justify-between gap-6 rounded-3xl border border-gold/50 bg-brand-deep p-7 text-cream shadow-md sm:p-10 lg:flex-row lg:items-center">
+              <div className="max-w-2xl">
+                <p className="text-[11px] font-semibold tracking-[0.22em] text-gold-soft uppercase">
+                  {BRAND.areaSummary}
+                </p>
+                <h2 className="mt-2 font-serif text-3xl font-bold text-white sm:text-4xl">
+                  Connect Directly With {BRAND.cateringBrand}
+                </h2>
+                <p className="mt-2.5 text-sm leading-relaxed text-cream/85">
+                  Speak directly with our team by phone or WhatsApp to plan your marriage function,
+                  wedding feast, or bulk biryani requirement in Tirunelveli.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {CONTACT_LINES.map((line) => (
+                  <a
+                    key={line.id}
+                    href={line.telHref}
+                    className="msk-btn group inline-flex items-center gap-2 rounded-lg border border-gold/60 bg-white px-5 py-3 text-xs font-semibold tracking-[0.12em] text-brand-deep uppercase hover:bg-cream"
+                  >
+                    <Phone className="h-3.5 w-3.5 text-brand-primary transition-transform duration-300 group-hover:-rotate-12" />
+                    <span>{line.display}</span>
+                  </a>
+                ))}
+                <Link
+                  to="/about/"
+                  className="msk-btn inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-brand-primary px-5 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase hover:bg-brand-secondary"
                 >
-                  <Phone className="h-3.5 w-3.5 text-brand-primary" />
-                  <span>{line.display}</span>
-                </a>
-              ))}
-              <Link
-                to="/about/"
-                className="inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-brand-primary px-5 py-3 text-xs font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:bg-brand-secondary"
-              >
-                <MapPin className="h-3.5 w-3.5 text-gold-soft" />
-                <span>Location &amp; Maps</span>
-              </Link>
+                  <MapPin className="h-3.5 w-3.5 text-gold-soft" />
+                  <span>Location &amp; Maps</span>
+                </Link>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

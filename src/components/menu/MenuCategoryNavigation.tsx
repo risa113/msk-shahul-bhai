@@ -21,7 +21,7 @@ export function MenuCategoryNavigation({
           type="button"
           onClick={() => onSelectCategory('all')}
           aria-pressed={activeCategory === 'all'}
-          className={`shrink-0 cursor-pointer rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.14em] uppercase transition-all ${
+          className={`msk-btn shrink-0 cursor-pointer rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.14em] uppercase ${
             activeCategory === 'all'
               ? 'border-brand-primary bg-brand-primary text-white shadow-sm'
               : 'border-brand-primary/20 bg-cream text-ink hover:border-brand-primary hover:bg-white'
@@ -38,7 +38,7 @@ export function MenuCategoryNavigation({
               type="button"
               onClick={() => onSelectCategory(cat.id)}
               aria-pressed={isSelected}
-              className={`inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.14em] uppercase transition-all ${
+              className={`msk-btn inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.14em] uppercase ${
                 isSelected
                   ? 'border-brand-primary bg-brand-primary text-white shadow-sm'
                   : 'border-brand-primary/20 bg-cream text-ink hover:border-brand-primary hover:bg-white'

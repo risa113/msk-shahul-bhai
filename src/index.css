@@ -534,3 +534,398 @@
     transform: none !important;
   }
 }
+
+
+/* ============================================================================
+   GLOBAL MSK MOTION DESIGN SYSTEM & PERFORMANCE-OPTIMIZED INTERACTIONS
+   ============================================================================ */
+
+:root {
+  --msk-ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  --msk-ease-crisp: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --msk-ease-media: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth focus accessibility across keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--msk-gold);
+  outline-offset: 2px;
+}
+
+/* Keyframes (GPU-composited only) */
+@keyframes mskHeroMediaSettle {
+  from {
+    transform: scale(1.045);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes mskHeroMediaSettleMobile {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes mskHeroMaskUp {
+  from {
+    opacity: 0.01;
+    clip-path: inset(0 0 22% 0);
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes mskHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes mskHeroScaleFade {
+  from {
+    opacity: 0;
+    transform: scale(0.965) translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes mskNavBrandIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes mskPageEnter {
+  from {
+    opacity: 0.9;
+    transform: translate3d(0, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes mskWhatsAppEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Page-load Hero Classes (never reset on scroll) */
+.msk-hero-media {
+  transform-origin: center center;
+  animation: mskHeroMediaSettle 8s var(--msk-ease-media) both;
+}
+
+.msk-hero-stagger {
+  animation: mskHeroFadeUp 520ms var(--msk-ease-luxury) var(--msk-hero-delay, 0ms) both;
+}
+
+.msk-hero-headline {
+  animation: mskHeroMaskUp 680ms var(--msk-ease-luxury) var(--msk-hero-delay, 100ms) both;
+}
+
+.msk-hero-copy {
+  animation: mskHeroFadeUp 580ms var(--msk-ease-luxury) var(--msk-hero-delay, 190ms) both;
+}
+
+.msk-hero-actions {
+  animation: mskHeroScaleFade 560ms var(--msk-ease-luxury) var(--msk-hero-delay, 270ms) both;
+}
+
+.msk-hero-bar {
+  animation: mskHeroFadeUp 560ms var(--msk-ease-luxury) var(--msk-hero-delay, 360ms) both;
+}
+
+/* Navbar, Route Transition, WhatsApp Float */
+.msk-nav-brand {
+  animation: mskNavBrandIn 420ms var(--msk-ease-luxury) both;
+}
+
+.msk-nav-underline {
+  transform-origin: left center;
+  transition: transform 280ms var(--msk-ease-luxury);
+}
+
+.msk-page-enter {
+  animation: mskPageEnter 260ms var(--msk-ease-luxury) both;
+}
+
+.msk-whatsapp-float {
+  animation: mskWhatsAppEntrance 500ms var(--msk-ease-luxury) 450ms both;
+  transition: transform 260ms var(--msk-ease-luxury), background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+/* Mobile navigation animated drawer (no layout shift) */
+.msk-mobile-drawer {
+  transition: opacity 280ms var(--msk-ease-luxury), transform 280ms var(--msk-ease-luxury),
+    visibility 280ms step-end;
+}
+
+.msk-mobile-drawer[data-open='true'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 280ms var(--msk-ease-luxury), transform 280ms var(--msk-ease-luxury),
+    visibility 0s step-start;
+}
+
+.msk-mobile-drawer[data-open='false'] {
+  opacity: 0;
+  transform: translate3d(0, -10px, 0);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.msk-mobile-drawer[data-open='true'] .msk-mobile-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 320ms var(--msk-ease-luxury) var(--msk-item-delay, 40ms),
+    transform 320ms var(--msk-ease-luxury) var(--msk-item-delay, 40ms),
+    color 200ms ease;
+}
+
+.msk-mobile-drawer[data-open='false'] .msk-mobile-item {
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+/* Reusable Repeating Scroll Reveal Variants */
+.msk-reveal {
+  transition:
+    opacity 620ms var(--msk-ease-luxury) var(--msk-delay, 0ms),
+    transform 620ms var(--msk-ease-luxury) var(--msk-delay, 0ms),
+    clip-path 700ms var(--msk-ease-luxury) var(--msk-delay, 0ms);
+}
+
+.msk-reveal[data-motion='ssr'] {
+  opacity: 1;
+  transform: none;
+  clip-path: none;
+}
+
+.msk-reveal[data-motion='waiting'] {
+  transition: none !important;
+  will-change: opacity, transform;
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='fade-up'] {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='editorial'] {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  clip-path: inset(0 0 10% 0);
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='mask-reveal'] {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  clip-path: inset(0 0 28% 0);
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='image-curtain'] {
+  opacity: 0;
+  transform: scale(1.045);
+  clip-path: inset(5% 4% 5% 4% round 1.25rem);
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='cta-scale'] {
+  opacity: 0;
+  transform: scale(0.965) translate3d(0, 14px, 0);
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='slide-left'] {
+  opacity: 0;
+  transform: translate3d(-22px, 0, 0);
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='slide-right'] {
+  opacity: 0;
+  transform: translate3d(22px, 0, 0);
+}
+
+.msk-reveal[data-motion='waiting'][data-variant='card-stagger'] {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0) scale(0.975);
+}
+
+.msk-reveal[data-motion='visible'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  clip-path: inset(0 0 0 0);
+}
+
+.msk-reveal[data-motion='visible'][data-variant='image-curtain'] {
+  transition:
+    opacity 720ms var(--msk-ease-media) var(--msk-delay, 0ms),
+    transform 760ms var(--msk-ease-media) var(--msk-delay, 0ms),
+    clip-path 760ms var(--msk-ease-media) var(--msk-delay, 0ms);
+}
+
+/* Tactile Micro-interactions (Buttons, Arrows, Touch-Safe Hover Cards) */
+.msk-btn {
+  transition:
+    transform 240ms var(--msk-ease-crisp),
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.msk-btn:active {
+  transform: scale(0.98);
+}
+
+.msk-arrow-right,
+.msk-arrow-left,
+.msk-arrow-diag {
+  transition: transform 240ms var(--msk-ease-luxury);
+}
+
+.msk-img-zoom {
+  transition: transform 620ms var(--msk-ease-media);
+}
+
+.msk-card-hover {
+  transition:
+    transform 300ms var(--msk-ease-luxury),
+    border-color 260ms ease;
+}
+
+.msk-card-hover:active {
+  transform: scale(0.99);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .msk-btn:hover {
+    transform: translateY(-1.5px);
+  }
+
+  .msk-btn:active {
+    transform: scale(0.98);
+  }
+
+  .group:hover .msk-arrow-right,
+  a:hover .msk-arrow-right,
+  button:hover .msk-arrow-right {
+    transform: translateX(3px);
+  }
+
+  .group:hover .msk-arrow-left,
+  a:hover .msk-arrow-left {
+    transform: translateX(-3px);
+  }
+
+  .group:hover .msk-arrow-diag,
+  a:hover .msk-arrow-diag,
+  button:hover .msk-arrow-diag {
+    transform: translate(2px, -2px);
+  }
+
+  .msk-whatsapp-float:hover {
+    transform: translateY(-2.5px);
+  }
+
+  .luxury-panel:hover,
+  .msk-card-hover:hover {
+    transform: translateY(-3px);
+    border-color: rgba(214, 168, 92, 0.6);
+  }
+
+  .group:hover .msk-img-zoom,
+  .msk-card-hover:hover .msk-img-zoom {
+    transform: scale(1.045);
+  }
+}
+
+/* Responsive mobile tuning: keep motion subtle & strictly vertical to avoid horizontal overflow */
+@media (max-width: 767px) {
+  .msk-hero-media {
+    animation-name: mskHeroMediaSettleMobile;
+    animation-duration: 4.5s;
+  }
+
+  .msk-reveal[data-motion='waiting'][data-variant='slide-left'],
+  .msk-reveal[data-motion='waiting'][data-variant='slide-right'] {
+    transform: translate3d(0, 18px, 0);
+  }
+
+  .msk-reveal {
+    transition-duration: 500ms;
+  }
+}
+
+/* Accessibility: complete override for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .msk-hero-media,
+  .msk-hero-stagger,
+  .msk-hero-headline,
+  .msk-hero-copy,
+  .msk-hero-actions,
+  .msk-hero-bar,
+  .msk-nav-brand,
+  .msk-page-enter,
+  .msk-whatsapp-float,
+  .animate-scroll-cue {
+    animation: none !important;
+  }
+
+  .msk-reveal,
+  .msk-reveal[data-motion='waiting'],
+  .msk-reveal[data-motion='visible'] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  .msk-mobile-drawer,
+  .msk-mobile-drawer .msk-mobile-item,
+  .msk-nav-underline,
+  .msk-btn,
+  .msk-arrow-right,
+  .msk-arrow-left,
+  .msk-arrow-diag,
+  .msk-img-zoom,
+  .msk-card-hover,
+  .luxury-panel {
+    transition: none !important;
+  }
+}
