@@ -132,7 +132,7 @@
 
 .bm-section[data-bm-state="waiting"] .bm-eyebrow {
   opacity: 0;
-  transform: translate3d(0, -14px, 0);
+  transform: translate3d(0, 14px, 0);
 }
 
 .bm-section[data-bm-state="waiting"] .bm-heading-line {
@@ -166,7 +166,7 @@
 }
 
 .bm-section[data-bm-state="waiting"] .bm-card-img-reveal {
-  transform: scale(1.08);
+  transform: scale(1);
 }
 
 .bm-section[data-bm-state="waiting"] .bm-stagger {
@@ -231,12 +231,12 @@
 }
 
 .bm-section[data-bm-state="visible"] .bm-card-left .bm-card-img-reveal {
-  transform: scale(1);
+  transform: scale(1.03);
   transition: transform 1.05s var(--bm-ease) 0.36s;
 }
 
 .bm-section[data-bm-state="visible"] .bm-card-right .bm-card-img-reveal {
-  transform: scale(1);
+  transform: scale(1.03);
   transition: transform 1.05s var(--bm-ease) 0.46s;
 }
 
@@ -294,7 +294,7 @@
 }
 
 .bm-card:hover .bm-card-img {
-  transform: scale(1.06);
+  transform: scale(1.045);
 }
 
 .bm-cta-link {

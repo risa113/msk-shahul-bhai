@@ -22,33 +22,42 @@ export function BiryaniMandiSection() {
       return
     }
 
+    let firstRaf = 0
+    let secondRaf = 0
+
     const rect = node.getBoundingClientRect()
-    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+    const initiallyVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0
+
+    if (initiallyVisible) {
       setAnimState('waiting')
-      let secondRaf = 0
-      const firstRaf = window.requestAnimationFrame(() => {
+      firstRaf = window.requestAnimationFrame(() => {
         secondRaf = window.requestAnimationFrame(() => setAnimState('visible'))
       })
-      return () => {
-        window.cancelAnimationFrame(firstRaf)
-        if (secondRaf) window.cancelAnimationFrame(secondRaf)
-      }
+    } else {
+      setAnimState('waiting')
     }
-
-    setAnimState('waiting')
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (!entry.isIntersecting) {
+          setAnimState('waiting')
+          return
+        }
+
+        if (entry.intersectionRatio >= 0.14 || entry.intersectionRect.height >= 110) {
           setAnimState('visible')
-          observer.disconnect()
         }
       },
-      { threshold: 0.14, rootMargin: '0px 0px -48px 0px' }
+      { threshold: [0, 0.14] }
     )
 
     observer.observe(node)
-    return () => observer.disconnect()
+
+    return () => {
+      if (firstRaf) window.cancelAnimationFrame(firstRaf)
+      if (secondRaf) window.cancelAnimationFrame(secondRaf)
+      observer.disconnect()
+    }
   }, [])
 
   return (
