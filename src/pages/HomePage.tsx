@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom'
 import { BiryaniMandiSection } from '../components/BiryaniMandiSection'
 import { InstagramBrandIcon, WhatsAppBrandIcon } from '../components/BrandIcons'
-import { AvailabilityBadge } from '../components/menu/AvailabilityBadge'
+import { FeaturedSelectionsSection } from '../components/FeaturedSelectionsSection'
 import { Reveal, SectionHeading } from '../components/MotionSection'
 import { SeoHead } from '../components/SeoHead'
 import { MENU_DATA } from '../data/menuData'
@@ -199,63 +199,7 @@ export function HomePage() {
       <BiryaniMandiSection />
 
       {/* Featured Menu Preview */}
-      <section className="border-t border-gold/30 bg-cream-soft py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Our Menu"
-                title="Featured"
-                accentWord="Selections"
-                description="Explore highlights from our evening Mandi Specials (6:30 PM onwards), Biryani Collection, Malabar Chukka, and Fried & Grilled dishes."
-              />
-            </Reveal>
-            <Reveal delay={0.1}>
-              <Link
-                to="/menu/"
-                className="inline-flex items-center gap-2.5 rounded-lg bg-brand-primary px-6 py-3.5 text-xs font-semibold tracking-[0.14em] text-white uppercase shadow-sm transition-colors hover:bg-brand-secondary"
-              >
-                <span>View Full Menu</span>
-                <ArrowRight className="h-4 w-4 text-gold-soft" />
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredDishes.map((dish) => (
-              <Link key={dish.id} to="/menu/" className="luxury-panel group block h-full overflow-hidden">
-                <div className="relative h-56 overflow-hidden bg-cream">
-                  <img
-                    src={dish.image}
-                    alt={dish.imageAlt}
-                    loading="lazy"
-                    decoding="async"
-                    width={dish.imageWidth}
-                    height={dish.imageHeight}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-deep/30 via-transparent to-transparent" />
-                  <div className="absolute top-3 left-3">
-                    <AvailabilityBadge
-                      label={dish.availability}
-                      isEveningSpecial={dish.isEveningSpecial}
-                    />
-                  </div>
-                </div>
-                <div className="p-5">
-                  <span className="text-[10px] font-semibold tracking-[0.2em] text-brand-secondary uppercase">
-                    {dish.categoryTitle}
-                  </span>
-                  <h3 className="mt-1.5 font-serif text-2xl font-bold text-ink transition-colors group-hover:text-brand-primary">
-                    {dish.name}
-                  </h3>
-                  <div className="mt-4 h-px w-10 bg-gold/60 transition-all duration-300 group-hover:w-16" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturedSelectionsSection dishes={featuredDishes} />
 
       {/* Signature Dish Showcase */}
       <section className="border-t border-gold/30 bg-white py-20 sm:py-28">

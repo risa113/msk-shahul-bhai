@@ -349,3 +349,188 @@
     transform: none !important;
   }
 }
+
+/* Home Featured Selections Section — Replayable Cinematic Clip-Path & Focus Reveal */
+.fs-section {
+  --fs-ease: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-eyebrow {
+  opacity: 0;
+  letter-spacing: 0.34em;
+}
+
+.fs-section[data-fs-state="waiting"] .fs-heading {
+  opacity: 0.15;
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 12px, 0);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-description {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translate3d(0, 8px, 0);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-cta-wrap {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-card {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0) scale(0.95);
+  filter: blur(6px);
+  clip-path: inset(12% 0% 0% 0% round 1rem);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-image-curtain {
+  opacity: 0.35;
+  clip-path: inset(10% 8% 10% 8%);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-image-reveal-scale {
+  transform: scale(1.12);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-category {
+  opacity: 0;
+  letter-spacing: 0.32em;
+}
+
+.fs-section[data-fs-state="waiting"] .fs-title {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 12px, 0);
+}
+
+.fs-section[data-fs-state="waiting"] .fs-divider {
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.fs-section[data-fs-state="visible"] .fs-eyebrow {
+  opacity: 1;
+  letter-spacing: 0.26em;
+  transition: opacity 0.65s var(--fs-ease) 0.04s, letter-spacing 0.78s var(--fs-ease) 0.04s;
+}
+
+.fs-section[data-fs-state="visible"] .fs-heading {
+  opacity: 1;
+  clip-path: inset(0 0 0% 0);
+  transform: translate3d(0, 0, 0);
+  transition:
+    clip-path 0.85s var(--fs-ease) 0.1s,
+    transform 0.85s var(--fs-ease) 0.1s,
+    opacity 0.6s ease 0.1s;
+}
+
+.fs-section[data-fs-state="visible"] .fs-description {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.78s var(--fs-ease) 0.22s,
+    filter 0.78s var(--fs-ease) 0.22s,
+    transform 0.78s var(--fs-ease) 0.22s;
+}
+
+.fs-section[data-fs-state="visible"] .fs-cta-wrap {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.68s var(--fs-ease) 0.28s, transform 0.68s var(--fs-ease) 0.28s;
+}
+
+.fs-section[data-fs-state="visible"] .fs-card {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0px);
+  clip-path: inset(0% 0% 0% 0% round 1rem);
+  transition:
+    opacity 0.8s var(--fs-ease) var(--fs-delay, 0.16s),
+    transform 0.86s var(--fs-ease) var(--fs-delay, 0.16s),
+    filter 0.78s var(--fs-ease) var(--fs-delay, 0.16s),
+    clip-path 0.88s var(--fs-ease) var(--fs-delay, 0.16s),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.fs-section[data-fs-state="visible"] .fs-image-curtain {
+  opacity: 1;
+  clip-path: inset(0% 0% 0% 0%);
+  transition:
+    clip-path 0.9s var(--fs-ease) calc(var(--fs-delay, 0.16s) + 0.08s),
+    opacity 0.6s ease calc(var(--fs-delay, 0.16s) + 0.08s);
+}
+
+.fs-section[data-fs-state="visible"] .fs-image-reveal-scale {
+  transform: scale(1);
+  transition: transform 1.05s var(--fs-ease) calc(var(--fs-delay, 0.16s) + 0.08s);
+}
+
+.fs-section[data-fs-state="visible"] .fs-category {
+  opacity: 1;
+  letter-spacing: 0.2em;
+  transition:
+    opacity 0.62s var(--fs-ease) calc(var(--fs-delay, 0.16s) + 0.22s),
+    letter-spacing 0.75s var(--fs-ease) calc(var(--fs-delay, 0.16s) + 0.22s);
+}
+
+.fs-section[data-fs-state="visible"] .fs-title {
+  opacity: 1;
+  clip-path: inset(0 0 0% 0);
+  transform: translate3d(0, 0, 0);
+  transition:
+    clip-path 0.72s var(--fs-ease) calc(var(--fs-delay, 0.16s) + 0.28s),
+    transform 0.72s var(--fs-ease) calc(var(--fs-delay, 0.16s) + 0.28s),
+    opacity 0.55s ease calc(var(--fs-delay, 0.16s) + 0.28s),
+    color 0.25s ease;
+}
+
+.fs-section[data-fs-state="visible"] .fs-divider {
+  opacity: 1;
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition:
+    transform 0.68s var(--fs-ease) calc(var(--fs-delay, 0.16s) + 0.36s),
+    opacity 0.45s ease calc(var(--fs-delay, 0.16s) + 0.36s),
+    width 0.3s ease;
+}
+
+.fs-card-img {
+  transition: transform 0.65s var(--fs-ease);
+  will-change: transform;
+}
+
+.fs-card:hover .fs-card-img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 640px) {
+  .fs-section[data-fs-state="waiting"] .fs-card {
+    filter: blur(3px);
+    transform: translate3d(0, 18px, 0) scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fs-section[data-fs-state],
+  .fs-section[data-fs-state] * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  .fs-section[data-fs-state] .fs-eyebrow {
+    letter-spacing: 0.26em !important;
+  }
+  .fs-section[data-fs-state] .fs-category {
+    letter-spacing: 0.2em !important;
+  }
+  .fs-card:hover .fs-card-img {
+    transform: none !important;
+  }
+}
