@@ -62,7 +62,7 @@ export function MenuSection() {
                 aria-labelledby={`heading-${category.id}`}
                 className={
                   category.isEveningSpecial
-                    ? 'relative rounded-3xl border border-gold/60 bg-gradient-to-br from-brand-primary/[0.08] via-white to-cream-soft p-6 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.2)] sm:p-10'
+                    ? 'relative rounded-3xl border border-gold/60 bg-gradient-to-br from-brand-primary/[0.08] via-white to-cream-soft p-6 shadow-[0_20px_50px_-24px_rgba(63,9,19,0.2)] sm:p-10'
                     : 'border-t border-gold/35 pt-10 first:border-t-0 first:pt-0'
                 }
               >

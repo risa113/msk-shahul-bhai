@@ -29,7 +29,7 @@ export function MandiSpecialsPage() {
             fetchPriority="high"
             className="msk-hero-media h-full w-full object-cover"
           />
-          <div className="hero-scrim-green absolute inset-0" />
+          <div className="hero-scrim-burgundy absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">

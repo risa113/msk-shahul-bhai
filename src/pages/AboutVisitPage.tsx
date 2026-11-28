@@ -32,7 +32,7 @@ export function AboutVisitPage() {
             fetchPriority="high"
             className="msk-hero-media h-full w-full object-cover"
           />
-          <div className="hero-scrim-green absolute inset-0" />
+          <div className="hero-scrim-burgundy absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -57,7 +57,7 @@ export function AboutVisitPage() {
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
             <div className="space-y-6 lg:sticky lg:top-28 lg:col-span-5">
               <Reveal variant="image-curtain">
-                <div className="msk-card-hover group overflow-hidden rounded-3xl border border-gold/55 bg-white p-2 shadow-[0_18px_45px_-20px_rgba(38,60,48,0.18)]">
+                <div className="msk-card-hover group overflow-hidden rounded-3xl border border-gold/55 bg-white p-2 shadow-[0_18px_45px_-20px_rgba(63,9,19,0.18)]">
                   <div className="overflow-hidden rounded-2xl">
                     <img
                       src={assetUrl(BRAND_IMAGES.founderPortrait.path)}
@@ -73,7 +73,7 @@ export function AboutVisitPage() {
               </Reveal>
 
               <Reveal variant="cta-scale" delay={0.08}>
-                <div className="msk-card-hover rounded-3xl border border-gold/55 bg-white p-8 text-center shadow-[0_18px_45px_-20px_rgba(38,60,48,0.18)]">
+                <div className="msk-card-hover rounded-3xl border border-gold/55 bg-white p-8 text-center shadow-[0_18px_45px_-20px_rgba(63,9,19,0.18)]">
                   <span className="inline-block rounded-full border border-gold/55 bg-cream px-3.5 py-1 text-[10px] font-semibold tracking-[0.22em] text-brand-primary uppercase">
                     Serving Since {BRAND.establishedYear}
                   </span>

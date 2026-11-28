@@ -46,7 +46,7 @@ export function HomePage() {
             className="msk-hero-media h-full w-full object-cover object-[center_20%]"
             fetchPriority="high"
           />
-          <div className="hero-scrim-green absolute inset-0" />
+          <div className="hero-scrim-burgundy absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto my-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -62,7 +62,7 @@ export function HomePage() {
             </div>
 
             <h1
-              className="msk-hero-headline font-serif text-4xl leading-[1.06] font-extrabold tracking-tight text-white drop-shadow-[0_2px_14px_rgba(18,32,24,0.6)] sm:text-5xl lg:text-[4.25rem]"
+              className="msk-hero-headline font-serif text-4xl leading-[1.06] font-extrabold tracking-tight text-white drop-shadow-[0_2px_14px_rgba(36,6,12,0.68)] sm:text-5xl lg:text-[4.25rem]"
               style={{ '--msk-hero-delay': '120ms' } as CSSProperties}
             >
               MSK Shahul Bhai Biryani – <br className="hidden sm:block" />
@@ -70,7 +70,7 @@ export function HomePage() {
             </h1>
 
             <p
-              className="msk-hero-copy mt-6 max-w-xl text-base leading-relaxed text-cream/95 drop-shadow-[0_1px_10px_rgba(18,32,24,0.65)] sm:text-lg"
+              className="msk-hero-copy mt-6 max-w-xl text-base leading-relaxed text-cream/95 drop-shadow-[0_1px_10px_rgba(36,6,12,0.68)] sm:text-lg"
               style={{ '--msk-hero-delay': '210ms' } as CSSProperties}
             >
               {BRAND.heroSupporting}
@@ -181,7 +181,7 @@ export function HomePage() {
 
             <div className="space-y-5 lg:col-span-6">
               <Reveal variant="image-curtain" delay={0.06}>
-                <div className="msk-card-hover group overflow-hidden rounded-3xl border border-gold/40 bg-white p-2 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.22)]">
+                <div className="msk-card-hover group overflow-hidden rounded-3xl border border-gold/40 bg-white p-2 shadow-[0_20px_50px_-24px_rgba(63,9,19,0.22)]">
                   <div className="overflow-hidden rounded-2xl">
                     <img
                       src={assetUrl(BRAND_IMAGES.founderPortrait.path)}
@@ -197,7 +197,7 @@ export function HomePage() {
               </Reveal>
 
               <Reveal variant="image-curtain" delay={0.14}>
-                <div className="msk-card-hover group overflow-hidden rounded-3xl border border-gold/40 bg-white p-2 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.22)]">
+                <div className="msk-card-hover group overflow-hidden rounded-3xl border border-gold/40 bg-white p-2 shadow-[0_20px_50px_-24px_rgba(63,9,19,0.22)]">
                   <div className="overflow-hidden rounded-2xl">
                     <img
                       src={assetUrl(BRAND_IMAGES.restaurantAmbience.path)}

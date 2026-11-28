@@ -59,7 +59,7 @@ export function CateringPage() {
             fetchPriority="high"
             className="msk-hero-media h-full w-full object-cover"
           />
-          <div className="hero-scrim-green absolute inset-0" />
+          <div className="hero-scrim-burgundy absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -248,7 +248,7 @@ export function CateringPage() {
             <Reveal variant="cta-scale" delay={0.08} className="lg:col-span-7">
               <form
                 onSubmit={handleEnquirySubmit}
-                className="space-y-5 rounded-3xl border border-gold/45 bg-white p-6 shadow-[0_20px_50px_-24px_rgba(38,60,48,0.18)] sm:p-8"
+                className="space-y-5 rounded-3xl border border-gold/45 bg-white p-6 shadow-[0_20px_50px_-24px_rgba(63,9,19,0.18)] sm:p-8"
               >
                 <div>
                   <label

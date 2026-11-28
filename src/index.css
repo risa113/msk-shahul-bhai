@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --msk-primary: #356B4F;
-  --msk-secondary: #477D5D;
-  --msk-deep: #263C30;
-  --msk-cream: #F4EFE3;
-  --msk-cream-soft: #FAF7F0;
+  --msk-primary: #6E1423;
+  --msk-secondary: #8A2132;
+  --msk-deep: #3F0913;
+  --msk-cream: #EAD9BE;
+  --msk-cream-soft: #F4E8D4;
   --msk-white: #FFFFFF;
-  --msk-gold: #D6A85C;
-  --msk-gold-soft: #E5C58A;
-  --msk-text-primary: #263C30;
-  --msk-text-secondary: #647067;
+  --msk-gold: #D8AB67;
+  --msk-gold-soft: #F2DFC2;
+  --msk-text-primary: #2B0D12;
+  --msk-text-secondary: #593E41;
 }
 
 @theme {
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 
-  --color-brand-primary: #356B4F;
-  --color-brand-secondary: #477D5D;
-  --color-brand-deep: #263C30;
-  --color-cream: #F4EFE3;
-  --color-cream-soft: #FAF7F0;
-  --color-gold: #D6A85C;
-  --color-gold-soft: #E5C58A;
-  --color-ink: #263C30;
-  --color-muted: #647067;
+  --color-brand-primary: #6E1423;
+  --color-brand-secondary: #8A2132;
+  --color-brand-deep: #3F0913;
+  --color-cream: #EAD9BE;
+  --color-cream-soft: #F4E8D4;
+  --color-gold: #D8AB67;
+  --color-gold-soft: #F2DFC2;
+  --color-ink: #2B0D12;
+  --color-muted: #593E41;
 }
 
 @layer base {
@@ -74,41 +74,41 @@
 
 .luxury-panel {
   background-color: var(--msk-white);
-  border: 1px solid rgba(53, 107, 79, 0.14);
+  border: 1px solid rgba(110, 20, 35, 0.14);
   border-radius: 1rem;
-  box-shadow: 0 10px 30px -16px rgba(38, 60, 48, 0.16);
+  box-shadow: 0 10px 30px -16px rgba(63, 9, 19, 0.16);
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .luxury-panel:hover {
-  border-color: rgba(214, 168, 92, 0.72);
-  box-shadow: 0 22px 44px -18px rgba(38, 60, 48, 0.22);
+  border-color: rgba(216, 171, 103, 0.72);
+  box-shadow: 0 22px 44px -18px rgba(63, 9, 19, 0.22);
 }
 
-.hero-scrim-green {
+.hero-scrim-burgundy {
   background:
     linear-gradient(
       95deg,
-      rgba(28, 46, 36, 0.72) 0%,
-      rgba(38, 60, 48, 0.48) 44%,
-      rgba(38, 60, 48, 0.16) 76%,
-      rgba(38, 60, 48, 0.08) 100%
+      rgba(56, 8, 17, 0.72) 0%,
+      rgba(96, 17, 30, 0.48) 44%,
+      rgba(63, 9, 19, 0.16) 76%,
+      rgba(63, 9, 19, 0.08) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(28, 46, 36, 0.24) 0%,
-      rgba(28, 46, 36, 0.04) 42%,
-      rgba(28, 46, 36, 0.58) 100%
+      rgba(56, 8, 17, 0.24) 0%,
+      rgba(56, 8, 17, 0.04) 42%,
+      rgba(56, 8, 17, 0.58) 100%
     );
 }
 
 @media (max-width: 767px) {
-  .hero-scrim-green {
+  .hero-scrim-burgundy {
     background: linear-gradient(
       180deg,
-      rgba(28, 46, 36, 0.52) 0%,
-      rgba(28, 46, 36, 0.44) 48%,
-      rgba(28, 46, 36, 0.74) 100%
+      rgba(56, 8, 17, 0.52) 0%,
+      rgba(63, 9, 19, 0.44) 48%,
+      rgba(56, 8, 17, 0.74) 100%
     );
   }
 }
@@ -888,7 +888,7 @@ textarea:focus-visible {
   .luxury-panel:hover,
   .msk-card-hover:hover {
     transform: translateY(-3px);
-    border-color: rgba(214, 168, 92, 0.6);
+    border-color: rgba(216, 171, 103, 0.65);
   }
 
   .group:hover .msk-img-zoom,

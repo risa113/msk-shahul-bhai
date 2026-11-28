@@ -25,7 +25,7 @@ export function SignaturePage() {
             fetchPriority="high"
             className="msk-hero-media h-full w-full object-cover"
           />
-          <div className="hero-scrim-green absolute inset-0" />
+          <div className="hero-scrim-burgundy absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -52,7 +52,7 @@ export function SignaturePage() {
             return (
               <article
                 key={item.number}
-                className="msk-card-hover group grid grid-cols-1 items-center gap-10 rounded-3xl border border-brand-primary/14 bg-white p-6 shadow-[0_14px_40px_-20px_rgba(38,60,48,0.18)] sm:p-10 lg:grid-cols-12"
+                className="msk-card-hover group grid grid-cols-1 items-center gap-10 rounded-3xl border border-brand-primary/14 bg-white p-6 shadow-[0_14px_40px_-20px_rgba(63,9,19,0.18)] sm:p-10 lg:grid-cols-12"
               >
                 <Reveal
                   variant="image-curtain"

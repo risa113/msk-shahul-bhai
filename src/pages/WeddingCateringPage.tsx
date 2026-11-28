@@ -71,7 +71,7 @@ export function WeddingCateringPage() {
             fetchPriority="high"
             className="msk-hero-media h-full w-full object-cover"
           />
-          <div className="hero-scrim-green absolute inset-0" />
+          <div className="hero-scrim-burgundy absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -164,7 +164,7 @@ export function WeddingCateringPage() {
                 {ENQUIRY_STEPS.map((step, idx) => (
                   <Reveal key={step.step} variant="editorial" delay={idx * 0.08} className="h-full">
                     <div className="msk-card-hover h-full rounded-2xl border border-brand-primary/14 bg-cream-soft p-5">
-                      <span className="font-serif text-2xl font-medium text-gold">{step.step}</span>
+                      <span className="font-serif text-2xl font-bold text-brand-primary">{step.step}</span>
                       <h3 className="mt-2 font-serif text-xl font-bold text-ink">{step.title}</h3>
                       <p className="mt-2 text-xs leading-relaxed text-muted">{step.detail}</p>
                     </div>

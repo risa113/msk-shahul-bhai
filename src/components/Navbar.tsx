@@ -33,7 +33,7 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
         scrolled
-          ? 'border-b border-gold/30 bg-brand-primary/97 py-3 shadow-[0_12px_32px_rgba(38,60,48,0.22)] backdrop-blur-md'
+          ? 'border-b border-gold/30 bg-brand-primary/97 py-3 shadow-[0_12px_32px_rgba(63,9,19,0.24)] backdrop-blur-md'
           : 'border-b border-gold/20 bg-brand-primary/92 py-3 backdrop-blur-md'
       }`}
     >

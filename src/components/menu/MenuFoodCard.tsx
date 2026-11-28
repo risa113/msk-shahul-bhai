@@ -17,8 +17,8 @@ export function MenuFoodCard({ dish, index = 0 }: MenuFoodCardProps) {
       <article
         className={`msk-card-hover group flex h-full flex-col overflow-hidden rounded-2xl border bg-white ${
           dish.isEveningSpecial
-            ? 'border-gold/60 shadow-[0_14px_34px_-16px_rgba(38,60,48,0.2)] hover:border-brand-primary/70'
-            : 'border-brand-primary/14 shadow-[0_10px_28px_-16px_rgba(38,60,48,0.14)] hover:border-gold/80'
+            ? 'border-gold/60 shadow-[0_14px_34px_-16px_rgba(63,9,19,0.2)] hover:border-brand-primary/70'
+            : 'border-brand-primary/14 shadow-[0_10px_28px_-16px_rgba(63,9,19,0.14)] hover:border-gold/80'
         }`}
       >
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-cream">
